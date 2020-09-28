@@ -57,14 +57,23 @@ steps:
     TargetFolder: '$(Build.ArtifactStagingDirectory)/pack/license'
 
 - task: CopyFiles@2
-  displayName: Copia del progetto
+  displayName: Copia del file nuspec
   inputs:
-    SourceFolder: 'src/ARXivarNEXT.Client'
-    Contents: '*.csproj'
+    SourceFolder: 'src'
+    Contents: 'ARXivarNEXT.Client.nuspec'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack'
+  inputs:
+    command: pack
+    packagesToPack: '$(Build.ArtifactStagingDirectory)/ARXivarNEXT.Client.nuspec'
+    packDestination: '$(Build.ArtifactStagingDirectory)'
+    versioningScheme: byBuildNumber
+    basePath: '$(Build.ArtifactStagingDirectory)/drop'
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/drop'
     ArtifactName: 'drop'
     publishLocation: 'Container'
