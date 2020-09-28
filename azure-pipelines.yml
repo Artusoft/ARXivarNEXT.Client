@@ -47,14 +47,21 @@ steps:
   inputs:
     SourceFolder: 'src/ARXivarNEXT.Client/bin/$(buildConfiguration)'
     Contents: '*.dll'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/lib/netstandard1.3'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/pack/lib/netstandard1.3'
 
 - task: CopyFiles@2
   displayName: Copia della licenza
   inputs:
     SourceFolder: ''
     Contents: 'license.txt'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)/license'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)/pack/license'
+
+- task: CopyFiles@2
+  displayName: Copia della licenza
+  inputs:
+    SourceFolder: 'src/ARXivarNEXT.Client'
+    Contents: '*.csproj'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   inputs:
