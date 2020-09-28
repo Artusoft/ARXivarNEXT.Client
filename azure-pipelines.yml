@@ -63,19 +63,14 @@ steps:
     Contents: 'ARXivarNEXT.Client.nuspec'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: CmdLine@2
-  inputs:
-    script: 'md drop'
-    workingDirectory: '$(Build.ArtifactStagingDirectory)'
-
 - task: NuGetCommand@2
   displayName: 'NuGet pack'
   inputs:
     command: pack
     packagesToPack: '$(Build.ArtifactStagingDirectory)/ARXivarNEXT.Client.nuspec'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    packDestination: '$(Build.ArtifactStagingDirectory)/drop'
     versioningScheme: byBuildNumber
-    basePath: '$(Build.ArtifactStagingDirectory)/drop'
+    basePath: '$(Build.ArtifactStagingDirectory)/pack'
 
 - task: PublishBuildArtifacts@1
   inputs:
