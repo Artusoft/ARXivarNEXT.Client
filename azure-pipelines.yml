@@ -52,12 +52,12 @@ steps:
 - task: CopyFiles@2
   displayName: Copia della licenza
   inputs:
-    SourceFolder: ''
+    SourceFolder: '$(Build.SourcesDirectory)'
     Contents: 'license.txt'
     TargetFolder: '$(Build.ArtifactStagingDirectory)/pack/license'
 
 - task: CopyFiles@2
-  displayName: Copia della licenza
+  displayName: Copia del progetto
   inputs:
     SourceFolder: 'src/ARXivarNEXT.Client'
     Contents: '*.csproj'
