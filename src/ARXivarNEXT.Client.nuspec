@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>ARXivarNEXT.Client</id>
+    <version>7.3.29.2</version>
+    <title>ARXivar NEXT Client Library</title>
+    <authors>Pragmos S.r.l.</authors>
+    <owners>Diego Artusio</owners>
+    <projectUrl>https://github.com/Pragmos/ARXivarNEXT.Client</projectUrl>
+    <license type="file">license\license.txt</license>
+    <description>ARXivar NEXT Client Library generated from a Swagger doc</description>
+    <tags>ARXivar</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+         <dependency id="FubarCoder.RestSharp.Portable.Core" version="4.0.7" exclude="Build,Analyzers" />
+         <dependency id="FubarCoder.RestSharp.Portable.HttpClient" version="4.0.7" exclude="Build,Analyzers" />
+         <dependency id="Newtonsoft.Json" version="10.0.3" exclude="Build,Analyzers" />
+         <dependency id="JsonSubTypes" version="1.2.0" exclude="Build,Analyzers" />
+       </group>
+     </dependencies>
+  </metadata>
+</package>
