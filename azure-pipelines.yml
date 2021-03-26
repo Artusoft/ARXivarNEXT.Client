@@ -68,9 +68,9 @@ steps:
   inputs:
     command: pack
     packagesToPack: '$(Build.ArtifactStagingDirectory)/ARXivarNEXT.Client.nuspec'
-    packDestination: '$(Build.ArtifactStagingDirectory)'
+    packDestination: '$(Build.ArtifactStagingDirectory)/drop'
     versioningScheme: byBuildNumber
-    basePath: '$(Build.ArtifactStagingDirectory)/drop'
+    basePath: '$(Build.ArtifactStagingDirectory)/pack'
 
 - task: PublishBuildArtifacts@1
   inputs:
