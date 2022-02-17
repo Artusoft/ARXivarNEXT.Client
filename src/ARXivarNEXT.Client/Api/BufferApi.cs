@@ -25,24 +25,24 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// 
+        /// This call deletes a Buffer from its bufferId
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>bool?</returns>
         bool? BufferDeleteByBufferId (string bufferId);
 
         /// <summary>
-        /// 
+        /// This call deletes a Buffer from its bufferId
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>ApiResponse of bool?</returns>
         ApiResponse<bool?> BufferDeleteByBufferIdWithHttpInfo (string bufferId);
         /// <summary>
@@ -88,7 +88,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> BufferGetFileWithHttpInfo (string id);
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included)
         /// </summary>
         /// <remarks>
         /// 
@@ -98,7 +98,7 @@ namespace ARXivarNEXT.Client.Api
         List<BufferSimpleElement> BufferGetForMonitoredFolder ();
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included)
         /// </summary>
         /// <remarks>
         /// 
@@ -134,7 +134,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>List&lt;string&gt;</returns>
@@ -147,7 +147,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -159,7 +159,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -173,7 +173,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -182,24 +182,24 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// 
+        /// This call deletes a Buffer from its bufferId
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>Task of bool?</returns>
         System.Threading.Tasks.Task<bool?> BufferDeleteByBufferIdAsync (string bufferId);
 
         /// <summary>
-        /// 
+        /// This call deletes a Buffer from its bufferId
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>Task of ApiResponse (bool?)</returns>
         System.Threading.Tasks.Task<ApiResponse<bool?>> BufferDeleteByBufferIdAsyncWithHttpInfo (string bufferId);
         /// <summary>
@@ -245,7 +245,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> BufferGetFileAsyncWithHttpInfo (string id);
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included)
         /// </summary>
         /// <remarks>
         /// 
@@ -255,7 +255,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task<List<BufferSimpleElement>> BufferGetForMonitoredFolderAsync ();
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included)
         /// </summary>
         /// <remarks>
         /// 
@@ -291,7 +291,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>Task of List&lt;string&gt;</returns>
@@ -304,7 +304,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
@@ -316,7 +316,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -330,7 +330,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -437,10 +437,10 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// This call deletes a Buffer from its bufferId 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>bool?</returns>
         public bool? BufferDeleteByBufferId (string bufferId)
         {
@@ -449,10 +449,10 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// This call deletes a Buffer from its bufferId 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>ApiResponse of bool?</returns>
         public ApiResponse< bool? > BufferDeleteByBufferIdWithHttpInfo (string bufferId)
         {
@@ -511,10 +511,10 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// This call deletes a Buffer from its bufferId 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>Task of bool?</returns>
         public async System.Threading.Tasks.Task<bool?> BufferDeleteByBufferIdAsync (string bufferId)
         {
@@ -524,10 +524,10 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        ///  
+        /// This call deletes a Buffer from its bufferId 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="bufferId"></param>
+        /// <param name="bufferId">The buffer ID</param>
         /// <returns>Task of ApiResponse (bool?)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<bool?>> BufferDeleteByBufferIdAsyncWithHttpInfo (string bufferId)
         {
@@ -878,7 +878,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder 
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;BufferSimpleElement&gt;</returns>
@@ -889,7 +889,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder 
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;BufferSimpleElement&gt;</returns>
@@ -946,7 +946,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder 
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;BufferSimpleElement&gt;</returns>
@@ -958,7 +958,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call returns the list of the document in the buffer for the monitored folder 
+        /// This call returns the list of the document in the buffer for the monitored folder (Mail type included) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;BufferSimpleElement&gt;)</returns>
@@ -1169,7 +1169,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>List&lt;string&gt;</returns>
@@ -1183,7 +1183,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -1256,7 +1256,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>Task of List&lt;string&gt;</returns>
@@ -1271,7 +1271,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
@@ -1344,7 +1344,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -1359,7 +1359,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -1437,7 +1437,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>
@@ -1453,7 +1453,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call allows to add a file to the buffer 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted </param>
+        /// <param name="elementTypeEnum">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </param>
         /// <param name="monitoredFolderId">If the buffer is related to a monitored folder</param>
         /// <param name="description">Description</param>
         /// <param name="_file">The file</param>

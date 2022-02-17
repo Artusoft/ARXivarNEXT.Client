@@ -40,24 +40,36 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="composedValues">List of search items.</param>
         /// <param name="documentType">Document Type for profiling.</param>
         /// <param name="insertMaskId">Identifier of the profiling mask.</param>
+        /// <param name="viewSearchId">Identifier of the view.</param>
+        /// <param name="maskForViewId">Identifier Mask for view.</param>
+        /// <param name="viewForViewId">Identifier View for view.</param>
         /// <param name="showExpanded">Show all expanded items.</param>
         /// <param name="singleElement">Only one item.</param>
         /// <param name="columns">Columns to show.</param>
+        /// <param name="showCommandAttachments">Show command attachments.</param>
+        /// <param name="showCommandNote">Show command note.</param>
+        /// <param name="showCommandUpdateProfile">Show command update profile.</param>
         /// <param name="additionalFieldType">Possible values:  0: Textbox  1: Databox  2: Numeric  3: Combobox  4: TableBox  5: Checkbox  6: MultiValue  7: ClasseBox  8: Group  9: RubricaBox  10: TextArea .</param>
         /// <param name="groupId">Group Identifier.</param>
         /// <param name="binderFieldId">Binder Field Identifier.</param>
         /// <param name="taskWorkVariableId">Variable Identifier in taskword context.</param>
         /// <param name="validationType">Possible values:  0: None  1: Regex  2: Formula .</param>
         /// <param name="validationString">Validation string (regex or formula).</param>
-        public AdditionalFieldClasseDTO(List<int?> value = default(List<int?>), List<RowSearchResult> composedValues = default(List<RowSearchResult>), DocumentTypeBaseDTO documentType = default(DocumentTypeBaseDTO), string insertMaskId = default(string), bool? showExpanded = default(bool?), bool? singleElement = default(bool?), List<ColumnInfo> columns = default(List<ColumnInfo>), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldClasseDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, addressBookDefaultFilter, enabledAddressBook)
+        public AdditionalFieldClasseDTO(List<int?> value = default(List<int?>), List<RowSearchResult> composedValues = default(List<RowSearchResult>), DocumentTypeBaseDTO documentType = default(DocumentTypeBaseDTO), string insertMaskId = default(string), string viewSearchId = default(string), string maskForViewId = default(string), string viewForViewId = default(string), bool? showExpanded = default(bool?), bool? singleElement = default(bool?), List<ColumnInfo> columns = default(List<ColumnInfo>), bool? showCommandAttachments = default(bool?), bool? showCommandNote = default(bool?), bool? showCommandUpdateProfile = default(bool?), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldClasseDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), string mandatoryCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, mandatoryCondition, addressBookDefaultFilter, enabledAddressBook)
         {
             this.Value = value;
             this.ComposedValues = composedValues;
             this.DocumentType = documentType;
             this.InsertMaskId = insertMaskId;
+            this.ViewSearchId = viewSearchId;
+            this.MaskForViewId = maskForViewId;
+            this.ViewForViewId = viewForViewId;
             this.ShowExpanded = showExpanded;
             this.SingleElement = singleElement;
             this.Columns = columns;
+            this.ShowCommandAttachments = showCommandAttachments;
+            this.ShowCommandNote = showCommandNote;
+            this.ShowCommandUpdateProfile = showCommandUpdateProfile;
             this.AdditionalFieldType = additionalFieldType;
             this.GroupId = groupId;
             this.BinderFieldId = binderFieldId;
@@ -95,6 +107,27 @@ namespace ARXivarNEXT.Client.Model
         public string InsertMaskId { get; set; }
 
         /// <summary>
+        /// Identifier of the view
+        /// </summary>
+        /// <value>Identifier of the view</value>
+        [DataMember(Name="viewSearchId", EmitDefaultValue=false)]
+        public string ViewSearchId { get; set; }
+
+        /// <summary>
+        /// Identifier Mask for view
+        /// </summary>
+        /// <value>Identifier Mask for view</value>
+        [DataMember(Name="maskForViewId", EmitDefaultValue=false)]
+        public string MaskForViewId { get; set; }
+
+        /// <summary>
+        /// Identifier View for view
+        /// </summary>
+        /// <value>Identifier View for view</value>
+        [DataMember(Name="viewForViewId", EmitDefaultValue=false)]
+        public string ViewForViewId { get; set; }
+
+        /// <summary>
         /// Show all expanded items
         /// </summary>
         /// <value>Show all expanded items</value>
@@ -114,6 +147,27 @@ namespace ARXivarNEXT.Client.Model
         /// <value>Columns to show</value>
         [DataMember(Name="columns", EmitDefaultValue=false)]
         public List<ColumnInfo> Columns { get; set; }
+
+        /// <summary>
+        /// Show command attachments
+        /// </summary>
+        /// <value>Show command attachments</value>
+        [DataMember(Name="showCommandAttachments", EmitDefaultValue=false)]
+        public bool? ShowCommandAttachments { get; set; }
+
+        /// <summary>
+        /// Show command note
+        /// </summary>
+        /// <value>Show command note</value>
+        [DataMember(Name="showCommandNote", EmitDefaultValue=false)]
+        public bool? ShowCommandNote { get; set; }
+
+        /// <summary>
+        /// Show command update profile
+        /// </summary>
+        /// <value>Show command update profile</value>
+        [DataMember(Name="showCommandUpdateProfile", EmitDefaultValue=false)]
+        public bool? ShowCommandUpdateProfile { get; set; }
 
         /// <summary>
         /// Possible values:  0: Textbox  1: Databox  2: Numeric  3: Combobox  4: TableBox  5: Checkbox  6: MultiValue  7: ClasseBox  8: Group  9: RubricaBox  10: TextArea 
@@ -170,9 +224,15 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  ComposedValues: ").Append(ComposedValues).Append("\n");
             sb.Append("  DocumentType: ").Append(DocumentType).Append("\n");
             sb.Append("  InsertMaskId: ").Append(InsertMaskId).Append("\n");
+            sb.Append("  ViewSearchId: ").Append(ViewSearchId).Append("\n");
+            sb.Append("  MaskForViewId: ").Append(MaskForViewId).Append("\n");
+            sb.Append("  ViewForViewId: ").Append(ViewForViewId).Append("\n");
             sb.Append("  ShowExpanded: ").Append(ShowExpanded).Append("\n");
             sb.Append("  SingleElement: ").Append(SingleElement).Append("\n");
             sb.Append("  Columns: ").Append(Columns).Append("\n");
+            sb.Append("  ShowCommandAttachments: ").Append(ShowCommandAttachments).Append("\n");
+            sb.Append("  ShowCommandNote: ").Append(ShowCommandNote).Append("\n");
+            sb.Append("  ShowCommandUpdateProfile: ").Append(ShowCommandUpdateProfile).Append("\n");
             sb.Append("  AdditionalFieldType: ").Append(AdditionalFieldType).Append("\n");
             sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  BinderFieldId: ").Append(BinderFieldId).Append("\n");
@@ -234,6 +294,21 @@ namespace ARXivarNEXT.Client.Model
                     this.InsertMaskId.Equals(input.InsertMaskId))
                 ) && base.Equals(input) && 
                 (
+                    this.ViewSearchId == input.ViewSearchId ||
+                    (this.ViewSearchId != null &&
+                    this.ViewSearchId.Equals(input.ViewSearchId))
+                ) && base.Equals(input) && 
+                (
+                    this.MaskForViewId == input.MaskForViewId ||
+                    (this.MaskForViewId != null &&
+                    this.MaskForViewId.Equals(input.MaskForViewId))
+                ) && base.Equals(input) && 
+                (
+                    this.ViewForViewId == input.ViewForViewId ||
+                    (this.ViewForViewId != null &&
+                    this.ViewForViewId.Equals(input.ViewForViewId))
+                ) && base.Equals(input) && 
+                (
                     this.ShowExpanded == input.ShowExpanded ||
                     (this.ShowExpanded != null &&
                     this.ShowExpanded.Equals(input.ShowExpanded))
@@ -247,6 +322,21 @@ namespace ARXivarNEXT.Client.Model
                     this.Columns == input.Columns ||
                     this.Columns != null &&
                     this.Columns.SequenceEqual(input.Columns)
+                ) && base.Equals(input) && 
+                (
+                    this.ShowCommandAttachments == input.ShowCommandAttachments ||
+                    (this.ShowCommandAttachments != null &&
+                    this.ShowCommandAttachments.Equals(input.ShowCommandAttachments))
+                ) && base.Equals(input) && 
+                (
+                    this.ShowCommandNote == input.ShowCommandNote ||
+                    (this.ShowCommandNote != null &&
+                    this.ShowCommandNote.Equals(input.ShowCommandNote))
+                ) && base.Equals(input) && 
+                (
+                    this.ShowCommandUpdateProfile == input.ShowCommandUpdateProfile ||
+                    (this.ShowCommandUpdateProfile != null &&
+                    this.ShowCommandUpdateProfile.Equals(input.ShowCommandUpdateProfile))
                 ) && base.Equals(input) && 
                 (
                     this.AdditionalFieldType == input.AdditionalFieldType ||
@@ -297,12 +387,24 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.DocumentType.GetHashCode();
                 if (this.InsertMaskId != null)
                     hashCode = hashCode * 59 + this.InsertMaskId.GetHashCode();
+                if (this.ViewSearchId != null)
+                    hashCode = hashCode * 59 + this.ViewSearchId.GetHashCode();
+                if (this.MaskForViewId != null)
+                    hashCode = hashCode * 59 + this.MaskForViewId.GetHashCode();
+                if (this.ViewForViewId != null)
+                    hashCode = hashCode * 59 + this.ViewForViewId.GetHashCode();
                 if (this.ShowExpanded != null)
                     hashCode = hashCode * 59 + this.ShowExpanded.GetHashCode();
                 if (this.SingleElement != null)
                     hashCode = hashCode * 59 + this.SingleElement.GetHashCode();
                 if (this.Columns != null)
                     hashCode = hashCode * 59 + this.Columns.GetHashCode();
+                if (this.ShowCommandAttachments != null)
+                    hashCode = hashCode * 59 + this.ShowCommandAttachments.GetHashCode();
+                if (this.ShowCommandNote != null)
+                    hashCode = hashCode * 59 + this.ShowCommandNote.GetHashCode();
+                if (this.ShowCommandUpdateProfile != null)
+                    hashCode = hashCode * 59 + this.ShowCommandUpdateProfile.GetHashCode();
                 if (this.AdditionalFieldType != null)
                     hashCode = hashCode * 59 + this.AdditionalFieldType.GetHashCode();
                 if (this.GroupId != null)

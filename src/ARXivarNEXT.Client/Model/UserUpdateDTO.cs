@@ -100,7 +100,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="completeDescription">Full Description.</param>
         /// <param name="canAddVirtualStamps">Possible values:  0: NotApplied  1: Allow  2: Denied .</param>
         /// <param name="canApplyStaps">Possible values:  0: NotApplied  1: Allow  2: Denied .</param>
-        public UserUpdateDTO(int? user = default(int?), bool? businessUnitUserUnlock = default(bool?), bool? tempArchive = default(bool?), bool? addressBookProfile = default(bool?), bool? distributionList = default(bool?), int? mailIn = default(int?), int? mailOutStoreExt = default(int?), int? mailOutStoreIn = default(int?), bool? mailDeleteProfile = default(bool?), bool? webCompliantCopy = default(bool?), bool? webSearch = default(bool?), bool? webQuickSearch = default(bool?), bool? webMailBox = default(bool?), bool? webFolders = default(bool?), bool? webSearchViews = default(bool?), bool? webBinders = default(bool?), bool? webCheckinAdmin = default(bool?), int? mailOutMaxSize = default(int?), int? mailOutDefaultType = default(int?), int? mailOutType2 = default(int?), int? mailOutType3 = default(int?), List<UserSecurityStateDTO> securityStateList = default(List<UserSecurityStateDTO>), int? group = default(int?), string description = default(string), string email = default(string), string businessUnit = default(string), string password = default(string), int? defaultType = default(int?), int? type2 = default(int?), int? type3 = default(int?), string internalFax = default(string), DateTime? lastMail = default(DateTime?), int? category = default(int?), bool? workflow = default(bool?), string defaultState = default(string), bool? addressBook = default(bool?), int? userState = default(int?), string mailServer = default(string), bool? webAccess = default(bool?), bool? upload = default(bool?), bool? folders = default(bool?), bool? flow = default(bool?), bool? sign = default(bool?), int? viewer = default(int?), bool? protocol = default(bool?), bool? models = default(bool?), string domain = default(string), string outState = default(string), string mailBody = default(string), bool? notify = default(bool?), string mailClient = default(string), int? htmlBody = default(int?), bool? respAos = default(bool?), bool? assAos = default(bool?), string codFis = default(string), string pin = default(string), bool? guest = default(bool?), bool? passwordChange = default(bool?), byte[] marking = default(byte[]), int? type = default(int?), bool? mailOutDefault = default(bool?), bool? barcodeAccess = default(bool?), int? mustChangePassword = default(int?), string lang = default(string), bool? ws = default(bool?), bool? disablePswExpired = default(bool?), string completeDescription = default(string), int? canAddVirtualStamps = default(int?), int? canApplyStaps = default(int?))
+        /// <param name="viewFlow">Enable the user to view the workflow information.</param>
+        public UserUpdateDTO(int? user = default(int?), bool? businessUnitUserUnlock = default(bool?), bool? tempArchive = default(bool?), bool? addressBookProfile = default(bool?), bool? distributionList = default(bool?), int? mailIn = default(int?), int? mailOutStoreExt = default(int?), int? mailOutStoreIn = default(int?), bool? mailDeleteProfile = default(bool?), bool? webCompliantCopy = default(bool?), bool? webSearch = default(bool?), bool? webQuickSearch = default(bool?), bool? webMailBox = default(bool?), bool? webFolders = default(bool?), bool? webSearchViews = default(bool?), bool? webBinders = default(bool?), bool? webCheckinAdmin = default(bool?), int? mailOutMaxSize = default(int?), int? mailOutDefaultType = default(int?), int? mailOutType2 = default(int?), int? mailOutType3 = default(int?), List<UserSecurityStateDTO> securityStateList = default(List<UserSecurityStateDTO>), int? group = default(int?), string description = default(string), string email = default(string), string businessUnit = default(string), string password = default(string), int? defaultType = default(int?), int? type2 = default(int?), int? type3 = default(int?), string internalFax = default(string), DateTime? lastMail = default(DateTime?), int? category = default(int?), bool? workflow = default(bool?), string defaultState = default(string), bool? addressBook = default(bool?), int? userState = default(int?), string mailServer = default(string), bool? webAccess = default(bool?), bool? upload = default(bool?), bool? folders = default(bool?), bool? flow = default(bool?), bool? sign = default(bool?), int? viewer = default(int?), bool? protocol = default(bool?), bool? models = default(bool?), string domain = default(string), string outState = default(string), string mailBody = default(string), bool? notify = default(bool?), string mailClient = default(string), int? htmlBody = default(int?), bool? respAos = default(bool?), bool? assAos = default(bool?), string codFis = default(string), string pin = default(string), bool? guest = default(bool?), bool? passwordChange = default(bool?), byte[] marking = default(byte[]), int? type = default(int?), bool? mailOutDefault = default(bool?), bool? barcodeAccess = default(bool?), int? mustChangePassword = default(int?), string lang = default(string), bool? ws = default(bool?), bool? disablePswExpired = default(bool?), string completeDescription = default(string), int? canAddVirtualStamps = default(int?), int? canApplyStaps = default(int?), bool? viewFlow = default(bool?))
         {
             this.User = user;
             this.BusinessUnitUserUnlock = businessUnitUserUnlock;
@@ -171,6 +172,7 @@ namespace ARXivarNEXT.Client.Model
             this.CompleteDescription = completeDescription;
             this.CanAddVirtualStamps = canAddVirtualStamps;
             this.CanApplyStaps = canApplyStaps;
+            this.ViewFlow = viewFlow;
         }
         
         /// <summary>
@@ -652,6 +654,13 @@ namespace ARXivarNEXT.Client.Model
         public int? CanApplyStaps { get; set; }
 
         /// <summary>
+        /// Enable the user to view the workflow information
+        /// </summary>
+        /// <value>Enable the user to view the workflow information</value>
+        [DataMember(Name="viewFlow", EmitDefaultValue=false)]
+        public bool? ViewFlow { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -728,6 +737,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  CompleteDescription: ").Append(CompleteDescription).Append("\n");
             sb.Append("  CanAddVirtualStamps: ").Append(CanAddVirtualStamps).Append("\n");
             sb.Append("  CanApplyStaps: ").Append(CanApplyStaps).Append("\n");
+            sb.Append("  ViewFlow: ").Append(ViewFlow).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -1106,6 +1116,11 @@ namespace ARXivarNEXT.Client.Model
                     this.CanApplyStaps == input.CanApplyStaps ||
                     (this.CanApplyStaps != null &&
                     this.CanApplyStaps.Equals(input.CanApplyStaps))
+                ) && 
+                (
+                    this.ViewFlow == input.ViewFlow ||
+                    (this.ViewFlow != null &&
+                    this.ViewFlow.Equals(input.ViewFlow))
                 );
         }
 
@@ -1256,6 +1271,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.CanAddVirtualStamps.GetHashCode();
                 if (this.CanApplyStaps != null)
                     hashCode = hashCode * 59 + this.CanApplyStaps.GetHashCode();
+                if (this.ViewFlow != null)
+                    hashCode = hashCode * 59 + this.ViewFlow.GetHashCode();
                 return hashCode;
             }
         }

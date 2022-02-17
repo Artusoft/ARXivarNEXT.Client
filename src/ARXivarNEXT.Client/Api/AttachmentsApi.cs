@@ -111,6 +111,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AttachmentsDeleteRevisionWithHttpInfo (int? revisionId);
         /// <summary>
+        /// This call returns the attachment by profile and footprint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>AttachmentDTO</returns>
+        AttachmentDTO AttachmentsGetByDocNumberAndFootprint (AttachmentByDocnumberFootprintRequestDTO options);
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>ApiResponse of AttachmentDTO</returns>
+        ApiResponse<AttachmentDTO> AttachmentsGetByDocNumberAndFootprintWithHttpInfo (AttachmentByDocnumberFootprintRequestDTO options);
+        /// <summary>
         /// This call retrieves all the attachments of a profile
         /// </summary>
         /// <remarks>
@@ -420,6 +441,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="revisionId">Identifier of the revision</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AttachmentsDeleteRevisionAsyncWithHttpInfo (int? revisionId);
+        /// <summary>
+        /// This call returns the attachment by profile and footprint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>Task of AttachmentDTO</returns>
+        System.Threading.Tasks.Task<AttachmentDTO> AttachmentsGetByDocNumberAndFootprintAsync (AttachmentByDocnumberFootprintRequestDTO options);
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>Task of ApiResponse (AttachmentDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AttachmentDTO>> AttachmentsGetByDocNumberAndFootprintAsyncWithHttpInfo (AttachmentByDocnumberFootprintRequestDTO options);
         /// <summary>
         /// This call retrieves all the attachments of a profile
         /// </summary>
@@ -1308,6 +1350,179 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>AttachmentDTO</returns>
+        public AttachmentDTO AttachmentsGetByDocNumberAndFootprint (AttachmentByDocnumberFootprintRequestDTO options)
+        {
+             ApiResponse<AttachmentDTO> localVarResponse = AttachmentsGetByDocNumberAndFootprintWithHttpInfo(options);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>ApiResponse of AttachmentDTO</returns>
+        public ApiResponse< AttachmentDTO > AttachmentsGetByDocNumberAndFootprintWithHttpInfo (AttachmentByDocnumberFootprintRequestDTO options)
+        {
+            // verify the required parameter 'options' is set
+            if (options == null)
+                throw new ApiException(400, "Missing required parameter 'options' when calling AttachmentsApi->AttachmentsGetByDocNumberAndFootprint");
+
+            var localVarPath = "./api/Attachments/ByDocnumberAndFootprint";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (options != null && options.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(options); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = options; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AttachmentsGetByDocNumberAndFootprint", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AttachmentDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (AttachmentDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttachmentDTO)));
+        }
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>Task of AttachmentDTO</returns>
+        public async System.Threading.Tasks.Task<AttachmentDTO> AttachmentsGetByDocNumberAndFootprintAsync (AttachmentByDocnumberFootprintRequestDTO options)
+        {
+             ApiResponse<AttachmentDTO> localVarResponse = await AttachmentsGetByDocNumberAndFootprintAsyncWithHttpInfo(options);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the attachment by profile and footprint 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="options">Search options</param>
+        /// <returns>Task of ApiResponse (AttachmentDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<AttachmentDTO>> AttachmentsGetByDocNumberAndFootprintAsyncWithHttpInfo (AttachmentByDocnumberFootprintRequestDTO options)
+        {
+            // verify the required parameter 'options' is set
+            if (options == null)
+                throw new ApiException(400, "Missing required parameter 'options' when calling AttachmentsApi->AttachmentsGetByDocNumberAndFootprint");
+
+            var localVarPath = "./api/Attachments/ByDocnumberAndFootprint";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (options != null && options.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(options); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = options; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AttachmentsGetByDocNumberAndFootprint", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<AttachmentDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (AttachmentDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AttachmentDTO)));
         }
 
         /// <summary>

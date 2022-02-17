@@ -215,9 +215,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>UserCompleteDTO</returns>
-        UserCompleteDTO UsersUpdate (int? id, UserUpdateDTO userUpdate);
+        UserCompleteDTO UsersUpdate (int? id, UserUpdateDTO userupdate = null);
 
         /// <summary>
         /// This call updates a given user
@@ -227,9 +227,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>ApiResponse of UserCompleteDTO</returns>
-        ApiResponse<UserCompleteDTO> UsersUpdateWithHttpInfo (int? id, UserUpdateDTO userUpdate);
+        ApiResponse<UserCompleteDTO> UsersUpdateWithHttpInfo (int? id, UserUpdateDTO userupdate = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -423,9 +423,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>Task of UserCompleteDTO</returns>
-        System.Threading.Tasks.Task<UserCompleteDTO> UsersUpdateAsync (int? id, UserUpdateDTO userUpdate);
+        System.Threading.Tasks.Task<UserCompleteDTO> UsersUpdateAsync (int? id, UserUpdateDTO userupdate = null);
 
         /// <summary>
         /// This call updates a given user
@@ -435,9 +435,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>Task of ApiResponse (UserCompleteDTO)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserCompleteDTO>> UsersUpdateAsyncWithHttpInfo (int? id, UserUpdateDTO userUpdate);
+        System.Threading.Tasks.Task<ApiResponse<UserCompleteDTO>> UsersUpdateAsyncWithHttpInfo (int? id, UserUpdateDTO userupdate = null);
         #endregion Asynchronous Operations
     }
 
@@ -1852,11 +1852,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>UserCompleteDTO</returns>
-        public UserCompleteDTO UsersUpdate (int? id, UserUpdateDTO userUpdate)
+        public UserCompleteDTO UsersUpdate (int? id, UserUpdateDTO userupdate = null)
         {
-             ApiResponse<UserCompleteDTO> localVarResponse = UsersUpdateWithHttpInfo(id, userUpdate);
+             ApiResponse<UserCompleteDTO> localVarResponse = UsersUpdateWithHttpInfo(id, userupdate);
              return localVarResponse.Data;
         }
 
@@ -1865,16 +1865,13 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>ApiResponse of UserCompleteDTO</returns>
-        public ApiResponse< UserCompleteDTO > UsersUpdateWithHttpInfo (int? id, UserUpdateDTO userUpdate)
+        public ApiResponse< UserCompleteDTO > UsersUpdateWithHttpInfo (int? id, UserUpdateDTO userupdate = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UsersUpdate");
-            // verify the required parameter 'userUpdate' is set
-            if (userUpdate == null)
-                throw new ApiException(400, "Missing required parameter 'userUpdate' when calling UsersApi->UsersUpdate");
 
             var localVarPath = "./api/Users/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1886,11 +1883,6 @@ namespace ARXivarNEXT.Client.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1906,13 +1898,13 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (userUpdate != null && userUpdate.GetType() != typeof(byte[]))
+            if (userupdate != null && userupdate.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(userUpdate); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userupdate); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = userUpdate; // byte array
+                localVarPostBody = userupdate; // byte array
             }
 
             // authentication (Authorization) required
@@ -1944,11 +1936,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>Task of UserCompleteDTO</returns>
-        public async System.Threading.Tasks.Task<UserCompleteDTO> UsersUpdateAsync (int? id, UserUpdateDTO userUpdate)
+        public async System.Threading.Tasks.Task<UserCompleteDTO> UsersUpdateAsync (int? id, UserUpdateDTO userupdate = null)
         {
-             ApiResponse<UserCompleteDTO> localVarResponse = await UsersUpdateAsyncWithHttpInfo(id, userUpdate);
+             ApiResponse<UserCompleteDTO> localVarResponse = await UsersUpdateAsyncWithHttpInfo(id, userupdate);
              return localVarResponse.Data;
 
         }
@@ -1958,16 +1950,13 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Identifier</param>
-        /// <param name="userUpdate">User information to update</param>
+        /// <param name="userupdate"> (optional)</param>
         /// <returns>Task of ApiResponse (UserCompleteDTO)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<UserCompleteDTO>> UsersUpdateAsyncWithHttpInfo (int? id, UserUpdateDTO userUpdate)
+        public async System.Threading.Tasks.Task<ApiResponse<UserCompleteDTO>> UsersUpdateAsyncWithHttpInfo (int? id, UserUpdateDTO userupdate = null)
         {
             // verify the required parameter 'id' is set
             if (id == null)
                 throw new ApiException(400, "Missing required parameter 'id' when calling UsersApi->UsersUpdate");
-            // verify the required parameter 'userUpdate' is set
-            if (userUpdate == null)
-                throw new ApiException(400, "Missing required parameter 'userUpdate' when calling UsersApi->UsersUpdate");
 
             var localVarPath = "./api/Users/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1979,11 +1968,6 @@ namespace ARXivarNEXT.Client.Api
 
             // to determine the Content-Type header
             String[] localVarHttpContentTypes = new String[] {
-                "application/json", 
-                "text/json", 
-                "application/xml", 
-                "text/xml", 
-                "application/x-www-form-urlencoded"
             };
             String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
@@ -1999,13 +1983,13 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
-            if (userUpdate != null && userUpdate.GetType() != typeof(byte[]))
+            if (userupdate != null && userupdate.GetType() != typeof(byte[]))
             {
-                localVarPostBody = this.Configuration.ApiClient.Serialize(userUpdate); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(userupdate); // http body (model) parameter
             }
             else
             {
-                localVarPostBody = userUpdate; // byte array
+                localVarPostBody = userupdate; // byte array
             }
 
             // authentication (Authorization) required

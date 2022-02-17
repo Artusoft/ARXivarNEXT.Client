@@ -34,11 +34,13 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="name">Name.</param>
         /// <param name="version">Version.</param>
         /// <param name="baseUrl">Url Address.</param>
-        public ServerPluginDto(string name = default(string), string version = default(string), string baseUrl = default(string))
+        /// <param name="code">Code.</param>
+        public ServerPluginDto(string name = default(string), string version = default(string), string baseUrl = default(string), string code = default(string))
         {
             this.Name = name;
             this.Version = version;
             this.BaseUrl = baseUrl;
+            this.Code = code;
         }
         
         /// <summary>
@@ -63,6 +65,13 @@ namespace ARXivarNEXT.Client.Model
         public string BaseUrl { get; set; }
 
         /// <summary>
+        /// Code
+        /// </summary>
+        /// <value>Code</value>
+        [DataMember(Name="code", EmitDefaultValue=false)]
+        public string Code { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -73,6 +82,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Version: ").Append(Version).Append("\n");
             sb.Append("  BaseUrl: ").Append(BaseUrl).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -121,6 +131,11 @@ namespace ARXivarNEXT.Client.Model
                     this.BaseUrl == input.BaseUrl ||
                     (this.BaseUrl != null &&
                     this.BaseUrl.Equals(input.BaseUrl))
+                ) && 
+                (
+                    this.Code == input.Code ||
+                    (this.Code != null &&
+                    this.Code.Equals(input.Code))
                 );
         }
 
@@ -139,6 +154,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.Version.GetHashCode();
                 if (this.BaseUrl != null)
                     hashCode = hashCode * 59 + this.BaseUrl.GetHashCode();
+                if (this.Code != null)
+                    hashCode = hashCode * 59 + this.Code.GetHashCode();
                 return hashCode;
             }
         }

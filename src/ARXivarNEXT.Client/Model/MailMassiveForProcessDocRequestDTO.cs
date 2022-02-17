@@ -34,11 +34,13 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="items">items.</param>
         /// <param name="forView">forView.</param>
         /// <param name="createZip">createZip.</param>
-        public MailMassiveForProcessDocRequestDTO(List<MailMassiveForProcessDocItemRequestDTO> items = default(List<MailMassiveForProcessDocItemRequestDTO>), bool? forView = default(bool?), bool? createZip = default(bool?))
+        /// <param name="addAttachments">addAttachments.</param>
+        public MailMassiveForProcessDocRequestDTO(List<MailMassiveForProcessDocItemRequestDTO> items = default(List<MailMassiveForProcessDocItemRequestDTO>), bool? forView = default(bool?), bool? createZip = default(bool?), bool? addAttachments = default(bool?))
         {
             this.Items = items;
             this.ForView = forView;
             this.CreateZip = createZip;
+            this.AddAttachments = addAttachments;
         }
         
         /// <summary>
@@ -60,6 +62,12 @@ namespace ARXivarNEXT.Client.Model
         public bool? CreateZip { get; set; }
 
         /// <summary>
+        /// Gets or Sets AddAttachments
+        /// </summary>
+        [DataMember(Name="addAttachments", EmitDefaultValue=false)]
+        public bool? AddAttachments { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -70,6 +78,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Items: ").Append(Items).Append("\n");
             sb.Append("  ForView: ").Append(ForView).Append("\n");
             sb.Append("  CreateZip: ").Append(CreateZip).Append("\n");
+            sb.Append("  AddAttachments: ").Append(AddAttachments).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -118,6 +127,11 @@ namespace ARXivarNEXT.Client.Model
                     this.CreateZip == input.CreateZip ||
                     (this.CreateZip != null &&
                     this.CreateZip.Equals(input.CreateZip))
+                ) && 
+                (
+                    this.AddAttachments == input.AddAttachments ||
+                    (this.AddAttachments != null &&
+                    this.AddAttachments.Equals(input.AddAttachments))
                 );
         }
 
@@ -136,6 +150,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.ForView.GetHashCode();
                 if (this.CreateZip != null)
                     hashCode = hashCode * 59 + this.CreateZip.GetHashCode();
+                if (this.AddAttachments != null)
+                    hashCode = hashCode * 59 + this.AddAttachments.GetHashCode();
                 return hashCode;
             }
         }

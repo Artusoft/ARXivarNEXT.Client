@@ -61,8 +61,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns></returns>
-        void CheckInOutV2CheckInForTask (int? processDocId, int? taskWorkId, string fileId);
+        void CheckInOutV2CheckInForTask (int? processDocId, int? taskWorkId, string fileId, int? option);
 
         /// <summary>
         /// This call set file and remove document from checkout list when document is used in taskwork
@@ -74,8 +75,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> CheckInOutV2CheckInForTaskWithHttpInfo (int? processDocId, int? taskWorkId, string fileId);
+        ApiResponse<Object> CheckInOutV2CheckInForTaskWithHttpInfo (int? processDocId, int? taskWorkId, string fileId, int? option);
         /// <summary>
         /// This call allows checkout document
         /// </summary>
@@ -245,8 +247,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task CheckInOutV2CheckInForTaskAsync (int? processDocId, int? taskWorkId, string fileId);
+        System.Threading.Tasks.Task CheckInOutV2CheckInForTaskAsync (int? processDocId, int? taskWorkId, string fileId, int? option);
 
         /// <summary>
         /// This call set file and remove document from checkout list when document is used in taskwork
@@ -258,8 +261,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> CheckInOutV2CheckInForTaskAsyncWithHttpInfo (int? processDocId, int? taskWorkId, string fileId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> CheckInOutV2CheckInForTaskAsyncWithHttpInfo (int? processDocId, int? taskWorkId, string fileId, int? option);
         /// <summary>
         /// This call allows checkout document
         /// </summary>
@@ -672,10 +676,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns></returns>
-        public void CheckInOutV2CheckInForTask (int? processDocId, int? taskWorkId, string fileId)
+        public void CheckInOutV2CheckInForTask (int? processDocId, int? taskWorkId, string fileId, int? option)
         {
-             CheckInOutV2CheckInForTaskWithHttpInfo(processDocId, taskWorkId, fileId);
+             CheckInOutV2CheckInForTaskWithHttpInfo(processDocId, taskWorkId, fileId, option);
         }
 
         /// <summary>
@@ -685,8 +690,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> CheckInOutV2CheckInForTaskWithHttpInfo (int? processDocId, int? taskWorkId, string fileId)
+        public ApiResponse<Object> CheckInOutV2CheckInForTaskWithHttpInfo (int? processDocId, int? taskWorkId, string fileId, int? option)
         {
             // verify the required parameter 'processDocId' is set
             if (processDocId == null)
@@ -697,8 +703,11 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'fileId' is set
             if (fileId == null)
                 throw new ApiException(400, "Missing required parameter 'fileId' when calling CheckInOutV2Api->CheckInOutV2CheckInForTask");
+            // verify the required parameter 'option' is set
+            if (option == null)
+                throw new ApiException(400, "Missing required parameter 'option' when calling CheckInOutV2Api->CheckInOutV2CheckInForTask");
 
-            var localVarPath = "./api/v2/CheckInOut/checkInForTask/{processDocId}/{taskWorkId}/{fileId}";
+            var localVarPath = "./api/v2/CheckInOut/checkInForTask/{processDocId}/{taskWorkId}/{fileId}/{option}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -721,6 +730,7 @@ namespace ARXivarNEXT.Client.Api
             if (processDocId != null) localVarPathParams.Add("processDocId", this.Configuration.ApiClient.ParameterToString(processDocId)); // path parameter
             if (taskWorkId != null) localVarPathParams.Add("taskWorkId", this.Configuration.ApiClient.ParameterToString(taskWorkId)); // path parameter
             if (fileId != null) localVarPathParams.Add("fileId", this.Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (option != null) localVarPathParams.Add("option", this.Configuration.ApiClient.ParameterToString(option)); // path parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -753,10 +763,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task CheckInOutV2CheckInForTaskAsync (int? processDocId, int? taskWorkId, string fileId)
+        public async System.Threading.Tasks.Task CheckInOutV2CheckInForTaskAsync (int? processDocId, int? taskWorkId, string fileId, int? option)
         {
-             await CheckInOutV2CheckInForTaskAsyncWithHttpInfo(processDocId, taskWorkId, fileId);
+             await CheckInOutV2CheckInForTaskAsyncWithHttpInfo(processDocId, taskWorkId, fileId, option);
 
         }
 
@@ -767,8 +778,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="processDocId">Identifier of the document you want to checkin</param>
         /// <param name="taskWorkId">Identifier of the document you want to checkin</param>
         /// <param name="fileId">Identifier of file in the cache you want to upload</param>
+        /// <param name="option">State option (overwrite or revise)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> CheckInOutV2CheckInForTaskAsyncWithHttpInfo (int? processDocId, int? taskWorkId, string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> CheckInOutV2CheckInForTaskAsyncWithHttpInfo (int? processDocId, int? taskWorkId, string fileId, int? option)
         {
             // verify the required parameter 'processDocId' is set
             if (processDocId == null)
@@ -779,8 +791,11 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'fileId' is set
             if (fileId == null)
                 throw new ApiException(400, "Missing required parameter 'fileId' when calling CheckInOutV2Api->CheckInOutV2CheckInForTask");
+            // verify the required parameter 'option' is set
+            if (option == null)
+                throw new ApiException(400, "Missing required parameter 'option' when calling CheckInOutV2Api->CheckInOutV2CheckInForTask");
 
-            var localVarPath = "./api/v2/CheckInOut/checkInForTask/{processDocId}/{taskWorkId}/{fileId}";
+            var localVarPath = "./api/v2/CheckInOut/checkInForTask/{processDocId}/{taskWorkId}/{fileId}/{option}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
@@ -803,6 +818,7 @@ namespace ARXivarNEXT.Client.Api
             if (processDocId != null) localVarPathParams.Add("processDocId", this.Configuration.ApiClient.ParameterToString(processDocId)); // path parameter
             if (taskWorkId != null) localVarPathParams.Add("taskWorkId", this.Configuration.ApiClient.ParameterToString(taskWorkId)); // path parameter
             if (fileId != null) localVarPathParams.Add("fileId", this.Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (option != null) localVarPathParams.Add("option", this.Configuration.ApiClient.ParameterToString(option)); // path parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

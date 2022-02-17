@@ -91,10 +91,11 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="visible">Visible.</param>
         /// <param name="predefinedProfileFormula">Formula in the context of predefined profile.</param>
         /// <param name="visibilityCondition">The visibility condition formula for this mask field.</param>
+        /// <param name="mandatoryCondition">The mandatory condition formula for this mask field.</param>
         /// <param name="addressBookDefaultFilter">The preferred address book for search contacts for this field.</param>
         /// <param name="enabledAddressBook">Possible addressbook for selection for this field.</param>
         /// <param name="columns">Number of display columns for the field.</param>
-        public FieldBaseDTO(string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = default(string), bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?))
+        public FieldBaseDTO(string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = default(string), bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), string mandatoryCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?))
         {
             // to ensure "className" is required (not null)
             if (className == null)
@@ -120,6 +121,7 @@ namespace ARXivarNEXT.Client.Model
             this.Visible = visible;
             this.PredefinedProfileFormula = predefinedProfileFormula;
             this.VisibilityCondition = visibilityCondition;
+            this.MandatoryCondition = mandatoryCondition;
             this.AddressBookDefaultFilter = addressBookDefaultFilter;
             this.EnabledAddressBook = enabledAddressBook;
             this.Columns = columns;
@@ -238,6 +240,13 @@ namespace ARXivarNEXT.Client.Model
         public string VisibilityCondition { get; set; }
 
         /// <summary>
+        /// The mandatory condition formula for this mask field
+        /// </summary>
+        /// <value>The mandatory condition formula for this mask field</value>
+        [DataMember(Name="mandatoryCondition", EmitDefaultValue=false)]
+        public string MandatoryCondition { get; set; }
+
+        /// <summary>
         /// The preferred address book for search contacts for this field
         /// </summary>
         /// <value>The preferred address book for search contacts for this field</value>
@@ -282,6 +291,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Visible: ").Append(Visible).Append("\n");
             sb.Append("  PredefinedProfileFormula: ").Append(PredefinedProfileFormula).Append("\n");
             sb.Append("  VisibilityCondition: ").Append(VisibilityCondition).Append("\n");
+            sb.Append("  MandatoryCondition: ").Append(MandatoryCondition).Append("\n");
             sb.Append("  AddressBookDefaultFilter: ").Append(AddressBookDefaultFilter).Append("\n");
             sb.Append("  EnabledAddressBook: ").Append(EnabledAddressBook).Append("\n");
             sb.Append("  Columns: ").Append(Columns).Append("\n");
@@ -400,6 +410,11 @@ namespace ARXivarNEXT.Client.Model
                     this.VisibilityCondition.Equals(input.VisibilityCondition))
                 ) && 
                 (
+                    this.MandatoryCondition == input.MandatoryCondition ||
+                    (this.MandatoryCondition != null &&
+                    this.MandatoryCondition.Equals(input.MandatoryCondition))
+                ) && 
+                (
                     this.AddressBookDefaultFilter == input.AddressBookDefaultFilter ||
                     (this.AddressBookDefaultFilter != null &&
                     this.AddressBookDefaultFilter.Equals(input.AddressBookDefaultFilter))
@@ -457,6 +472,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.PredefinedProfileFormula.GetHashCode();
                 if (this.VisibilityCondition != null)
                     hashCode = hashCode * 59 + this.VisibilityCondition.GetHashCode();
+                if (this.MandatoryCondition != null)
+                    hashCode = hashCode * 59 + this.MandatoryCondition.GetHashCode();
                 if (this.AddressBookDefaultFilter != null)
                     hashCode = hashCode * 59 + this.AddressBookDefaultFilter.GetHashCode();
                 if (this.EnabledAddressBook != null)

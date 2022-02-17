@@ -361,6 +361,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of List&lt;RubricaFieldDTO&gt;</returns>
         ApiResponse<List<RubricaFieldDTO>> AddressBookGetSelectFieldWithHttpInfo ();
         /// <summary>
+        /// This call returns user permissions for an AddressBook
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>UserPermissionsDTO</returns>
+        UserPermissionsDTO AddressBookGetUserPermissionByAddrebookId (int? addressBookId);
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>ApiResponse of UserPermissionsDTO</returns>
+        ApiResponse<UserPermissionsDTO> AddressBookGetUserPermissionByAddrebookIdWithHttpInfo (int? addressBookId);
+        /// <summary>
         /// This call inserts new addres book item
         /// </summary>
         /// <remarks>
@@ -870,6 +891,27 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;RubricaFieldDTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<RubricaFieldDTO>>> AddressBookGetSelectFieldAsyncWithHttpInfo ();
+        /// <summary>
+        /// This call returns user permissions for an AddressBook
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>Task of UserPermissionsDTO</returns>
+        System.Threading.Tasks.Task<UserPermissionsDTO> AddressBookGetUserPermissionByAddrebookIdAsync (int? addressBookId);
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>Task of ApiResponse (UserPermissionsDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserPermissionsDTO>> AddressBookGetUserPermissionByAddrebookIdAsyncWithHttpInfo (int? addressBookId);
         /// <summary>
         /// This call inserts new addres book item
         /// </summary>
@@ -3532,6 +3574,155 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<List<RubricaFieldDTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<RubricaFieldDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<RubricaFieldDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>UserPermissionsDTO</returns>
+        public UserPermissionsDTO AddressBookGetUserPermissionByAddrebookId (int? addressBookId)
+        {
+             ApiResponse<UserPermissionsDTO> localVarResponse = AddressBookGetUserPermissionByAddrebookIdWithHttpInfo(addressBookId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>ApiResponse of UserPermissionsDTO</returns>
+        public ApiResponse< UserPermissionsDTO > AddressBookGetUserPermissionByAddrebookIdWithHttpInfo (int? addressBookId)
+        {
+            // verify the required parameter 'addressBookId' is set
+            if (addressBookId == null)
+                throw new ApiException(400, "Missing required parameter 'addressBookId' when calling AddressBookApi->AddressBookGetUserPermissionByAddrebookId");
+
+            var localVarPath = "./api/AddressBook/{addressBookId}/UserPermission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (addressBookId != null) localVarPathParams.Add("addressBookId", this.Configuration.ApiClient.ParameterToString(addressBookId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddressBookGetUserPermissionByAddrebookId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionsDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (UserPermissionsDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionsDTO)));
+        }
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>Task of UserPermissionsDTO</returns>
+        public async System.Threading.Tasks.Task<UserPermissionsDTO> AddressBookGetUserPermissionByAddrebookIdAsync (int? addressBookId)
+        {
+             ApiResponse<UserPermissionsDTO> localVarResponse = await AddressBookGetUserPermissionByAddrebookIdAsyncWithHttpInfo(addressBookId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns user permissions for an AddressBook 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookId">Id of the addressBook</param>
+        /// <returns>Task of ApiResponse (UserPermissionsDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserPermissionsDTO>> AddressBookGetUserPermissionByAddrebookIdAsyncWithHttpInfo (int? addressBookId)
+        {
+            // verify the required parameter 'addressBookId' is set
+            if (addressBookId == null)
+                throw new ApiException(400, "Missing required parameter 'addressBookId' when calling AddressBookApi->AddressBookGetUserPermissionByAddrebookId");
+
+            var localVarPath = "./api/AddressBook/{addressBookId}/UserPermission";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (addressBookId != null) localVarPathParams.Add("addressBookId", this.Configuration.ApiClient.ParameterToString(addressBookId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddressBookGetUserPermissionByAddrebookId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionsDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (UserPermissionsDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionsDTO)));
         }
 
         /// <summary>

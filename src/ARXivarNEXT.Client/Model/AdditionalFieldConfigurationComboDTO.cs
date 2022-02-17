@@ -36,8 +36,8 @@ namespace ARXivarNEXT.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AdditionalFieldConfigurationComboDTO" /> class.
         /// </summary>
-        /// <param name="limitToList">Possible values ​​limited to the list.</param>
         /// <param name="values">List of possible fields.</param>
+        /// <param name="limitToList">Possible values ​​limited to the list.</param>
         /// <param name="displayValue">Value to display.</param>
         /// <param name="value">Value.</param>
         /// <param name="numMaxChar">Maximum number of characters.</param>
@@ -48,10 +48,10 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="taskWorkVariableId">Variable Identifier in taskword context.</param>
         /// <param name="validationType">Possible values:  0: None  1: Regex  2: Formula .</param>
         /// <param name="validationString">Validation string (regex or formula).</param>
-        public AdditionalFieldConfigurationComboDTO(bool? limitToList = default(bool?), List<string> values = default(List<string>), string displayValue = default(string), string value = default(string), int? numMaxChar = default(int?), int? numRows = default(int?), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldConfigurationComboDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, addressBookDefaultFilter, enabledAddressBook, columns)
+        public AdditionalFieldConfigurationComboDTO(List<string> values = default(List<string>), bool? limitToList = default(bool?), string displayValue = default(string), string value = default(string), int? numMaxChar = default(int?), int? numRows = default(int?), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldConfigurationComboDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), string mandatoryCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, mandatoryCondition, addressBookDefaultFilter, enabledAddressBook, columns)
         {
-            this.LimitToList = limitToList;
             this.Values = values;
+            this.LimitToList = limitToList;
             this.DisplayValue = displayValue;
             this.Value = value;
             this.NumMaxChar = numMaxChar;
@@ -65,18 +65,18 @@ namespace ARXivarNEXT.Client.Model
         }
         
         /// <summary>
-        /// Possible values ​​limited to the list
-        /// </summary>
-        /// <value>Possible values ​​limited to the list</value>
-        [DataMember(Name="limitToList", EmitDefaultValue=false)]
-        public bool? LimitToList { get; set; }
-
-        /// <summary>
         /// List of possible fields
         /// </summary>
         /// <value>List of possible fields</value>
         [DataMember(Name="values", EmitDefaultValue=false)]
         public List<string> Values { get; set; }
+
+        /// <summary>
+        /// Possible values ​​limited to the list
+        /// </summary>
+        /// <value>Possible values ​​limited to the list</value>
+        [DataMember(Name="limitToList", EmitDefaultValue=false)]
+        public bool? LimitToList { get; set; }
 
         /// <summary>
         /// Value to display
@@ -157,8 +157,8 @@ namespace ARXivarNEXT.Client.Model
             var sb = new StringBuilder();
             sb.Append("class AdditionalFieldConfigurationComboDTO {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
-            sb.Append("  LimitToList: ").Append(LimitToList).Append("\n");
             sb.Append("  Values: ").Append(Values).Append("\n");
+            sb.Append("  LimitToList: ").Append(LimitToList).Append("\n");
             sb.Append("  DisplayValue: ").Append(DisplayValue).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  NumMaxChar: ").Append(NumMaxChar).Append("\n");
@@ -204,14 +204,14 @@ namespace ARXivarNEXT.Client.Model
 
             return base.Equals(input) && 
                 (
-                    this.LimitToList == input.LimitToList ||
-                    (this.LimitToList != null &&
-                    this.LimitToList.Equals(input.LimitToList))
-                ) && base.Equals(input) && 
-                (
                     this.Values == input.Values ||
                     this.Values != null &&
                     this.Values.SequenceEqual(input.Values)
+                ) && base.Equals(input) && 
+                (
+                    this.LimitToList == input.LimitToList ||
+                    (this.LimitToList != null &&
+                    this.LimitToList.Equals(input.LimitToList))
                 ) && base.Equals(input) && 
                 (
                     this.DisplayValue == input.DisplayValue ||
@@ -274,10 +274,10 @@ namespace ARXivarNEXT.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = base.GetHashCode();
-                if (this.LimitToList != null)
-                    hashCode = hashCode * 59 + this.LimitToList.GetHashCode();
                 if (this.Values != null)
                     hashCode = hashCode * 59 + this.Values.GetHashCode();
+                if (this.LimitToList != null)
+                    hashCode = hashCode * 59 + this.LimitToList.GetHashCode();
                 if (this.DisplayValue != null)
                     hashCode = hashCode * 59 + this.DisplayValue.GetHashCode();
                 if (this.Value != null)

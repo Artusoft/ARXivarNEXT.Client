@@ -44,11 +44,15 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="kind">Possible values:  0: UserMask  1: SystemMask .</param>
         /// <param name="showGroups">Show Groups.</param>
         /// <param name="userCompleteName">Author Complete Name.</param>
+        /// <param name="whitelistFileExtensions">Whitelist Extension.</param>
+        /// <param name="blacklistFileExtensions">Blacklist Extension.</param>
+        /// <param name="minFileSize">File size minimum value.</param>
+        /// <param name="maxFileSize">File size maximum value.</param>
         /// <param name="predefinedProfile">Predefined Profile associated with the mask.</param>
         /// <param name="maskDetails">Details.</param>
         /// <param name="maskClassOptions">Options on document type.</param>
         /// <param name="useAdvancedTool">This option indicates if the mask use new features for ARXivar Next Portal.</param>
-        public MaskDTO(string id = default(string), string maskName = default(string), string maskDescription = default(string), int? predefinedProfileId = default(int?), int? user = default(int?), string externalId = default(string), bool? isRoot = default(bool?), int? type = default(int?), int? paMode = default(int?), bool? showAdditional = default(bool?), int? kind = default(int?), bool? showGroups = default(bool?), string userCompleteName = default(string), PredefinedProfileDTO predefinedProfile = default(PredefinedProfileDTO), List<MaskDetailDTO> maskDetails = default(List<MaskDetailDTO>), List<MaskClassOptionsDTO> maskClassOptions = default(List<MaskClassOptionsDTO>), bool? useAdvancedTool = default(bool?))
+        public MaskDTO(string id = default(string), string maskName = default(string), string maskDescription = default(string), int? predefinedProfileId = default(int?), int? user = default(int?), string externalId = default(string), bool? isRoot = default(bool?), int? type = default(int?), int? paMode = default(int?), bool? showAdditional = default(bool?), int? kind = default(int?), bool? showGroups = default(bool?), string userCompleteName = default(string), List<string> whitelistFileExtensions = default(List<string>), List<string> blacklistFileExtensions = default(List<string>), long? minFileSize = default(long?), long? maxFileSize = default(long?), PredefinedProfileDTO predefinedProfile = default(PredefinedProfileDTO), List<MaskDetailDTO> maskDetails = default(List<MaskDetailDTO>), List<MaskClassOptionsDTO> maskClassOptions = default(List<MaskClassOptionsDTO>), bool? useAdvancedTool = default(bool?))
         {
             this.Id = id;
             this.MaskName = maskName;
@@ -63,6 +67,10 @@ namespace ARXivarNEXT.Client.Model
             this.Kind = kind;
             this.ShowGroups = showGroups;
             this.UserCompleteName = userCompleteName;
+            this.WhitelistFileExtensions = whitelistFileExtensions;
+            this.BlacklistFileExtensions = blacklistFileExtensions;
+            this.MinFileSize = minFileSize;
+            this.MaxFileSize = maxFileSize;
             this.PredefinedProfile = predefinedProfile;
             this.MaskDetails = maskDetails;
             this.MaskClassOptions = maskClassOptions;
@@ -161,6 +169,34 @@ namespace ARXivarNEXT.Client.Model
         public string UserCompleteName { get; set; }
 
         /// <summary>
+        /// Whitelist Extension
+        /// </summary>
+        /// <value>Whitelist Extension</value>
+        [DataMember(Name="whitelistFileExtensions", EmitDefaultValue=false)]
+        public List<string> WhitelistFileExtensions { get; set; }
+
+        /// <summary>
+        /// Blacklist Extension
+        /// </summary>
+        /// <value>Blacklist Extension</value>
+        [DataMember(Name="blacklistFileExtensions", EmitDefaultValue=false)]
+        public List<string> BlacklistFileExtensions { get; set; }
+
+        /// <summary>
+        /// File size minimum value
+        /// </summary>
+        /// <value>File size minimum value</value>
+        [DataMember(Name="minFileSize", EmitDefaultValue=false)]
+        public long? MinFileSize { get; set; }
+
+        /// <summary>
+        /// File size maximum value
+        /// </summary>
+        /// <value>File size maximum value</value>
+        [DataMember(Name="maxFileSize", EmitDefaultValue=false)]
+        public long? MaxFileSize { get; set; }
+
+        /// <summary>
         /// Predefined Profile associated with the mask
         /// </summary>
         /// <value>Predefined Profile associated with the mask</value>
@@ -209,6 +245,10 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Kind: ").Append(Kind).Append("\n");
             sb.Append("  ShowGroups: ").Append(ShowGroups).Append("\n");
             sb.Append("  UserCompleteName: ").Append(UserCompleteName).Append("\n");
+            sb.Append("  WhitelistFileExtensions: ").Append(WhitelistFileExtensions).Append("\n");
+            sb.Append("  BlacklistFileExtensions: ").Append(BlacklistFileExtensions).Append("\n");
+            sb.Append("  MinFileSize: ").Append(MinFileSize).Append("\n");
+            sb.Append("  MaxFileSize: ").Append(MaxFileSize).Append("\n");
             sb.Append("  PredefinedProfile: ").Append(PredefinedProfile).Append("\n");
             sb.Append("  MaskDetails: ").Append(MaskDetails).Append("\n");
             sb.Append("  MaskClassOptions: ").Append(MaskClassOptions).Append("\n");
@@ -313,6 +353,26 @@ namespace ARXivarNEXT.Client.Model
                     this.UserCompleteName.Equals(input.UserCompleteName))
                 ) && 
                 (
+                    this.WhitelistFileExtensions == input.WhitelistFileExtensions ||
+                    this.WhitelistFileExtensions != null &&
+                    this.WhitelistFileExtensions.SequenceEqual(input.WhitelistFileExtensions)
+                ) && 
+                (
+                    this.BlacklistFileExtensions == input.BlacklistFileExtensions ||
+                    this.BlacklistFileExtensions != null &&
+                    this.BlacklistFileExtensions.SequenceEqual(input.BlacklistFileExtensions)
+                ) && 
+                (
+                    this.MinFileSize == input.MinFileSize ||
+                    (this.MinFileSize != null &&
+                    this.MinFileSize.Equals(input.MinFileSize))
+                ) && 
+                (
+                    this.MaxFileSize == input.MaxFileSize ||
+                    (this.MaxFileSize != null &&
+                    this.MaxFileSize.Equals(input.MaxFileSize))
+                ) && 
+                (
                     this.PredefinedProfile == input.PredefinedProfile ||
                     (this.PredefinedProfile != null &&
                     this.PredefinedProfile.Equals(input.PredefinedProfile))
@@ -369,6 +429,14 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.ShowGroups.GetHashCode();
                 if (this.UserCompleteName != null)
                     hashCode = hashCode * 59 + this.UserCompleteName.GetHashCode();
+                if (this.WhitelistFileExtensions != null)
+                    hashCode = hashCode * 59 + this.WhitelistFileExtensions.GetHashCode();
+                if (this.BlacklistFileExtensions != null)
+                    hashCode = hashCode * 59 + this.BlacklistFileExtensions.GetHashCode();
+                if (this.MinFileSize != null)
+                    hashCode = hashCode * 59 + this.MinFileSize.GetHashCode();
+                if (this.MaxFileSize != null)
+                    hashCode = hashCode * 59 + this.MaxFileSize.GetHashCode();
                 if (this.PredefinedProfile != null)
                     hashCode = hashCode * 59 + this.PredefinedProfile.GetHashCode();
                 if (this.MaskDetails != null)

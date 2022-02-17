@@ -149,6 +149,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
         ApiResponse<List<string>> WorkflowGetTasksExternalIdsWithHttpInfo ();
         /// <summary>
+        /// This call returns the variables of a specifico workflow
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        List<WorkflowVariableInfoDTO> WorkflowGetVariablesByWorkflow (int? workflowId);
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>ApiResponse of List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        ApiResponse<List<WorkflowVariableInfoDTO>> WorkflowGetVariablesByWorkflowWithHttpInfo (int? workflowId);
+        /// <summary>
         /// This call returns all workflow associated with a document
         /// </summary>
         /// <remarks>
@@ -421,6 +442,27 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<string>>> WorkflowGetTasksExternalIdsAsyncWithHttpInfo ();
+        /// <summary>
+        /// This call returns the variables of a specifico workflow
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>Task of List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkflowVariableInfoDTO>> WorkflowGetVariablesByWorkflowAsync (int? workflowId);
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>Task of ApiResponse (List&lt;WorkflowVariableInfoDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkflowVariableInfoDTO>>> WorkflowGetVariablesByWorkflowAsyncWithHttpInfo (int? workflowId);
         /// <summary>
         /// This call returns all workflow associated with a document
         /// </summary>
@@ -1552,6 +1594,155 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<List<string>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<string>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<string>)));
+        }
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        public List<WorkflowVariableInfoDTO> WorkflowGetVariablesByWorkflow (int? workflowId)
+        {
+             ApiResponse<List<WorkflowVariableInfoDTO>> localVarResponse = WorkflowGetVariablesByWorkflowWithHttpInfo(workflowId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>ApiResponse of List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        public ApiResponse< List<WorkflowVariableInfoDTO> > WorkflowGetVariablesByWorkflowWithHttpInfo (int? workflowId)
+        {
+            // verify the required parameter 'workflowId' is set
+            if (workflowId == null)
+                throw new ApiException(400, "Missing required parameter 'workflowId' when calling WorkflowApi->WorkflowGetVariablesByWorkflow");
+
+            var localVarPath = "./api/Workflow/{workflowId}/variables";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (workflowId != null) localVarPathParams.Add("workflowId", this.Configuration.ApiClient.ParameterToString(workflowId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowGetVariablesByWorkflow", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkflowVariableInfoDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkflowVariableInfoDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkflowVariableInfoDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>Task of List&lt;WorkflowVariableInfoDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkflowVariableInfoDTO>> WorkflowGetVariablesByWorkflowAsync (int? workflowId)
+        {
+             ApiResponse<List<WorkflowVariableInfoDTO>> localVarResponse = await WorkflowGetVariablesByWorkflowAsyncWithHttpInfo(workflowId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the variables of a specifico workflow 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="workflowId"></param>
+        /// <returns>Task of ApiResponse (List&lt;WorkflowVariableInfoDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<WorkflowVariableInfoDTO>>> WorkflowGetVariablesByWorkflowAsyncWithHttpInfo (int? workflowId)
+        {
+            // verify the required parameter 'workflowId' is set
+            if (workflowId == null)
+                throw new ApiException(400, "Missing required parameter 'workflowId' when calling WorkflowApi->WorkflowGetVariablesByWorkflow");
+
+            var localVarPath = "./api/Workflow/{workflowId}/variables";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (workflowId != null) localVarPathParams.Add("workflowId", this.Configuration.ApiClient.ParameterToString(workflowId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowGetVariablesByWorkflow", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkflowVariableInfoDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkflowVariableInfoDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkflowVariableInfoDTO>)));
         }
 
         /// <summary>

@@ -37,7 +37,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="monitoredFolderId">monitoredFolderId.</param>
         /// <param name="monitoredFolderPath">monitoredFolderPath.</param>
         /// <param name="fileSize">fileSize.</param>
-        public BufferSimpleElement(string id = default(string), string filename = default(string), DateTime? creationDate = default(DateTime?), string monitoredFolderId = default(string), string monitoredFolderPath = default(string), long? fileSize = default(long?))
+        /// <param name="bufferElementType">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign .</param>
+        public BufferSimpleElement(string id = default(string), string filename = default(string), DateTime? creationDate = default(DateTime?), string monitoredFolderId = default(string), string monitoredFolderPath = default(string), long? fileSize = default(long?), int? bufferElementType = default(int?))
         {
             this.Id = id;
             this.Filename = filename;
@@ -45,6 +46,7 @@ namespace ARXivarNEXT.Client.Model
             this.MonitoredFolderId = monitoredFolderId;
             this.MonitoredFolderPath = monitoredFolderPath;
             this.FileSize = fileSize;
+            this.BufferElementType = bufferElementType;
         }
         
         /// <summary>
@@ -84,6 +86,13 @@ namespace ARXivarNEXT.Client.Model
         public long? FileSize { get; set; }
 
         /// <summary>
+        /// Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign 
+        /// </summary>
+        /// <value>Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </value>
+        [DataMember(Name="bufferElementType", EmitDefaultValue=false)]
+        public int? BufferElementType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +106,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  MonitoredFolderId: ").Append(MonitoredFolderId).Append("\n");
             sb.Append("  MonitoredFolderPath: ").Append(MonitoredFolderPath).Append("\n");
             sb.Append("  FileSize: ").Append(FileSize).Append("\n");
+            sb.Append("  BufferElementType: ").Append(BufferElementType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -160,6 +170,11 @@ namespace ARXivarNEXT.Client.Model
                     this.FileSize == input.FileSize ||
                     (this.FileSize != null &&
                     this.FileSize.Equals(input.FileSize))
+                ) && 
+                (
+                    this.BufferElementType == input.BufferElementType ||
+                    (this.BufferElementType != null &&
+                    this.BufferElementType.Equals(input.BufferElementType))
                 );
         }
 
@@ -184,6 +199,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.MonitoredFolderPath.GetHashCode();
                 if (this.FileSize != null)
                     hashCode = hashCode * 59 + this.FileSize.GetHashCode();
+                if (this.BufferElementType != null)
+                    hashCode = hashCode * 59 + this.BufferElementType.GetHashCode();
                 return hashCode;
             }
         }

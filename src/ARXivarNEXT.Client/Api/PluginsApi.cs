@@ -87,6 +87,52 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="parameters">Parameters</param>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> PluginsPluginsPostWithHttpInfo (string pluginCode, List<KeyValuePairStringString> parameters);
+        /// <summary>
+        /// This call executes plugin advanced command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>PluginCommandResponseDTO</returns>
+        PluginCommandResponseDTO PluginsSendAdvancedCommand (string pluginCode, PluginAdvancedCommandRequestDTO request);
+
+        /// <summary>
+        /// This call executes plugin advanced command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>ApiResponse of PluginCommandResponseDTO</returns>
+        ApiResponse<PluginCommandResponseDTO> PluginsSendAdvancedCommandWithHttpInfo (string pluginCode, PluginAdvancedCommandRequestDTO request);
+        /// <summary>
+        /// This call executes plugin command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>PluginCommandResponseDTO</returns>
+        PluginCommandResponseDTO PluginsSendCommand (string pluginCode, PluginCommandRequestDTO request);
+
+        /// <summary>
+        /// This call executes plugin command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>ApiResponse of PluginCommandResponseDTO</returns>
+        ApiResponse<PluginCommandResponseDTO> PluginsSendCommandWithHttpInfo (string pluginCode, PluginCommandRequestDTO request);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -152,6 +198,52 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="parameters">Parameters</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> PluginsPluginsPostAsyncWithHttpInfo (string pluginCode, List<KeyValuePairStringString> parameters);
+        /// <summary>
+        /// This call executes plugin advanced command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>Task of PluginCommandResponseDTO</returns>
+        System.Threading.Tasks.Task<PluginCommandResponseDTO> PluginsSendAdvancedCommandAsync (string pluginCode, PluginAdvancedCommandRequestDTO request);
+
+        /// <summary>
+        /// This call executes plugin advanced command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>Task of ApiResponse (PluginCommandResponseDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PluginCommandResponseDTO>> PluginsSendAdvancedCommandAsyncWithHttpInfo (string pluginCode, PluginAdvancedCommandRequestDTO request);
+        /// <summary>
+        /// This call executes plugin command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>Task of PluginCommandResponseDTO</returns>
+        System.Threading.Tasks.Task<PluginCommandResponseDTO> PluginsSendCommandAsync (string pluginCode, PluginCommandRequestDTO request);
+
+        /// <summary>
+        /// This call executes plugin command
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>Task of ApiResponse (PluginCommandResponseDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PluginCommandResponseDTO>> PluginsSendCommandAsyncWithHttpInfo (string pluginCode, PluginCommandRequestDTO request);
         #endregion Asynchronous Operations
     }
 
@@ -721,6 +813,376 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call executes plugin advanced command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>PluginCommandResponseDTO</returns>
+        public PluginCommandResponseDTO PluginsSendAdvancedCommand (string pluginCode, PluginAdvancedCommandRequestDTO request)
+        {
+             ApiResponse<PluginCommandResponseDTO> localVarResponse = PluginsSendAdvancedCommandWithHttpInfo(pluginCode, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call executes plugin advanced command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>ApiResponse of PluginCommandResponseDTO</returns>
+        public ApiResponse< PluginCommandResponseDTO > PluginsSendAdvancedCommandWithHttpInfo (string pluginCode, PluginAdvancedCommandRequestDTO request)
+        {
+            // verify the required parameter 'pluginCode' is set
+            if (pluginCode == null)
+                throw new ApiException(400, "Missing required parameter 'pluginCode' when calling PluginsApi->PluginsSendAdvancedCommand");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling PluginsApi->PluginsSendAdvancedCommand");
+
+            var localVarPath = "./api/Plugins/{pluginCode}/AdvancedCommand";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (pluginCode != null) localVarPathParams.Add("pluginCode", this.Configuration.ApiClient.ParameterToString(pluginCode)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PluginsSendAdvancedCommand", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PluginCommandResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PluginCommandResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PluginCommandResponseDTO)));
+        }
+
+        /// <summary>
+        /// This call executes plugin advanced command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>Task of PluginCommandResponseDTO</returns>
+        public async System.Threading.Tasks.Task<PluginCommandResponseDTO> PluginsSendAdvancedCommandAsync (string pluginCode, PluginAdvancedCommandRequestDTO request)
+        {
+             ApiResponse<PluginCommandResponseDTO> localVarResponse = await PluginsSendAdvancedCommandAsyncWithHttpInfo(pluginCode, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call executes plugin advanced command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin advanced command request</param>
+        /// <returns>Task of ApiResponse (PluginCommandResponseDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PluginCommandResponseDTO>> PluginsSendAdvancedCommandAsyncWithHttpInfo (string pluginCode, PluginAdvancedCommandRequestDTO request)
+        {
+            // verify the required parameter 'pluginCode' is set
+            if (pluginCode == null)
+                throw new ApiException(400, "Missing required parameter 'pluginCode' when calling PluginsApi->PluginsSendAdvancedCommand");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling PluginsApi->PluginsSendAdvancedCommand");
+
+            var localVarPath = "./api/Plugins/{pluginCode}/AdvancedCommand";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (pluginCode != null) localVarPathParams.Add("pluginCode", this.Configuration.ApiClient.ParameterToString(pluginCode)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PluginsSendAdvancedCommand", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PluginCommandResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PluginCommandResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PluginCommandResponseDTO)));
+        }
+
+        /// <summary>
+        /// This call executes plugin command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>PluginCommandResponseDTO</returns>
+        public PluginCommandResponseDTO PluginsSendCommand (string pluginCode, PluginCommandRequestDTO request)
+        {
+             ApiResponse<PluginCommandResponseDTO> localVarResponse = PluginsSendCommandWithHttpInfo(pluginCode, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call executes plugin command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>ApiResponse of PluginCommandResponseDTO</returns>
+        public ApiResponse< PluginCommandResponseDTO > PluginsSendCommandWithHttpInfo (string pluginCode, PluginCommandRequestDTO request)
+        {
+            // verify the required parameter 'pluginCode' is set
+            if (pluginCode == null)
+                throw new ApiException(400, "Missing required parameter 'pluginCode' when calling PluginsApi->PluginsSendCommand");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling PluginsApi->PluginsSendCommand");
+
+            var localVarPath = "./api/Plugins/{pluginCode}/Command";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (pluginCode != null) localVarPathParams.Add("pluginCode", this.Configuration.ApiClient.ParameterToString(pluginCode)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PluginsSendCommand", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PluginCommandResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PluginCommandResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PluginCommandResponseDTO)));
+        }
+
+        /// <summary>
+        /// This call executes plugin command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>Task of PluginCommandResponseDTO</returns>
+        public async System.Threading.Tasks.Task<PluginCommandResponseDTO> PluginsSendCommandAsync (string pluginCode, PluginCommandRequestDTO request)
+        {
+             ApiResponse<PluginCommandResponseDTO> localVarResponse = await PluginsSendCommandAsyncWithHttpInfo(pluginCode, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call executes plugin command 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="pluginCode">Identifier of plugin</param>
+        /// <param name="request">Plugin command request</param>
+        /// <returns>Task of ApiResponse (PluginCommandResponseDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PluginCommandResponseDTO>> PluginsSendCommandAsyncWithHttpInfo (string pluginCode, PluginCommandRequestDTO request)
+        {
+            // verify the required parameter 'pluginCode' is set
+            if (pluginCode == null)
+                throw new ApiException(400, "Missing required parameter 'pluginCode' when calling PluginsApi->PluginsSendCommand");
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling PluginsApi->PluginsSendCommand");
+
+            var localVarPath = "./api/Plugins/{pluginCode}/Command";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (pluginCode != null) localVarPathParams.Add("pluginCode", this.Configuration.ApiClient.ParameterToString(pluginCode)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("PluginsSendCommand", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PluginCommandResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (PluginCommandResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(PluginCommandResponseDTO)));
         }
 
     }

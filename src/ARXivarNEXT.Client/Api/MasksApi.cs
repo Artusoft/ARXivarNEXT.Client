@@ -308,6 +308,29 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of MaskProfileSchemaDTO</returns>
         ApiResponse<MaskProfileSchemaDTO> MasksGetProfileSchemaByMaskIdWithHttpInfo (string maskId);
         /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>MaskProfileSchemaDTO</returns>
+        MaskProfileSchemaDTO MasksGetProfileSchemaByMaskIdAndMappings (string maskId, ProcessVariablesMappingDTO mapping = null);
+
+        /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ApiResponse of MaskProfileSchemaDTO</returns>
+        ApiResponse<MaskProfileSchemaDTO> MasksGetProfileSchemaByMaskIdAndMappingsWithHttpInfo (string maskId, ProcessVariablesMappingDTO mapping = null);
+        /// <summary>
         /// This call returns the root mask
         /// </summary>
         /// <remarks>
@@ -334,8 +357,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns></returns>
-        void MasksInserMask (MaskDTO mask = null);
+        /// <returns>MaskDTO</returns>
+        MaskDTO MasksInsertMask (MaskDTO mask = null);
 
         /// <summary>
         /// This call inserts a new mask
@@ -345,8 +368,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> MasksInserMaskWithHttpInfo (MaskDTO mask = null);
+        /// <returns>ApiResponse of MaskDTO</returns>
+        ApiResponse<MaskDTO> MasksInsertMaskWithHttpInfo (MaskDTO mask = null);
         /// <summary>
         /// This call executes a new profiling
         /// </summary>
@@ -702,6 +725,29 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (MaskProfileSchemaDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<MaskProfileSchemaDTO>> MasksGetProfileSchemaByMaskIdAsyncWithHttpInfo (string maskId);
         /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of MaskProfileSchemaDTO</returns>
+        System.Threading.Tasks.Task<MaskProfileSchemaDTO> MasksGetProfileSchemaByMaskIdAndMappingsAsync (string maskId, ProcessVariablesMappingDTO mapping = null);
+
+        /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ApiResponse (MaskProfileSchemaDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MaskProfileSchemaDTO>> MasksGetProfileSchemaByMaskIdAndMappingsAsyncWithHttpInfo (string maskId, ProcessVariablesMappingDTO mapping = null);
+        /// <summary>
         /// This call returns the root mask
         /// </summary>
         /// <remarks>
@@ -728,8 +774,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task MasksInserMaskAsync (MaskDTO mask = null);
+        /// <returns>Task of MaskDTO</returns>
+        System.Threading.Tasks.Task<MaskDTO> MasksInsertMaskAsync (MaskDTO mask = null);
 
         /// <summary>
         /// This call inserts a new mask
@@ -739,8 +785,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MasksInserMaskAsyncWithHttpInfo (MaskDTO mask = null);
+        /// <returns>Task of ApiResponse (MaskDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<MaskDTO>> MasksInsertMaskAsyncWithHttpInfo (MaskDTO mask = null);
         /// <summary>
         /// This call executes a new profiling
         /// </summary>
@@ -2918,6 +2964,175 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>MaskProfileSchemaDTO</returns>
+        public MaskProfileSchemaDTO MasksGetProfileSchemaByMaskIdAndMappings (string maskId, ProcessVariablesMappingDTO mapping = null)
+        {
+             ApiResponse<MaskProfileSchemaDTO> localVarResponse = MasksGetProfileSchemaByMaskIdAndMappingsWithHttpInfo(maskId, mapping);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ApiResponse of MaskProfileSchemaDTO</returns>
+        public ApiResponse< MaskProfileSchemaDTO > MasksGetProfileSchemaByMaskIdAndMappingsWithHttpInfo (string maskId, ProcessVariablesMappingDTO mapping = null)
+        {
+            // verify the required parameter 'maskId' is set
+            if (maskId == null)
+                throw new ApiException(400, "Missing required parameter 'maskId' when calling MasksApi->MasksGetProfileSchemaByMaskIdAndMappings");
+
+            var localVarPath = "./api/Masks/{maskId}/profileSchemaWithMappings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (maskId != null) localVarPathParams.Add("maskId", this.Configuration.ApiClient.ParameterToString(maskId)); // path parameter
+            if (mapping != null && mapping.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(mapping); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mapping; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("MasksGetProfileSchemaByMaskIdAndMappings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MaskProfileSchemaDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (MaskProfileSchemaDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MaskProfileSchemaDTO)));
+        }
+
+        /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of MaskProfileSchemaDTO</returns>
+        public async System.Threading.Tasks.Task<MaskProfileSchemaDTO> MasksGetProfileSchemaByMaskIdAndMappingsAsync (string maskId, ProcessVariablesMappingDTO mapping = null)
+        {
+             ApiResponse<MaskProfileSchemaDTO> localVarResponse = await MasksGetProfileSchemaByMaskIdAndMappingsAsyncWithHttpInfo(maskId, mapping);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the profile schema by a mask and a variables mapping 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="maskId">Identifier of the mask</param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ApiResponse (MaskProfileSchemaDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<MaskProfileSchemaDTO>> MasksGetProfileSchemaByMaskIdAndMappingsAsyncWithHttpInfo (string maskId, ProcessVariablesMappingDTO mapping = null)
+        {
+            // verify the required parameter 'maskId' is set
+            if (maskId == null)
+                throw new ApiException(400, "Missing required parameter 'maskId' when calling MasksApi->MasksGetProfileSchemaByMaskIdAndMappings");
+
+            var localVarPath = "./api/Masks/{maskId}/profileSchemaWithMappings";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (maskId != null) localVarPathParams.Add("maskId", this.Configuration.ApiClient.ParameterToString(maskId)); // path parameter
+            if (mapping != null && mapping.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(mapping); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mapping; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("MasksGetProfileSchemaByMaskIdAndMappings", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<MaskProfileSchemaDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (MaskProfileSchemaDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MaskProfileSchemaDTO)));
+        }
+
+        /// <summary>
         /// This call returns the root mask 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3059,10 +3274,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns></returns>
-        public void MasksInserMask (MaskDTO mask = null)
+        /// <returns>MaskDTO</returns>
+        public MaskDTO MasksInsertMask (MaskDTO mask = null)
         {
-             MasksInserMaskWithHttpInfo(mask);
+             ApiResponse<MaskDTO> localVarResponse = MasksInsertMaskWithHttpInfo(mask);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -3070,8 +3286,8 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> MasksInserMaskWithHttpInfo (MaskDTO mask = null)
+        /// <returns>ApiResponse of MaskDTO</returns>
+        public ApiResponse< MaskDTO > MasksInsertMaskWithHttpInfo (MaskDTO mask = null)
         {
 
             var localVarPath = "./api/Masks";
@@ -3089,6 +3305,10 @@ namespace ARXivarNEXT.Client.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3118,13 +3338,13 @@ namespace ARXivarNEXT.Client.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MasksInserMask", localVarResponse);
+                Exception exception = ExceptionFactory("MasksInsertMask", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<MaskDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (MaskDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MaskDTO)));
         }
 
         /// <summary>
@@ -3132,10 +3352,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task MasksInserMaskAsync (MaskDTO mask = null)
+        /// <returns>Task of MaskDTO</returns>
+        public async System.Threading.Tasks.Task<MaskDTO> MasksInsertMaskAsync (MaskDTO mask = null)
         {
-             await MasksInserMaskAsyncWithHttpInfo(mask);
+             ApiResponse<MaskDTO> localVarResponse = await MasksInsertMaskAsyncWithHttpInfo(mask);
+             return localVarResponse.Data;
 
         }
 
@@ -3144,8 +3365,8 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="mask"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> MasksInserMaskAsyncWithHttpInfo (MaskDTO mask = null)
+        /// <returns>Task of ApiResponse (MaskDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<MaskDTO>> MasksInsertMaskAsyncWithHttpInfo (MaskDTO mask = null)
         {
 
             var localVarPath = "./api/Masks";
@@ -3163,6 +3384,10 @@ namespace ARXivarNEXT.Client.Api
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
             };
             String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
@@ -3192,13 +3417,13 @@ namespace ARXivarNEXT.Client.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("MasksInserMask", localVarResponse);
+                Exception exception = ExceptionFactory("MasksInsertMask", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<MaskDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (MaskDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(MaskDTO)));
         }
 
         /// <summary>

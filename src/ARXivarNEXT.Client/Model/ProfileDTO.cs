@@ -41,7 +41,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="paNotes">Public Amministration Notes.</param>
         /// <param name="authorityData">Authority Data.</param>
         /// <param name="generatePaProtocol">Defines if a protocol has been generated.</param>
-        public ProfileDTO(int? id = default(int?), FileDTO document = default(FileDTO), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), List<PostProfilationActionDTO> postProfilationActions = default(List<PostProfilationActionDTO>), int? constrainRoleBehaviour = default(int?), List<string> attachments = default(List<string>), List<NoteDTO> notes = default(List<NoteDTO>), List<string> paNotes = default(List<string>), AuthorityDataDTO authorityData = default(AuthorityDataDTO), bool? generatePaProtocol = default(bool?))
+        /// <param name="fileWritingSettings">File Writing Settings.</param>
+        public ProfileDTO(int? id = default(int?), FileDTO document = default(FileDTO), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), List<PostProfilationActionDTO> postProfilationActions = default(List<PostProfilationActionDTO>), int? constrainRoleBehaviour = default(int?), List<string> attachments = default(List<string>), List<NoteDTO> notes = default(List<NoteDTO>), List<string> paNotes = default(List<string>), AuthorityDataDTO authorityData = default(AuthorityDataDTO), bool? generatePaProtocol = default(bool?), DocumentsWritingSettingsDTO fileWritingSettings = default(DocumentsWritingSettingsDTO))
         {
             this.Id = id;
             this.Document = document;
@@ -53,6 +54,7 @@ namespace ARXivarNEXT.Client.Model
             this.PaNotes = paNotes;
             this.AuthorityData = authorityData;
             this.GeneratePaProtocol = generatePaProtocol;
+            this.FileWritingSettings = fileWritingSettings;
         }
         
         /// <summary>
@@ -126,6 +128,13 @@ namespace ARXivarNEXT.Client.Model
         public bool? GeneratePaProtocol { get; set; }
 
         /// <summary>
+        /// File Writing Settings
+        /// </summary>
+        /// <value>File Writing Settings</value>
+        [DataMember(Name="fileWritingSettings", EmitDefaultValue=false)]
+        public DocumentsWritingSettingsDTO FileWritingSettings { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -143,6 +152,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  PaNotes: ").Append(PaNotes).Append("\n");
             sb.Append("  AuthorityData: ").Append(AuthorityData).Append("\n");
             sb.Append("  GeneratePaProtocol: ").Append(GeneratePaProtocol).Append("\n");
+            sb.Append("  FileWritingSettings: ").Append(FileWritingSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -226,6 +236,11 @@ namespace ARXivarNEXT.Client.Model
                     this.GeneratePaProtocol == input.GeneratePaProtocol ||
                     (this.GeneratePaProtocol != null &&
                     this.GeneratePaProtocol.Equals(input.GeneratePaProtocol))
+                ) && 
+                (
+                    this.FileWritingSettings == input.FileWritingSettings ||
+                    (this.FileWritingSettings != null &&
+                    this.FileWritingSettings.Equals(input.FileWritingSettings))
                 );
         }
 
@@ -258,6 +273,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.AuthorityData.GetHashCode();
                 if (this.GeneratePaProtocol != null)
                     hashCode = hashCode * 59 + this.GeneratePaProtocol.GetHashCode();
+                if (this.FileWritingSettings != null)
+                    hashCode = hashCode * 59 + this.FileWritingSettings.GetHashCode();
                 return hashCode;
             }
         }

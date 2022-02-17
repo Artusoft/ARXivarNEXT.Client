@@ -45,7 +45,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="stampName">Stamp name..</param>
         /// <param name="stampDescription">Stamp description..</param>
         /// <param name="applied">Stamp is applied.</param>
-        public StampsInstanceDTO(string id = default(string), double? x = default(double?), double? y = default(double?), double? width = default(double?), double? height = default(double?), int? pageIndex = default(int?), string masterDefinitionId = default(string), List<StampsInstanceValueDTO> bindings = default(List<StampsInstanceValueDTO>), string xaml = default(string), bool? isResizable = default(bool?), bool? removeAfterApplied = default(bool?), string stampName = default(string), string stampDescription = default(string), bool? applied = default(bool?))
+        /// <param name="isManual">Stamp is a manual graphic.</param>
+        public StampsInstanceDTO(string id = default(string), double? x = default(double?), double? y = default(double?), double? width = default(double?), double? height = default(double?), int? pageIndex = default(int?), string masterDefinitionId = default(string), List<StampsInstanceValueDTO> bindings = default(List<StampsInstanceValueDTO>), string xaml = default(string), bool? isResizable = default(bool?), bool? removeAfterApplied = default(bool?), string stampName = default(string), string stampDescription = default(string), bool? applied = default(bool?), bool? isManual = default(bool?))
         {
             this.Id = id;
             this.X = x;
@@ -61,6 +62,7 @@ namespace ARXivarNEXT.Client.Model
             this.StampName = stampName;
             this.StampDescription = stampDescription;
             this.Applied = applied;
+            this.IsManual = isManual;
         }
         
         /// <summary>
@@ -162,6 +164,13 @@ namespace ARXivarNEXT.Client.Model
         public bool? Applied { get; set; }
 
         /// <summary>
+        /// Stamp is a manual graphic
+        /// </summary>
+        /// <value>Stamp is a manual graphic</value>
+        [DataMember(Name="isManual", EmitDefaultValue=false)]
+        public bool? IsManual { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -183,6 +192,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  StampName: ").Append(StampName).Append("\n");
             sb.Append("  StampDescription: ").Append(StampDescription).Append("\n");
             sb.Append("  Applied: ").Append(Applied).Append("\n");
+            sb.Append("  IsManual: ").Append(IsManual).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -286,6 +296,11 @@ namespace ARXivarNEXT.Client.Model
                     this.Applied == input.Applied ||
                     (this.Applied != null &&
                     this.Applied.Equals(input.Applied))
+                ) && 
+                (
+                    this.IsManual == input.IsManual ||
+                    (this.IsManual != null &&
+                    this.IsManual.Equals(input.IsManual))
                 );
         }
 
@@ -326,6 +341,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.StampDescription.GetHashCode();
                 if (this.Applied != null)
                     hashCode = hashCode * 59 + this.Applied.GetHashCode();
+                if (this.IsManual != null)
+                    hashCode = hashCode * 59 + this.IsManual.GetHashCode();
                 return hashCode;
             }
         }

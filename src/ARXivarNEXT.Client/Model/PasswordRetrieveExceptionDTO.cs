@@ -32,7 +32,7 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="PasswordRetrieveExceptionDTO" /> class.
         /// </summary>
         /// <param name="userMessage">userMessage.</param>
-        /// <param name="exceptionCode">Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured .</param>
+        /// <param name="exceptionCode">Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured  3: EmailWrongFormat .</param>
         public PasswordRetrieveExceptionDTO(string userMessage = default(string), int? exceptionCode = default(int?))
         {
             this.UserMessage = userMessage;
@@ -46,9 +46,9 @@ namespace ARXivarNEXT.Client.Model
         public string UserMessage { get; set; }
 
         /// <summary>
-        /// Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured 
+        /// Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured  3: EmailWrongFormat 
         /// </summary>
-        /// <value>Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured </value>
+        /// <value>Possible values:  0: Generic  1: EmailNotUnique  2: EmailNotConfigured  3: EmailWrongFormat </value>
         [DataMember(Name="exceptionCode", EmitDefaultValue=false)]
         public int? ExceptionCode { get; set; }
 

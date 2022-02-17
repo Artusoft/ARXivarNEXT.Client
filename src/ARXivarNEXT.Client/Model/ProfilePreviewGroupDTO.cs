@@ -36,13 +36,15 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="order">Order.</param>
         /// <param name="fields">List of Fields.</param>
         /// <param name="groupType">Possible values:  0: Standard  1: From  2: To  3: CC  4: Senders  5: Additionals  6: Notes  7: InternalAttachments  8: ExternalAttachments  9: Folders  10: Binders  11: Associations .</param>
-        public ProfilePreviewGroupDTO(string labelGroup = default(string), string label = default(string), int? order = default(int?), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), int? groupType = default(int?))
+        /// <param name="groupId">Group Id.</param>
+        public ProfilePreviewGroupDTO(string labelGroup = default(string), string label = default(string), int? order = default(int?), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), int? groupType = default(int?), int? groupId = default(int?))
         {
             this.LabelGroup = labelGroup;
             this.Label = label;
             this.Order = order;
             this.Fields = fields;
             this.GroupType = groupType;
+            this.GroupId = groupId;
         }
         
         /// <summary>
@@ -81,6 +83,13 @@ namespace ARXivarNEXT.Client.Model
         public int? GroupType { get; set; }
 
         /// <summary>
+        /// Group Id
+        /// </summary>
+        /// <value>Group Id</value>
+        [DataMember(Name="groupId", EmitDefaultValue=false)]
+        public int? GroupId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,6 +102,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Fields: ").Append(Fields).Append("\n");
             sb.Append("  GroupType: ").Append(GroupType).Append("\n");
+            sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -151,6 +161,11 @@ namespace ARXivarNEXT.Client.Model
                     this.GroupType == input.GroupType ||
                     (this.GroupType != null &&
                     this.GroupType.Equals(input.GroupType))
+                ) && 
+                (
+                    this.GroupId == input.GroupId ||
+                    (this.GroupId != null &&
+                    this.GroupId.Equals(input.GroupId))
                 );
         }
 
@@ -173,6 +188,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.Fields.GetHashCode();
                 if (this.GroupType != null)
                     hashCode = hashCode * 59 + this.GroupType.GetHashCode();
+                if (this.GroupId != null)
+                    hashCode = hashCode * 59 + this.GroupId.GetHashCode();
                 return hashCode;
             }
         }

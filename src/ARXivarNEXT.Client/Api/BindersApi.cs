@@ -357,6 +357,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of List&lt;FieldBaseDTO&gt;</returns>
         ApiResponse<List<FieldBaseDTO>> BindersGetBindersFieldsByTypeWithHttpInfo (int? binderType);
         /// <summary>
+        /// This method allows to find binders that contains docnumber
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>List&lt;BinderDTO&gt;</returns>
+        List<BinderDTO> BindersGetByDocnumber (int? docnumber);
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>ApiResponse of List&lt;BinderDTO&gt;</returns>
+        ApiResponse<List<BinderDTO>> BindersGetByDocnumberWithHttpInfo (int? docnumber);
+        /// <summary>
         /// This call search a binder by the given identifiers
         /// </summary>
         /// <remarks>
@@ -1009,6 +1030,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="binderType">Binder type identifier</param>
         /// <returns>Task of ApiResponse (List&lt;FieldBaseDTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FieldBaseDTO>>> BindersGetBindersFieldsByTypeAsyncWithHttpInfo (int? binderType);
+        /// <summary>
+        /// This method allows to find binders that contains docnumber
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>Task of List&lt;BinderDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<BinderDTO>> BindersGetByDocnumberAsync (int? docnumber);
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>Task of ApiResponse (List&lt;BinderDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<BinderDTO>>> BindersGetByDocnumberAsyncWithHttpInfo (int? docnumber);
         /// <summary>
         /// This call search a binder by the given identifiers
         /// </summary>
@@ -3832,6 +3874,155 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<List<FieldBaseDTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<FieldBaseDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FieldBaseDTO>)));
+        }
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>List&lt;BinderDTO&gt;</returns>
+        public List<BinderDTO> BindersGetByDocnumber (int? docnumber)
+        {
+             ApiResponse<List<BinderDTO>> localVarResponse = BindersGetByDocnumberWithHttpInfo(docnumber);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>ApiResponse of List&lt;BinderDTO&gt;</returns>
+        public ApiResponse< List<BinderDTO> > BindersGetByDocnumberWithHttpInfo (int? docnumber)
+        {
+            // verify the required parameter 'docnumber' is set
+            if (docnumber == null)
+                throw new ApiException(400, "Missing required parameter 'docnumber' when calling BindersApi->BindersGetByDocnumber");
+
+            var localVarPath = "./api/Binders/docnumber/{docnumber}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetByDocnumber", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<BinderDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<BinderDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BinderDTO>)));
+        }
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>Task of List&lt;BinderDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<BinderDTO>> BindersGetByDocnumberAsync (int? docnumber)
+        {
+             ApiResponse<List<BinderDTO>> localVarResponse = await BindersGetByDocnumberAsyncWithHttpInfo(docnumber);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This method allows to find binders that contains docnumber 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumber">The document identifier</param>
+        /// <returns>Task of ApiResponse (List&lt;BinderDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<BinderDTO>>> BindersGetByDocnumberAsyncWithHttpInfo (int? docnumber)
+        {
+            // verify the required parameter 'docnumber' is set
+            if (docnumber == null)
+                throw new ApiException(400, "Missing required parameter 'docnumber' when calling BindersApi->BindersGetByDocnumber");
+
+            var localVarPath = "./api/Binders/docnumber/{docnumber}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetByDocnumber", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<BinderDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<BinderDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BinderDTO>)));
         }
 
         /// <summary>

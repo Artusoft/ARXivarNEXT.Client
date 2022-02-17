@@ -46,7 +46,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AssistantBufferInsertForMonitoredFolderWithHttpInfo (string bufferId);
         /// <summary>
-        /// This call notifies the specified user that the assistant is active
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29)
         /// </summary>
         /// <remarks>
         /// 
@@ -58,7 +58,7 @@ namespace ARXivarNEXT.Client.Api
         void AssistantDetected (string connectionId, string version = null);
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29)
         /// </summary>
         /// <remarks>
         /// 
@@ -68,6 +68,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="version">Version (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AssistantDetectedWithHttpInfo (string connectionId, string version = null);
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns></returns>
+        void AssistantDetected_0 (AssistantDetectedRequestDTO detectedRequestDto);
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AssistantDetected_0WithHttpInfo (AssistantDetectedRequestDTO detectedRequestDto);
         /// <summary>
         /// This call notifies that a receipt PA configuration is finished
         /// </summary>
@@ -114,6 +135,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="taskWorkId">Taskwork identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AssistantNotifyProcessDocChangeWithHttpInfo (int? processDocId, int? taskWorkId);
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns></returns>
+        void AssistantNotifyProcessDocChange_0 (Guid? documentId, Guid? taskId);
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AssistantNotifyProcessDocChange_0WithHttpInfo (Guid? documentId, Guid? taskId);
         /// <summary>
         /// This call notifies the specified user that a document has changed
         /// </summary>
@@ -182,7 +226,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AssistantBufferInsertForMonitoredFolderAsyncWithHttpInfo (string bufferId);
         /// <summary>
-        /// This call notifies the specified user that the assistant is active
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29)
         /// </summary>
         /// <remarks>
         /// 
@@ -194,7 +238,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task AssistantDetectedAsync (string connectionId, string version = null);
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29)
         /// </summary>
         /// <remarks>
         /// 
@@ -204,6 +248,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="version">Version (optional)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AssistantDetectedAsyncWithHttpInfo (string connectionId, string version = null);
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AssistantDetected_0Async (AssistantDetectedRequestDTO detectedRequestDto);
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AssistantDetected_0AsyncWithHttpInfo (AssistantDetectedRequestDTO detectedRequestDto);
         /// <summary>
         /// This call notifies that a receipt PA configuration is finished
         /// </summary>
@@ -250,6 +315,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="taskWorkId">Taskwork identifier</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AssistantNotifyProcessDocChangeAsyncWithHttpInfo (int? processDocId, int? taskWorkId);
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AssistantNotifyProcessDocChange_0Async (Guid? documentId, Guid? taskId);
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AssistantNotifyProcessDocChange_0AsyncWithHttpInfo (Guid? documentId, Guid? taskId);
         /// <summary>
         /// This call notifies the specified user that a document has changed
         /// </summary>
@@ -534,7 +622,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active 
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectionId">Connection identifier</param>
@@ -546,7 +634,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active 
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectionId">Connection identifier</param>
@@ -606,7 +694,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active 
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectionId">Connection identifier</param>
@@ -619,7 +707,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call notifies the specified user that the assistant is active 
+        /// This call notifies the specified user that the assistant is active (Legacy for support version since 2.3.29) 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="connectionId">Connection identifier</param>
@@ -670,6 +758,169 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("AssistantDetected", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns></returns>
+        public void AssistantDetected_0 (AssistantDetectedRequestDTO detectedRequestDto)
+        {
+             AssistantDetected_0WithHttpInfo(detectedRequestDto);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AssistantDetected_0WithHttpInfo (AssistantDetectedRequestDTO detectedRequestDto)
+        {
+            // verify the required parameter 'detectedRequestDto' is set
+            if (detectedRequestDto == null)
+                throw new ApiException(400, "Missing required parameter 'detectedRequestDto' when calling AssistantApi->AssistantDetected_0");
+
+            var localVarPath = "./api/Assistant";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (detectedRequestDto != null && detectedRequestDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(detectedRequestDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = detectedRequestDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantDetected_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AssistantDetected_0Async (AssistantDetectedRequestDTO detectedRequestDto)
+        {
+             await AssistantDetected_0AsyncWithHttpInfo(detectedRequestDto);
+
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that the assistant is active 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="detectedRequestDto">Parameters of detection</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AssistantDetected_0AsyncWithHttpInfo (AssistantDetectedRequestDTO detectedRequestDto)
+        {
+            // verify the required parameter 'detectedRequestDto' is set
+            if (detectedRequestDto == null)
+                throw new ApiException(400, "Missing required parameter 'detectedRequestDto' when calling AssistantApi->AssistantDetected_0");
+
+            var localVarPath = "./api/Assistant";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (detectedRequestDto != null && detectedRequestDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(detectedRequestDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = detectedRequestDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantDetected_0", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -996,6 +1247,157 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("AssistantNotifyProcessDocChange", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns></returns>
+        public void AssistantNotifyProcessDocChange_0 (Guid? documentId, Guid? taskId)
+        {
+             AssistantNotifyProcessDocChange_0WithHttpInfo(documentId, taskId);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AssistantNotifyProcessDocChange_0WithHttpInfo (Guid? documentId, Guid? taskId)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling AssistantApi->AssistantNotifyProcessDocChange_0");
+            // verify the required parameter 'taskId' is set
+            if (taskId == null)
+                throw new ApiException(400, "Missing required parameter 'taskId' when calling AssistantApi->AssistantNotifyProcessDocChange_0");
+
+            var localVarPath = "./api/Assistant/UpdateProcessDocV2/{documentId}/Task/{taskId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (taskId != null) localVarPathParams.Add("taskId", this.Configuration.ApiClient.ParameterToString(taskId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantNotifyProcessDocChange_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AssistantNotifyProcessDocChange_0Async (Guid? documentId, Guid? taskId)
+        {
+             await AssistantNotifyProcessDocChange_0AsyncWithHttpInfo(documentId, taskId);
+
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="documentId">Process document identifier</param>
+        /// <param name="taskId">Taskwork identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AssistantNotifyProcessDocChange_0AsyncWithHttpInfo (Guid? documentId, Guid? taskId)
+        {
+            // verify the required parameter 'documentId' is set
+            if (documentId == null)
+                throw new ApiException(400, "Missing required parameter 'documentId' when calling AssistantApi->AssistantNotifyProcessDocChange_0");
+            // verify the required parameter 'taskId' is set
+            if (taskId == null)
+                throw new ApiException(400, "Missing required parameter 'taskId' when calling AssistantApi->AssistantNotifyProcessDocChange_0");
+
+            var localVarPath = "./api/Assistant/UpdateProcessDocV2/{documentId}/Task/{taskId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId)); // path parameter
+            if (taskId != null) localVarPathParams.Add("taskId", this.Configuration.ApiClient.ParameterToString(taskId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantNotifyProcessDocChange_0", localVarResponse);
                 if (exception != null) throw exception;
             }
 

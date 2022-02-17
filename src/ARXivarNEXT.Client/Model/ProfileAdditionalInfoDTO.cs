@@ -39,7 +39,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="creationDate">Creation Date.</param>
         /// <param name="protocolDate">Protocol Date.</param>
         /// <param name="author">User to create the profile.</param>
-        public ProfileAdditionalInfoDTO(bool? isProtocolEnabled = default(bool?), string protocolNumber = default(string), string fileName = default(string), int? docNumber = default(int?), int? revision = default(int?), DateTime? creationDate = default(DateTime?), DateTime? protocolDate = default(DateTime?), string author = default(string))
+        /// <param name="userId">User to create the profile.</param>
+        public ProfileAdditionalInfoDTO(bool? isProtocolEnabled = default(bool?), string protocolNumber = default(string), string fileName = default(string), int? docNumber = default(int?), int? revision = default(int?), DateTime? creationDate = default(DateTime?), DateTime? protocolDate = default(DateTime?), string author = default(string), int? userId = default(int?))
         {
             this.IsProtocolEnabled = isProtocolEnabled;
             this.ProtocolNumber = protocolNumber;
@@ -49,6 +50,7 @@ namespace ARXivarNEXT.Client.Model
             this.CreationDate = creationDate;
             this.ProtocolDate = protocolDate;
             this.Author = author;
+            this.UserId = userId;
         }
         
         /// <summary>
@@ -108,6 +110,13 @@ namespace ARXivarNEXT.Client.Model
         public string Author { get; set; }
 
         /// <summary>
+        /// User to create the profile
+        /// </summary>
+        /// <value>User to create the profile</value>
+        [DataMember(Name="userId", EmitDefaultValue=false)]
+        public int? UserId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -123,6 +132,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
             sb.Append("  ProtocolDate: ").Append(ProtocolDate).Append("\n");
             sb.Append("  Author: ").Append(Author).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -196,6 +206,11 @@ namespace ARXivarNEXT.Client.Model
                     this.Author == input.Author ||
                     (this.Author != null &&
                     this.Author.Equals(input.Author))
+                ) && 
+                (
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 );
         }
 
@@ -224,6 +239,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.ProtocolDate.GetHashCode();
                 if (this.Author != null)
                     hashCode = hashCode * 59 + this.Author.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 return hashCode;
             }
         }

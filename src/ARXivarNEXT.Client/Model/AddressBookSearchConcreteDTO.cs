@@ -37,8 +37,9 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="boolFields">List of fields of type &#39;Boolean&#39;.</param>
         /// <param name="doubleFields">List of fields of type &#39;Decimal&#39;.</param>
         /// <param name="stringListFields">List of fields of type &#39;List&#39;.</param>
-        /// <param name="maxItems">maxItems.</param>
-        public AddressBookSearchConcreteDTO(List<FieldBaseForSearchDateTimeDto> dateTimeFields = default(List<FieldBaseForSearchDateTimeDto>), List<FieldBaseForSearchStringDto> stringFields = default(List<FieldBaseForSearchStringDto>), List<FieldBaseForSearchIntDto> intFields = default(List<FieldBaseForSearchIntDto>), List<FieldBaseForSearchBoolDto> boolFields = default(List<FieldBaseForSearchBoolDto>), List<FieldBaseForSearchDoubleDto> doubleFields = default(List<FieldBaseForSearchDoubleDto>), List<FieldBaseForSearchListDto> stringListFields = default(List<FieldBaseForSearchListDto>), int? maxItems = default(int?))
+        /// <param name="matrixFields">List of fields of type &#39;List&#39;.</param>
+        /// <param name="maxItems">Search max items.</param>
+        public AddressBookSearchConcreteDTO(List<FieldBaseForSearchDateTimeDto> dateTimeFields = default(List<FieldBaseForSearchDateTimeDto>), List<FieldBaseForSearchStringDto> stringFields = default(List<FieldBaseForSearchStringDto>), List<FieldBaseForSearchIntDto> intFields = default(List<FieldBaseForSearchIntDto>), List<FieldBaseForSearchBoolDto> boolFields = default(List<FieldBaseForSearchBoolDto>), List<FieldBaseForSearchDoubleDto> doubleFields = default(List<FieldBaseForSearchDoubleDto>), List<FieldBaseForSearchListDto> stringListFields = default(List<FieldBaseForSearchListDto>), List<FieldBaseForSearchMatrixDto> matrixFields = default(List<FieldBaseForSearchMatrixDto>), int? maxItems = default(int?))
         {
             this.DateTimeFields = dateTimeFields;
             this.StringFields = stringFields;
@@ -46,6 +47,7 @@ namespace ARXivarNEXT.Client.Model
             this.BoolFields = boolFields;
             this.DoubleFields = doubleFields;
             this.StringListFields = stringListFields;
+            this.MatrixFields = matrixFields;
             this.MaxItems = maxItems;
         }
         
@@ -92,8 +94,16 @@ namespace ARXivarNEXT.Client.Model
         public List<FieldBaseForSearchListDto> StringListFields { get; set; }
 
         /// <summary>
-        /// Gets or Sets MaxItems
+        /// List of fields of type &#39;List&#39;
         /// </summary>
+        /// <value>List of fields of type &#39;List&#39;</value>
+        [DataMember(Name="matrixFields", EmitDefaultValue=false)]
+        public List<FieldBaseForSearchMatrixDto> MatrixFields { get; set; }
+
+        /// <summary>
+        /// Search max items
+        /// </summary>
+        /// <value>Search max items</value>
         [DataMember(Name="maxItems", EmitDefaultValue=false)]
         public int? MaxItems { get; set; }
 
@@ -111,6 +121,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  BoolFields: ").Append(BoolFields).Append("\n");
             sb.Append("  DoubleFields: ").Append(DoubleFields).Append("\n");
             sb.Append("  StringListFields: ").Append(StringListFields).Append("\n");
+            sb.Append("  MatrixFields: ").Append(MatrixFields).Append("\n");
             sb.Append("  MaxItems: ").Append(MaxItems).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -177,6 +188,11 @@ namespace ARXivarNEXT.Client.Model
                     this.StringListFields.SequenceEqual(input.StringListFields)
                 ) && 
                 (
+                    this.MatrixFields == input.MatrixFields ||
+                    this.MatrixFields != null &&
+                    this.MatrixFields.SequenceEqual(input.MatrixFields)
+                ) && 
+                (
                     this.MaxItems == input.MaxItems ||
                     (this.MaxItems != null &&
                     this.MaxItems.Equals(input.MaxItems))
@@ -204,6 +220,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.DoubleFields.GetHashCode();
                 if (this.StringListFields != null)
                     hashCode = hashCode * 59 + this.StringListFields.GetHashCode();
+                if (this.MatrixFields != null)
+                    hashCode = hashCode * 59 + this.MatrixFields.GetHashCode();
                 if (this.MaxItems != null)
                     hashCode = hashCode * 59 + this.MaxItems.GetHashCode();
                 return hashCode;

@@ -28,6 +28,7 @@ namespace ARXivarNEXT.Client.Model
     /// </summary>
     [DataContract]
     [JsonConverter(typeof(JsonSubtypes), "className")]
+    [JsonSubtypes.KnownSubType(typeof(FieldBaseForSearchMatrixDto), "FieldBaseForSearchMatrixDto")]
     [JsonSubtypes.KnownSubType(typeof(FieldBaseForSearchIntDto), "FieldBaseForSearchIntDto")]
     [JsonSubtypes.KnownSubType(typeof(FieldBaseForSearchDoubleDto), "FieldBaseForSearchDoubleDto")]
     [JsonSubtypes.KnownSubType(typeof(FieldBaseForSearchConservazioneDto), "FieldBaseForSearchConservazioneDto")]

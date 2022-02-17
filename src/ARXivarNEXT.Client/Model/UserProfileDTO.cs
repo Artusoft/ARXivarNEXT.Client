@@ -61,7 +61,15 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="nation">Nation.</param>
         /// <param name="addressBookId">Address Book Identifier.</param>
         /// <param name="society">Society.</param>
-        public UserProfileDTO(int? id = default(int?), string externalId = default(string), string description = default(string), string docNumber = default(string), int? type = default(int?), int? contactId = default(int?), string fax = default(string), string address = default(string), string postalCode = default(string), string contact = default(string), string job = default(string), string locality = default(string), string province = default(string), string phone = default(string), string mobilePhone = default(string), string telName = default(string), string faxName = default(string), string house = default(string), string department = default(string), string reference = default(string), string office = default(string), string vat = default(string), string mail = default(string), string priority = default(string), string code = default(string), string email = default(string), string fiscalCode = default(string), string nation = default(string), int? addressBookId = default(int?), string society = default(string))
+        /// <param name="officeCode">Office code.</param>
+        /// <param name="publicAdministrationCode">Public administration code.</param>
+        /// <param name="pecAddressBook">Posta Elettronica Certificata (AddressBook).</param>
+        /// <param name="feaEnabled">Firma Elettronica Avanzata is enabled.</param>
+        /// <param name="feaExpireDate">Firma Elettronica Avanzata expiration date.</param>
+        /// <param name="firstName">Firstname.</param>
+        /// <param name="lastName">Lastname.</param>
+        /// <param name="pec">Posta Elettronica Certificata.</param>
+        public UserProfileDTO(int? id = default(int?), string externalId = default(string), string description = default(string), string docNumber = default(string), int? type = default(int?), int? contactId = default(int?), string fax = default(string), string address = default(string), string postalCode = default(string), string contact = default(string), string job = default(string), string locality = default(string), string province = default(string), string phone = default(string), string mobilePhone = default(string), string telName = default(string), string faxName = default(string), string house = default(string), string department = default(string), string reference = default(string), string office = default(string), string vat = default(string), string mail = default(string), string priority = default(string), string code = default(string), string email = default(string), string fiscalCode = default(string), string nation = default(string), int? addressBookId = default(int?), string society = default(string), string officeCode = default(string), string publicAdministrationCode = default(string), string pecAddressBook = default(string), bool? feaEnabled = default(bool?), DateTime? feaExpireDate = default(DateTime?), string firstName = default(string), string lastName = default(string), string pec = default(string))
         {
             this.Id = id;
             this.ExternalId = externalId;
@@ -93,6 +101,14 @@ namespace ARXivarNEXT.Client.Model
             this.Nation = nation;
             this.AddressBookId = addressBookId;
             this.Society = society;
+            this.OfficeCode = officeCode;
+            this.PublicAdministrationCode = publicAdministrationCode;
+            this.PecAddressBook = pecAddressBook;
+            this.FeaEnabled = feaEnabled;
+            this.FeaExpireDate = feaExpireDate;
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Pec = pec;
         }
         
         /// <summary>
@@ -306,6 +322,62 @@ namespace ARXivarNEXT.Client.Model
         public string Society { get; set; }
 
         /// <summary>
+        /// Office code
+        /// </summary>
+        /// <value>Office code</value>
+        [DataMember(Name="officeCode", EmitDefaultValue=false)]
+        public string OfficeCode { get; set; }
+
+        /// <summary>
+        /// Public administration code
+        /// </summary>
+        /// <value>Public administration code</value>
+        [DataMember(Name="publicAdministrationCode", EmitDefaultValue=false)]
+        public string PublicAdministrationCode { get; set; }
+
+        /// <summary>
+        /// Posta Elettronica Certificata (AddressBook)
+        /// </summary>
+        /// <value>Posta Elettronica Certificata (AddressBook)</value>
+        [DataMember(Name="pecAddressBook", EmitDefaultValue=false)]
+        public string PecAddressBook { get; set; }
+
+        /// <summary>
+        /// Firma Elettronica Avanzata is enabled
+        /// </summary>
+        /// <value>Firma Elettronica Avanzata is enabled</value>
+        [DataMember(Name="feaEnabled", EmitDefaultValue=false)]
+        public bool? FeaEnabled { get; set; }
+
+        /// <summary>
+        /// Firma Elettronica Avanzata expiration date
+        /// </summary>
+        /// <value>Firma Elettronica Avanzata expiration date</value>
+        [DataMember(Name="feaExpireDate", EmitDefaultValue=false)]
+        public DateTime? FeaExpireDate { get; set; }
+
+        /// <summary>
+        /// Firstname
+        /// </summary>
+        /// <value>Firstname</value>
+        [DataMember(Name="firstName", EmitDefaultValue=false)]
+        public string FirstName { get; set; }
+
+        /// <summary>
+        /// Lastname
+        /// </summary>
+        /// <value>Lastname</value>
+        [DataMember(Name="lastName", EmitDefaultValue=false)]
+        public string LastName { get; set; }
+
+        /// <summary>
+        /// Posta Elettronica Certificata
+        /// </summary>
+        /// <value>Posta Elettronica Certificata</value>
+        [DataMember(Name="pec", EmitDefaultValue=false)]
+        public string Pec { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -343,6 +415,14 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Nation: ").Append(Nation).Append("\n");
             sb.Append("  AddressBookId: ").Append(AddressBookId).Append("\n");
             sb.Append("  Society: ").Append(Society).Append("\n");
+            sb.Append("  OfficeCode: ").Append(OfficeCode).Append("\n");
+            sb.Append("  PublicAdministrationCode: ").Append(PublicAdministrationCode).Append("\n");
+            sb.Append("  PecAddressBook: ").Append(PecAddressBook).Append("\n");
+            sb.Append("  FeaEnabled: ").Append(FeaEnabled).Append("\n");
+            sb.Append("  FeaExpireDate: ").Append(FeaExpireDate).Append("\n");
+            sb.Append("  FirstName: ").Append(FirstName).Append("\n");
+            sb.Append("  LastName: ").Append(LastName).Append("\n");
+            sb.Append("  Pec: ").Append(Pec).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -526,6 +606,46 @@ namespace ARXivarNEXT.Client.Model
                     this.Society == input.Society ||
                     (this.Society != null &&
                     this.Society.Equals(input.Society))
+                ) && 
+                (
+                    this.OfficeCode == input.OfficeCode ||
+                    (this.OfficeCode != null &&
+                    this.OfficeCode.Equals(input.OfficeCode))
+                ) && 
+                (
+                    this.PublicAdministrationCode == input.PublicAdministrationCode ||
+                    (this.PublicAdministrationCode != null &&
+                    this.PublicAdministrationCode.Equals(input.PublicAdministrationCode))
+                ) && 
+                (
+                    this.PecAddressBook == input.PecAddressBook ||
+                    (this.PecAddressBook != null &&
+                    this.PecAddressBook.Equals(input.PecAddressBook))
+                ) && 
+                (
+                    this.FeaEnabled == input.FeaEnabled ||
+                    (this.FeaEnabled != null &&
+                    this.FeaEnabled.Equals(input.FeaEnabled))
+                ) && 
+                (
+                    this.FeaExpireDate == input.FeaExpireDate ||
+                    (this.FeaExpireDate != null &&
+                    this.FeaExpireDate.Equals(input.FeaExpireDate))
+                ) && 
+                (
+                    this.FirstName == input.FirstName ||
+                    (this.FirstName != null &&
+                    this.FirstName.Equals(input.FirstName))
+                ) && 
+                (
+                    this.LastName == input.LastName ||
+                    (this.LastName != null &&
+                    this.LastName.Equals(input.LastName))
+                ) && 
+                (
+                    this.Pec == input.Pec ||
+                    (this.Pec != null &&
+                    this.Pec.Equals(input.Pec))
                 );
         }
 
@@ -598,6 +718,22 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.AddressBookId.GetHashCode();
                 if (this.Society != null)
                     hashCode = hashCode * 59 + this.Society.GetHashCode();
+                if (this.OfficeCode != null)
+                    hashCode = hashCode * 59 + this.OfficeCode.GetHashCode();
+                if (this.PublicAdministrationCode != null)
+                    hashCode = hashCode * 59 + this.PublicAdministrationCode.GetHashCode();
+                if (this.PecAddressBook != null)
+                    hashCode = hashCode * 59 + this.PecAddressBook.GetHashCode();
+                if (this.FeaEnabled != null)
+                    hashCode = hashCode * 59 + this.FeaEnabled.GetHashCode();
+                if (this.FeaExpireDate != null)
+                    hashCode = hashCode * 59 + this.FeaExpireDate.GetHashCode();
+                if (this.FirstName != null)
+                    hashCode = hashCode * 59 + this.FirstName.GetHashCode();
+                if (this.LastName != null)
+                    hashCode = hashCode * 59 + this.LastName.GetHashCode();
+                if (this.Pec != null)
+                    hashCode = hashCode * 59 + this.Pec.GetHashCode();
                 return hashCode;
             }
         }

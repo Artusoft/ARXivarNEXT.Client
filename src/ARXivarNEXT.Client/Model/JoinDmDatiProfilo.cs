@@ -61,10 +61,18 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="priorita">priorita.</param>
         /// <param name="idrubrica">idrubrica.</param>
         /// <param name="idcontatto">idcontatto.</param>
+        /// <param name="codiceufficio">codiceufficio.</param>
+        /// <param name="codiceipa">codiceipa.</param>
+        /// <param name="pecrubrica">pecrubrica.</param>
+        /// <param name="feaenabled">feaenabled.</param>
+        /// <param name="feaexpiredate">feaexpiredate.</param>
+        /// <param name="nome">nome.</param>
+        /// <param name="cognome">cognome.</param>
+        /// <param name="pec">pec.</param>
         /// <param name="forceCaseInsensitive">forceCaseInsensitive.</param>
         /// <param name="joinMode">Possible values:  0: INNER  1: LEFT  2: RIGHT .</param>
         /// <param name="nomeTabella">nomeTabella.</param>
-        public JoinDmDatiProfilo(string legameTabella = default(string), FieldInt id = default(FieldInt), FieldInt docnumber = default(FieldInt), FieldString campo = default(FieldString), FieldString valore = default(FieldString), FieldString contatti = default(FieldString), FieldString fax = default(FieldString), FieldString tel = default(FieldString), FieldString indirizzo = default(FieldString), FieldString mail = default(FieldString), FieldString localita = default(FieldString), FieldString cap = default(FieldString), FieldString provincia = default(FieldString), FieldString nazione = default(FieldString), FieldString codice = default(FieldString), FieldString contatto = default(FieldString), FieldString mansione = default(FieldString), FieldString telnome = default(FieldString), FieldString faxnome = default(FieldString), FieldString cell = default(FieldString), FieldString abitazione = default(FieldString), FieldString reparto = default(FieldString), FieldString ufficio = default(FieldString), FieldString email = default(FieldString), FieldString riferimento = default(FieldString), FieldString codfis = default(FieldString), FieldString partiva = default(FieldString), FieldString priorita = default(FieldString), FieldInt idrubrica = default(FieldInt), FieldInt idcontatto = default(FieldInt), bool? forceCaseInsensitive = default(bool?), int? joinMode = default(int?), string nomeTabella = default(string))
+        public JoinDmDatiProfilo(string legameTabella = default(string), FieldInt id = default(FieldInt), FieldInt docnumber = default(FieldInt), FieldString campo = default(FieldString), FieldString valore = default(FieldString), FieldString contatti = default(FieldString), FieldString fax = default(FieldString), FieldString tel = default(FieldString), FieldString indirizzo = default(FieldString), FieldString mail = default(FieldString), FieldString localita = default(FieldString), FieldString cap = default(FieldString), FieldString provincia = default(FieldString), FieldString nazione = default(FieldString), FieldString codice = default(FieldString), FieldString contatto = default(FieldString), FieldString mansione = default(FieldString), FieldString telnome = default(FieldString), FieldString faxnome = default(FieldString), FieldString cell = default(FieldString), FieldString abitazione = default(FieldString), FieldString reparto = default(FieldString), FieldString ufficio = default(FieldString), FieldString email = default(FieldString), FieldString riferimento = default(FieldString), FieldString codfis = default(FieldString), FieldString partiva = default(FieldString), FieldString priorita = default(FieldString), FieldInt idrubrica = default(FieldInt), FieldInt idcontatto = default(FieldInt), FieldString codiceufficio = default(FieldString), FieldString codiceipa = default(FieldString), FieldString pecrubrica = default(FieldString), FieldInt feaenabled = default(FieldInt), FieldDateTime feaexpiredate = default(FieldDateTime), FieldString nome = default(FieldString), FieldString cognome = default(FieldString), FieldString pec = default(FieldString), bool? forceCaseInsensitive = default(bool?), int? joinMode = default(int?), string nomeTabella = default(string))
         {
             this.LegameTabella = legameTabella;
             this.Id = id;
@@ -96,6 +104,14 @@ namespace ARXivarNEXT.Client.Model
             this.Priorita = priorita;
             this.Idrubrica = idrubrica;
             this.Idcontatto = idcontatto;
+            this.Codiceufficio = codiceufficio;
+            this.Codiceipa = codiceipa;
+            this.Pecrubrica = pecrubrica;
+            this.Feaenabled = feaenabled;
+            this.Feaexpiredate = feaexpiredate;
+            this.Nome = nome;
+            this.Cognome = cognome;
+            this.Pec = pec;
             this.ForceCaseInsensitive = forceCaseInsensitive;
             this.JoinMode = joinMode;
             this.NomeTabella = nomeTabella;
@@ -282,6 +298,54 @@ namespace ARXivarNEXT.Client.Model
         public FieldInt Idcontatto { get; set; }
 
         /// <summary>
+        /// Gets or Sets Codiceufficio
+        /// </summary>
+        [DataMember(Name="codiceufficio", EmitDefaultValue=false)]
+        public FieldString Codiceufficio { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Codiceipa
+        /// </summary>
+        [DataMember(Name="codiceipa", EmitDefaultValue=false)]
+        public FieldString Codiceipa { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pecrubrica
+        /// </summary>
+        [DataMember(Name="pecrubrica", EmitDefaultValue=false)]
+        public FieldString Pecrubrica { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Feaenabled
+        /// </summary>
+        [DataMember(Name="feaenabled", EmitDefaultValue=false)]
+        public FieldInt Feaenabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Feaexpiredate
+        /// </summary>
+        [DataMember(Name="feaexpiredate", EmitDefaultValue=false)]
+        public FieldDateTime Feaexpiredate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Nome
+        /// </summary>
+        [DataMember(Name="nome", EmitDefaultValue=false)]
+        public FieldString Nome { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Cognome
+        /// </summary>
+        [DataMember(Name="cognome", EmitDefaultValue=false)]
+        public FieldString Cognome { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Pec
+        /// </summary>
+        [DataMember(Name="pec", EmitDefaultValue=false)]
+        public FieldString Pec { get; set; }
+
+        /// <summary>
         /// Gets or Sets ForceCaseInsensitive
         /// </summary>
         [DataMember(Name="forceCaseInsensitive", EmitDefaultValue=false)]
@@ -338,6 +402,14 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Priorita: ").Append(Priorita).Append("\n");
             sb.Append("  Idrubrica: ").Append(Idrubrica).Append("\n");
             sb.Append("  Idcontatto: ").Append(Idcontatto).Append("\n");
+            sb.Append("  Codiceufficio: ").Append(Codiceufficio).Append("\n");
+            sb.Append("  Codiceipa: ").Append(Codiceipa).Append("\n");
+            sb.Append("  Pecrubrica: ").Append(Pecrubrica).Append("\n");
+            sb.Append("  Feaenabled: ").Append(Feaenabled).Append("\n");
+            sb.Append("  Feaexpiredate: ").Append(Feaexpiredate).Append("\n");
+            sb.Append("  Nome: ").Append(Nome).Append("\n");
+            sb.Append("  Cognome: ").Append(Cognome).Append("\n");
+            sb.Append("  Pec: ").Append(Pec).Append("\n");
             sb.Append("  ForceCaseInsensitive: ").Append(ForceCaseInsensitive).Append("\n");
             sb.Append("  JoinMode: ").Append(JoinMode).Append("\n");
             sb.Append("  NomeTabella: ").Append(NomeTabella).Append("\n");
@@ -526,6 +598,46 @@ namespace ARXivarNEXT.Client.Model
                     this.Idcontatto.Equals(input.Idcontatto))
                 ) && 
                 (
+                    this.Codiceufficio == input.Codiceufficio ||
+                    (this.Codiceufficio != null &&
+                    this.Codiceufficio.Equals(input.Codiceufficio))
+                ) && 
+                (
+                    this.Codiceipa == input.Codiceipa ||
+                    (this.Codiceipa != null &&
+                    this.Codiceipa.Equals(input.Codiceipa))
+                ) && 
+                (
+                    this.Pecrubrica == input.Pecrubrica ||
+                    (this.Pecrubrica != null &&
+                    this.Pecrubrica.Equals(input.Pecrubrica))
+                ) && 
+                (
+                    this.Feaenabled == input.Feaenabled ||
+                    (this.Feaenabled != null &&
+                    this.Feaenabled.Equals(input.Feaenabled))
+                ) && 
+                (
+                    this.Feaexpiredate == input.Feaexpiredate ||
+                    (this.Feaexpiredate != null &&
+                    this.Feaexpiredate.Equals(input.Feaexpiredate))
+                ) && 
+                (
+                    this.Nome == input.Nome ||
+                    (this.Nome != null &&
+                    this.Nome.Equals(input.Nome))
+                ) && 
+                (
+                    this.Cognome == input.Cognome ||
+                    (this.Cognome != null &&
+                    this.Cognome.Equals(input.Cognome))
+                ) && 
+                (
+                    this.Pec == input.Pec ||
+                    (this.Pec != null &&
+                    this.Pec.Equals(input.Pec))
+                ) && 
+                (
                     this.ForceCaseInsensitive == input.ForceCaseInsensitive ||
                     (this.ForceCaseInsensitive != null &&
                     this.ForceCaseInsensitive.Equals(input.ForceCaseInsensitive))
@@ -611,6 +723,22 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.Idrubrica.GetHashCode();
                 if (this.Idcontatto != null)
                     hashCode = hashCode * 59 + this.Idcontatto.GetHashCode();
+                if (this.Codiceufficio != null)
+                    hashCode = hashCode * 59 + this.Codiceufficio.GetHashCode();
+                if (this.Codiceipa != null)
+                    hashCode = hashCode * 59 + this.Codiceipa.GetHashCode();
+                if (this.Pecrubrica != null)
+                    hashCode = hashCode * 59 + this.Pecrubrica.GetHashCode();
+                if (this.Feaenabled != null)
+                    hashCode = hashCode * 59 + this.Feaenabled.GetHashCode();
+                if (this.Feaexpiredate != null)
+                    hashCode = hashCode * 59 + this.Feaexpiredate.GetHashCode();
+                if (this.Nome != null)
+                    hashCode = hashCode * 59 + this.Nome.GetHashCode();
+                if (this.Cognome != null)
+                    hashCode = hashCode * 59 + this.Cognome.GetHashCode();
+                if (this.Pec != null)
+                    hashCode = hashCode * 59 + this.Pec.GetHashCode();
                 if (this.ForceCaseInsensitive != null)
                     hashCode = hashCode * 59 + this.ForceCaseInsensitive.GetHashCode();
                 if (this.JoinMode != null)

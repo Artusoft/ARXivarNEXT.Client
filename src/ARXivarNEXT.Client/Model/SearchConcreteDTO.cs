@@ -44,8 +44,9 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="boolFields">List of fields of type &#39;Boolean&#39;.</param>
         /// <param name="doubleFields">List of fields of type &#39;Decimal&#39;.</param>
         /// <param name="stringListFields">List of fields of type &#39;List&#39;.</param>
+        /// <param name="matrixFields">List of fields of type &#39;List&#39;.</param>
         /// <param name="groupFields">List of fields of type &#39;Group&#39;.</param>
-        public SearchConcreteDTO(int? daAAndOr = default(int?), List<FieldBaseForSearchContactDto> contactFields = default(List<FieldBaseForSearchContactDto>), FieldBaseForSearchAooDto aooField = default(FieldBaseForSearchAooDto), FieldBaseForSearchDocumentTypeDto documentTypeField = default(FieldBaseForSearchDocumentTypeDto), FieldBaseForSearchProtocolloDto protocolField = default(FieldBaseForSearchProtocolloDto), FieldBaseForSearchConservazioneDto conservationField = default(FieldBaseForSearchConservazioneDto), FieldBaseForSearchStampDto stampField = default(FieldBaseForSearchStampDto), List<FieldBaseForSearchDateTimeDto> dateTimeFields = default(List<FieldBaseForSearchDateTimeDto>), List<FieldBaseForSearchStringDto> stringFields = default(List<FieldBaseForSearchStringDto>), List<FieldBaseForSearchIntDto> intFields = default(List<FieldBaseForSearchIntDto>), List<FieldBaseForSearchBoolDto> boolFields = default(List<FieldBaseForSearchBoolDto>), List<FieldBaseForSearchDoubleDto> doubleFields = default(List<FieldBaseForSearchDoubleDto>), List<FieldBaseForSearchListDto> stringListFields = default(List<FieldBaseForSearchListDto>), List<FieldBaseForSearchDTO> groupFields = default(List<FieldBaseForSearchDTO>))
+        public SearchConcreteDTO(int? daAAndOr = default(int?), List<FieldBaseForSearchContactDto> contactFields = default(List<FieldBaseForSearchContactDto>), FieldBaseForSearchAooDto aooField = default(FieldBaseForSearchAooDto), FieldBaseForSearchDocumentTypeDto documentTypeField = default(FieldBaseForSearchDocumentTypeDto), FieldBaseForSearchProtocolloDto protocolField = default(FieldBaseForSearchProtocolloDto), FieldBaseForSearchConservazioneDto conservationField = default(FieldBaseForSearchConservazioneDto), FieldBaseForSearchStampDto stampField = default(FieldBaseForSearchStampDto), List<FieldBaseForSearchDateTimeDto> dateTimeFields = default(List<FieldBaseForSearchDateTimeDto>), List<FieldBaseForSearchStringDto> stringFields = default(List<FieldBaseForSearchStringDto>), List<FieldBaseForSearchIntDto> intFields = default(List<FieldBaseForSearchIntDto>), List<FieldBaseForSearchBoolDto> boolFields = default(List<FieldBaseForSearchBoolDto>), List<FieldBaseForSearchDoubleDto> doubleFields = default(List<FieldBaseForSearchDoubleDto>), List<FieldBaseForSearchListDto> stringListFields = default(List<FieldBaseForSearchListDto>), List<FieldBaseForSearchMatrixDto> matrixFields = default(List<FieldBaseForSearchMatrixDto>), List<FieldBaseForSearchDTO> groupFields = default(List<FieldBaseForSearchDTO>))
         {
             this.DaAAndOr = daAAndOr;
             this.ContactFields = contactFields;
@@ -60,6 +61,7 @@ namespace ARXivarNEXT.Client.Model
             this.BoolFields = boolFields;
             this.DoubleFields = doubleFields;
             this.StringListFields = stringListFields;
+            this.MatrixFields = matrixFields;
             this.GroupFields = groupFields;
         }
         
@@ -155,6 +157,13 @@ namespace ARXivarNEXT.Client.Model
         public List<FieldBaseForSearchListDto> StringListFields { get; set; }
 
         /// <summary>
+        /// List of fields of type &#39;List&#39;
+        /// </summary>
+        /// <value>List of fields of type &#39;List&#39;</value>
+        [DataMember(Name="matrixFields", EmitDefaultValue=false)]
+        public List<FieldBaseForSearchMatrixDto> MatrixFields { get; set; }
+
+        /// <summary>
         /// List of fields of type &#39;Group&#39;
         /// </summary>
         /// <value>List of fields of type &#39;Group&#39;</value>
@@ -182,6 +191,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  BoolFields: ").Append(BoolFields).Append("\n");
             sb.Append("  DoubleFields: ").Append(DoubleFields).Append("\n");
             sb.Append("  StringListFields: ").Append(StringListFields).Append("\n");
+            sb.Append("  MatrixFields: ").Append(MatrixFields).Append("\n");
             sb.Append("  GroupFields: ").Append(GroupFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -283,6 +293,11 @@ namespace ARXivarNEXT.Client.Model
                     this.StringListFields.SequenceEqual(input.StringListFields)
                 ) && 
                 (
+                    this.MatrixFields == input.MatrixFields ||
+                    this.MatrixFields != null &&
+                    this.MatrixFields.SequenceEqual(input.MatrixFields)
+                ) && 
+                (
                     this.GroupFields == input.GroupFields ||
                     this.GroupFields != null &&
                     this.GroupFields.SequenceEqual(input.GroupFields)
@@ -324,6 +339,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.DoubleFields.GetHashCode();
                 if (this.StringListFields != null)
                     hashCode = hashCode * 59 + this.StringListFields.GetHashCode();
+                if (this.MatrixFields != null)
+                    hashCode = hashCode * 59 + this.MatrixFields.GetHashCode();
                 if (this.GroupFields != null)
                     hashCode = hashCode * 59 + this.GroupFields.GetHashCode();
                 return hashCode;

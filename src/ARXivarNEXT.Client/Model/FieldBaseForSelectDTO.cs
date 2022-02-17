@@ -31,7 +31,6 @@ namespace ARXivarNEXT.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FieldBaseForSelectDTO" /> class.
         /// </summary>
-        /// <param name="sqlSelectField">Field in database.</param>
         /// <param name="toCalculate">Calculate.</param>
         /// <param name="index">Order.</param>
         /// <param name="selected">Selected.</param>
@@ -42,9 +41,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="name">Name.</param>
         /// <param name="userSelectionEnabled">Enabled the selection.</param>
         /// <param name="userSelectionGroup">Possible values:  0: Icon  1: Standard  2: Additional .</param>
-        public FieldBaseForSelectDTO(string sqlSelectField = default(string), bool? toCalculate = default(bool?), int? index = default(int?), bool? selected = default(bool?), int? fieldType = default(int?), OrderBy orderBy = default(OrderBy), string externalId = default(string), string label = default(string), string name = default(string), bool? userSelectionEnabled = default(bool?), int? userSelectionGroup = default(int?))
+        public FieldBaseForSelectDTO(bool? toCalculate = default(bool?), int? index = default(int?), bool? selected = default(bool?), int? fieldType = default(int?), OrderBy orderBy = default(OrderBy), string externalId = default(string), string label = default(string), string name = default(string), bool? userSelectionEnabled = default(bool?), int? userSelectionGroup = default(int?))
         {
-            this.SqlSelectField = sqlSelectField;
             this.ToCalculate = toCalculate;
             this.Index = index;
             this.Selected = selected;
@@ -57,13 +55,6 @@ namespace ARXivarNEXT.Client.Model
             this.UserSelectionGroup = userSelectionGroup;
         }
         
-        /// <summary>
-        /// Field in database
-        /// </summary>
-        /// <value>Field in database</value>
-        [DataMember(Name="sqlSelectField", EmitDefaultValue=false)]
-        public string SqlSelectField { get; set; }
-
         /// <summary>
         /// Calculate
         /// </summary>
@@ -142,7 +133,6 @@ namespace ARXivarNEXT.Client.Model
         {
             var sb = new StringBuilder();
             sb.Append("class FieldBaseForSelectDTO {\n");
-            sb.Append("  SqlSelectField: ").Append(SqlSelectField).Append("\n");
             sb.Append("  ToCalculate: ").Append(ToCalculate).Append("\n");
             sb.Append("  Index: ").Append(Index).Append("\n");
             sb.Append("  Selected: ").Append(Selected).Append("\n");
@@ -187,11 +177,6 @@ namespace ARXivarNEXT.Client.Model
                 return false;
 
             return 
-                (
-                    this.SqlSelectField == input.SqlSelectField ||
-                    (this.SqlSelectField != null &&
-                    this.SqlSelectField.Equals(input.SqlSelectField))
-                ) && 
                 (
                     this.ToCalculate == input.ToCalculate ||
                     (this.ToCalculate != null &&
@@ -253,8 +238,6 @@ namespace ARXivarNEXT.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.SqlSelectField != null)
-                    hashCode = hashCode * 59 + this.SqlSelectField.GetHashCode();
                 if (this.ToCalculate != null)
                     hashCode = hashCode * 59 + this.ToCalculate.GetHashCode();
                 if (this.Index != null)

@@ -23,7 +23,7 @@ using SwaggerDateConverter = ARXivarNEXT.Client.Client.SwaggerDateConverter;
 namespace ARXivarNEXT.Client.Model
 {
     /// <summary>
-    /// FieldBaseForSearchListDto
+    /// Field user for list search criteria
     /// </summary>
     [DataContract]
     public partial class FieldBaseForSearchListDto : FieldBaseForSearchDTO,  IEquatable<FieldBaseForSearchListDto>

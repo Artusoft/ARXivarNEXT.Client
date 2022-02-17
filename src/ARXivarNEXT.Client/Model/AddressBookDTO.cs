@@ -23,7 +23,7 @@ using SwaggerDateConverter = ARXivarNEXT.Client.Client.SwaggerDateConverter;
 namespace ARXivarNEXT.Client.Model
 {
     /// <summary>
-    /// Class of the adress book item
+    /// Class of the adress book item base
     /// </summary>
     [DataContract]
     public partial class AddressBookDTO :  IEquatable<AddressBookDTO>
@@ -31,6 +31,7 @@ namespace ARXivarNEXT.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressBookDTO" /> class.
         /// </summary>
+        /// <param name="contacts">Contacts.</param>
         /// <param name="id">Unique identifier of the address book.</param>
         /// <param name="businessName">Business name.</param>
         /// <param name="fax">Fax number.</param>
@@ -54,9 +55,9 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="addressBookNote">Note.</param>
         /// <param name="externalCode">External Code.</param>
         /// <param name="additionalFields">Additional fields.</param>
-        /// <param name="contacts">Contacts.</param>
-        public AddressBookDTO(int? id = default(int?), string businessName = default(string), string fax = default(string), string address = default(string), string location = default(string), string postalCode = default(string), string province = default(string), string country = default(string), string email = default(string), string phoneNumber = default(string), string cellPhone = default(string), int? state = default(int?), int? type = default(int?), int? addressBookCategoryId = default(int?), string businessUnit = default(string), string _class = default(string), string fiscalCode = default(string), string vatNumber = default(string), int? priority = default(int?), string addressBookBusinessUnitCode = default(string), string addressBookNote = default(string), string externalCode = default(string), AdditionalConcreteFields additionalFields = default(AdditionalConcreteFields), List<ContactDTO> contacts = default(List<ContactDTO>))
+        public AddressBookDTO(List<ContactDTO> contacts = default(List<ContactDTO>), int? id = default(int?), string businessName = default(string), string fax = default(string), string address = default(string), string location = default(string), string postalCode = default(string), string province = default(string), string country = default(string), string email = default(string), string phoneNumber = default(string), string cellPhone = default(string), int? state = default(int?), int? type = default(int?), int? addressBookCategoryId = default(int?), string businessUnit = default(string), string _class = default(string), string fiscalCode = default(string), string vatNumber = default(string), int? priority = default(int?), string addressBookBusinessUnitCode = default(string), string addressBookNote = default(string), string externalCode = default(string), AdditionalConcreteFields additionalFields = default(AdditionalConcreteFields))
         {
+            this.Contacts = contacts;
             this.Id = id;
             this.BusinessName = businessName;
             this.Fax = fax;
@@ -80,9 +81,15 @@ namespace ARXivarNEXT.Client.Model
             this.AddressBookNote = addressBookNote;
             this.ExternalCode = externalCode;
             this.AdditionalFields = additionalFields;
-            this.Contacts = contacts;
         }
         
+        /// <summary>
+        /// Contacts
+        /// </summary>
+        /// <value>Contacts</value>
+        [DataMember(Name="contacts", EmitDefaultValue=false)]
+        public List<ContactDTO> Contacts { get; set; }
+
         /// <summary>
         /// Unique identifier of the address book
         /// </summary>
@@ -245,13 +252,6 @@ namespace ARXivarNEXT.Client.Model
         public AdditionalConcreteFields AdditionalFields { get; set; }
 
         /// <summary>
-        /// Contacts
-        /// </summary>
-        /// <value>Contacts</value>
-        [DataMember(Name="contacts", EmitDefaultValue=false)]
-        public List<ContactDTO> Contacts { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -259,6 +259,7 @@ namespace ARXivarNEXT.Client.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AddressBookDTO {\n");
+            sb.Append("  Contacts: ").Append(Contacts).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  BusinessName: ").Append(BusinessName).Append("\n");
             sb.Append("  Fax: ").Append(Fax).Append("\n");
@@ -282,7 +283,6 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  AddressBookNote: ").Append(AddressBookNote).Append("\n");
             sb.Append("  ExternalCode: ").Append(ExternalCode).Append("\n");
             sb.Append("  AdditionalFields: ").Append(AdditionalFields).Append("\n");
-            sb.Append("  Contacts: ").Append(Contacts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -317,6 +317,11 @@ namespace ARXivarNEXT.Client.Model
                 return false;
 
             return 
+                (
+                    this.Contacts == input.Contacts ||
+                    this.Contacts != null &&
+                    this.Contacts.SequenceEqual(input.Contacts)
+                ) && 
                 (
                     this.Id == input.Id ||
                     (this.Id != null &&
@@ -431,11 +436,6 @@ namespace ARXivarNEXT.Client.Model
                     this.AdditionalFields == input.AdditionalFields ||
                     (this.AdditionalFields != null &&
                     this.AdditionalFields.Equals(input.AdditionalFields))
-                ) && 
-                (
-                    this.Contacts == input.Contacts ||
-                    this.Contacts != null &&
-                    this.Contacts.SequenceEqual(input.Contacts)
                 );
         }
 
@@ -448,6 +448,8 @@ namespace ARXivarNEXT.Client.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
+                if (this.Contacts != null)
+                    hashCode = hashCode * 59 + this.Contacts.GetHashCode();
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.BusinessName != null)
@@ -494,8 +496,6 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.ExternalCode.GetHashCode();
                 if (this.AdditionalFields != null)
                     hashCode = hashCode * 59 + this.AdditionalFields.GetHashCode();
-                if (this.Contacts != null)
-                    hashCode = hashCode * 59 + this.Contacts.GetHashCode();
                 return hashCode;
             }
         }
