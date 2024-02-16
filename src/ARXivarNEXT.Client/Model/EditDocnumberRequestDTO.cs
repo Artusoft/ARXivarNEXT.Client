@@ -33,7 +33,7 @@ namespace ARXivarNEXT.Client.Model
         /// </summary>
         /// <param name="accessToken">accessToken.</param>
         /// <param name="docnumber">docnumber.</param>
-        /// <param name="externalAppType">Possible values:  0: Office365 .</param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 .</param>
         public EditDocnumberRequestDTO(string accessToken = default(string), int? docnumber = default(int?), int? externalAppType = default(int?))
         {
             this.AccessToken = accessToken;
@@ -54,9 +54,9 @@ namespace ARXivarNEXT.Client.Model
         public int? Docnumber { get; set; }
 
         /// <summary>
-        /// Possible values:  0: Office365 
+        /// Possible values:  0: Office365  1: Outlook365 
         /// </summary>
-        /// <value>Possible values:  0: Office365 </value>
+        /// <value>Possible values:  0: Office365  1: Outlook365 </value>
         [DataMember(Name="externalAppType", EmitDefaultValue=false)]
         public int? ExternalAppType { get; set; }
 

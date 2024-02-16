@@ -34,7 +34,7 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="accessToken">accessToken.</param>
         /// <param name="processDocId">processDocId.</param>
         /// <param name="taskWorkId">taskWorkId.</param>
-        /// <param name="externalAppType">Possible values:  0: Office365 .</param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 .</param>
         public EditProcessDocRequestDTO(string accessToken = default(string), int? processDocId = default(int?), int? taskWorkId = default(int?), int? externalAppType = default(int?))
         {
             this.AccessToken = accessToken;
@@ -62,9 +62,9 @@ namespace ARXivarNEXT.Client.Model
         public int? TaskWorkId { get; set; }
 
         /// <summary>
-        /// Possible values:  0: Office365 
+        /// Possible values:  0: Office365  1: Outlook365 
         /// </summary>
-        /// <value>Possible values:  0: Office365 </value>
+        /// <value>Possible values:  0: Office365  1: Outlook365 </value>
         [DataMember(Name="externalAppType", EmitDefaultValue=false)]
         public int? ExternalAppType { get; set; }
 

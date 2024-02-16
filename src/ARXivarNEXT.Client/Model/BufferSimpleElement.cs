@@ -37,7 +37,7 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="monitoredFolderId">monitoredFolderId.</param>
         /// <param name="monitoredFolderPath">monitoredFolderPath.</param>
         /// <param name="fileSize">fileSize.</param>
-        /// <param name="bufferElementType">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign .</param>
+        /// <param name="bufferElementType">Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign  8: Audit .</param>
         public BufferSimpleElement(string id = default(string), string filename = default(string), DateTime? creationDate = default(DateTime?), string monitoredFolderId = default(string), string monitoredFolderPath = default(string), long? fileSize = default(long?), int? bufferElementType = default(int?))
         {
             this.Id = id;
@@ -86,9 +86,9 @@ namespace ARXivarNEXT.Client.Model
         public long? FileSize { get; set; }
 
         /// <summary>
-        /// Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign 
+        /// Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign  8: Audit 
         /// </summary>
-        /// <value>Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign </value>
+        /// <value>Possible values:  0: DmBuffer  1: NextArchive  2: MonitoredFolder  3: ProcessDocThumbnail  4: CloneProfile  5: ReportExecuted  6: Mail  7: ESign  8: Audit </value>
         [DataMember(Name="bufferElementType", EmitDefaultValue=false)]
         public int? BufferElementType { get; set; }
 

@@ -172,7 +172,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> IxServicesDetachAccumulationPackageDocumentWithHttpInfo (int? accumulationPackageDocumentId);
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date
+        /// This call returns the status of the validations for accumulation package documents in a range of date
         /// </summary>
         /// <remarks>
         /// 
@@ -184,7 +184,7 @@ namespace ARXivarNEXT.Client.Api
         List<AccumulationPackageDocumentValidationDTO> IxServicesGetAccumulationPackageDocumentValidationByDate (DateTime? startDate, DateTime? endDate);
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date
+        /// This call returns the status of the validations for accumulation package documents in a range of date
         /// </summary>
         /// <remarks>
         /// 
@@ -286,7 +286,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns></returns>
         void IxServicesReject (int? docnumber, string reason);
 
@@ -298,7 +298,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> IxServicesRejectWithHttpInfo (int? docnumber, string reason);
         /// <summary>
@@ -535,7 +535,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> IxServicesDetachAccumulationPackageDocumentAsyncWithHttpInfo (int? accumulationPackageDocumentId);
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date
+        /// This call returns the status of the validations for accumulation package documents in a range of date
         /// </summary>
         /// <remarks>
         /// 
@@ -547,7 +547,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task<List<AccumulationPackageDocumentValidationDTO>> IxServicesGetAccumulationPackageDocumentValidationByDateAsync (DateTime? startDate, DateTime? endDate);
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date
+        /// This call returns the status of the validations for accumulation package documents in a range of date
         /// </summary>
         /// <remarks>
         /// 
@@ -649,7 +649,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task IxServicesRejectAsync (int? docnumber, string reason);
 
@@ -661,7 +661,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> IxServicesRejectAsyncWithHttpInfo (int? docnumber, string reason);
         /// <summary>
@@ -1842,7 +1842,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date 
+        /// This call returns the status of the validations for accumulation package documents in a range of date 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start date</param>
@@ -1855,7 +1855,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date 
+        /// This call returns the status of the validations for accumulation package documents in a range of date 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start date</param>
@@ -1922,7 +1922,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date 
+        /// This call returns the status of the validations for accumulation package documents in a range of date 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start date</param>
@@ -1936,7 +1936,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the status of the validations for accumulation package documents in a range of date 
+        /// This call returns the status of the validations for accumulation package documents in a range of date 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="startDate">Start date</param>
@@ -2603,7 +2603,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns></returns>
         public void IxServicesReject (int? docnumber, string reason)
         {
@@ -2615,7 +2615,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> IxServicesRejectWithHttpInfo (int? docnumber, string reason)
         {
@@ -2690,7 +2690,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task IxServicesRejectAsync (int? docnumber, string reason)
         {
@@ -2703,7 +2703,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Docnumber</param>
-        /// <param name="reason"></param>
+        /// <param name="reason">The reason</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> IxServicesRejectAsyncWithHttpInfo (int? docnumber, string reason)
         {

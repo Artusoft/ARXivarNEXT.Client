@@ -33,8 +33,12 @@ namespace ARXivarNEXT.Client.Model
     [JsonSubtypes.KnownSubType(typeof(StringKeyValueDTO), "StringKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(GuidKeyValueDTO), "GuidKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(DoubleKeyValueDTO), "DoubleKeyValueDTO")]
+    [JsonSubtypes.KnownSubType(typeof(DateTimeNullableKeyValueDTO), "DateTimeNullableKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(BooleanKeyValueDTO), "BooleanKeyValueDTO")]
+    [JsonSubtypes.KnownSubType(typeof(DoubleNullableKeyValueDTO), "DoubleNullableKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(ArrayKeyValueDTO), "ArrayKeyValueDTO")]
+    [JsonSubtypes.KnownSubType(typeof(DecimalNullableKeyValueDTO), "DecimalNullableKeyValueDTO")]
+    [JsonSubtypes.KnownSubType(typeof(IntNullableKeyValueDTO), "IntNullableKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(NullKeyValueDTO), "NullKeyValueDTO")]
     [JsonSubtypes.KnownSubType(typeof(IntKeyValueDTO), "IntKeyValueDTO")]
     public partial class GenericKeyValueDTO :  IEquatable<GenericKeyValueDTO>

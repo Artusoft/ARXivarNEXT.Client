@@ -37,15 +37,17 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="AdditionalFieldIntDTO" /> class.
         /// </summary>
         /// <param name="value">Value.</param>
+        /// <param name="showThousandsSeparator">showThousandsSeparator.</param>
         /// <param name="additionalFieldType">Possible values:  0: Textbox  1: Databox  2: Numeric  3: Combobox  4: TableBox  5: Checkbox  6: MultiValue  7: ClasseBox  8: Group  9: RubricaBox  10: TextArea .</param>
         /// <param name="groupId">Group Identifier.</param>
         /// <param name="binderFieldId">Binder Field Identifier.</param>
         /// <param name="taskWorkVariableId">Variable Identifier in taskword context.</param>
         /// <param name="validationType">Possible values:  0: None  1: Regex  2: Formula .</param>
         /// <param name="validationString">Validation string (regex or formula).</param>
-        public AdditionalFieldIntDTO(int? value = default(int?), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldIntDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), string mandatoryCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, mandatoryCondition, addressBookDefaultFilter, enabledAddressBook, columns)
+        public AdditionalFieldIntDTO(int? value = default(int?), bool? showThousandsSeparator = default(bool?), int? additionalFieldType = default(int?), int? groupId = default(int?), int? binderFieldId = default(int?), int? taskWorkVariableId = default(int?), int? validationType = default(int?), string validationString = default(string), string name = default(string), string externalId = default(string), string description = default(string), int? order = default(int?), string dataSource = default(string), bool? required = default(bool?), string formula = default(string), string className = "AdditionalFieldIntDTO", bool? locked = default(bool?), string comboGruppiId = default(string), List<DependencyFieldItem> dependencyFields = default(List<DependencyFieldItem>), List<AssocitationFieldItem> associations = default(List<AssocitationFieldItem>), bool? isAdditional = default(bool?), bool? visible = default(bool?), string predefinedProfileFormula = default(string), string visibilityCondition = default(string), string mandatoryCondition = default(string), int? addressBookDefaultFilter = default(int?), List<int?> enabledAddressBook = default(List<int?>), int? columns = default(int?)) : base(name, externalId, description, order, dataSource, required, formula, className, locked, comboGruppiId, dependencyFields, associations, isAdditional, visible, predefinedProfileFormula, visibilityCondition, mandatoryCondition, addressBookDefaultFilter, enabledAddressBook, columns)
         {
             this.Value = value;
+            this.ShowThousandsSeparator = showThousandsSeparator;
             this.AdditionalFieldType = additionalFieldType;
             this.GroupId = groupId;
             this.BinderFieldId = binderFieldId;
@@ -60,6 +62,12 @@ namespace ARXivarNEXT.Client.Model
         /// <value>Value</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
         public int? Value { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ShowThousandsSeparator
+        /// </summary>
+        [DataMember(Name="showThousandsSeparator", EmitDefaultValue=false)]
+        public bool? ShowThousandsSeparator { get; set; }
 
         /// <summary>
         /// Possible values:  0: Textbox  1: Databox  2: Numeric  3: Combobox  4: TableBox  5: Checkbox  6: MultiValue  7: ClasseBox  8: Group  9: RubricaBox  10: TextArea 
@@ -113,6 +121,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("class AdditionalFieldIntDTO {\n");
             sb.Append("  ").Append(base.ToString().Replace("\n", "\n  ")).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  ShowThousandsSeparator: ").Append(ShowThousandsSeparator).Append("\n");
             sb.Append("  AdditionalFieldType: ").Append(AdditionalFieldType).Append("\n");
             sb.Append("  GroupId: ").Append(GroupId).Append("\n");
             sb.Append("  BinderFieldId: ").Append(BinderFieldId).Append("\n");
@@ -159,6 +168,11 @@ namespace ARXivarNEXT.Client.Model
                     this.Value.Equals(input.Value))
                 ) && base.Equals(input) && 
                 (
+                    this.ShowThousandsSeparator == input.ShowThousandsSeparator ||
+                    (this.ShowThousandsSeparator != null &&
+                    this.ShowThousandsSeparator.Equals(input.ShowThousandsSeparator))
+                ) && base.Equals(input) && 
+                (
                     this.AdditionalFieldType == input.AdditionalFieldType ||
                     (this.AdditionalFieldType != null &&
                     this.AdditionalFieldType.Equals(input.AdditionalFieldType))
@@ -201,6 +215,8 @@ namespace ARXivarNEXT.Client.Model
                 int hashCode = base.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
+                if (this.ShowThousandsSeparator != null)
+                    hashCode = hashCode * 59 + this.ShowThousandsSeparator.GetHashCode();
                 if (this.AdditionalFieldType != null)
                     hashCode = hashCode * 59 + this.AdditionalFieldType.GetHashCode();
                 if (this.GroupId != null)

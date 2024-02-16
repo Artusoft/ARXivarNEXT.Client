@@ -406,7 +406,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -417,7 +417,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -494,7 +494,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns></returns>
         void AddressBookSetPermissionByAddrebookId (int? addressBookId, PermissionsDTO permissions);
 
@@ -506,7 +506,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AddressBookSetPermissionByAddrebookIdWithHttpInfo (int? addressBookId, PermissionsDTO permissions);
         /// <summary>
@@ -937,7 +937,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -948,7 +948,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -1025,7 +1025,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task AddressBookSetPermissionByAddrebookIdAsync (int? addressBookId, PermissionsDTO permissions);
 
@@ -1037,7 +1037,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AddressBookSetPermissionByAddrebookIdAsyncWithHttpInfo (int? addressBookId, PermissionsDTO permissions);
         /// <summary>
@@ -3899,7 +3899,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -3911,7 +3911,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -3985,7 +3985,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -3998,7 +3998,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -4585,7 +4585,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns></returns>
         public void AddressBookSetPermissionByAddrebookId (int? addressBookId, PermissionsDTO permissions)
         {
@@ -4597,7 +4597,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public ApiResponse<Object> AddressBookSetPermissionByAddrebookIdWithHttpInfo (int? addressBookId, PermissionsDTO permissions)
         {
@@ -4672,7 +4672,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task AddressBookSetPermissionByAddrebookIdAsync (int? addressBookId, PermissionsDTO permissions)
         {
@@ -4685,7 +4685,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookId">Id of the addressBook</param>
-        /// <param name="permissions"></param>
+        /// <param name="permissions">The permissions</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<ApiResponse<Object>> AddressBookSetPermissionByAddrebookIdAsyncWithHttpInfo (int? addressBookId, PermissionsDTO permissions)
         {

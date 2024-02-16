@@ -53,13 +53,13 @@ namespace ARXivarNEXT.Client.Client
         public ApiClient()
         {
             Configuration = ARXivarNEXT.Client.Client.Configuration.Default;
-            RestClient = new RestClient("https://xxxx.myarxivar.it/ARXivarNextWebApi");
+            RestClient = new RestClient("https://demoarxivar.pragmos.it/ARXivarNextWebApi");
             RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (https://xxxx.myarxivar.it/ARXivarNextWebApi).
+        /// with default base path (https://demoarxivar.pragmos.it/ARXivarNextWebApi).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -75,7 +75,7 @@ namespace ARXivarNEXT.Client.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "https://xxxx.myarxivar.it/ARXivarNextWebApi")
+        public ApiClient(String basePath = "https://demoarxivar.pragmos.it/ARXivarNextWebApi")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

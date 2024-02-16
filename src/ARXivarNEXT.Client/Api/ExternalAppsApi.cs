@@ -94,7 +94,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ExternalAppAuthParamsDTO</returns>
         ExternalAppAuthParamsDTO ExternalAppsGetExternalAppAuthParams (int? externalAppType);
 
@@ -105,7 +105,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ApiResponse of ExternalAppAuthParamsDTO</returns>
         ApiResponse<ExternalAppAuthParamsDTO> ExternalAppsGetExternalAppAuthParamsWithHttpInfo (int? externalAppType);
         /// <summary>
@@ -115,7 +115,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         List<ExternalAppProfilationModeDTO> ExternalAppsGetProfilationOptions (int? externalAppType);
 
@@ -126,7 +126,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ApiResponse of List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         ApiResponse<List<ExternalAppProfilationModeDTO>> ExternalAppsGetProfilationOptionsWithHttpInfo (int? externalAppType);
         /// <summary>
@@ -243,7 +243,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ExternalAppAuthParamsDTO</returns>
         System.Threading.Tasks.Task<ExternalAppAuthParamsDTO> ExternalAppsGetExternalAppAuthParamsAsync (int? externalAppType);
 
@@ -254,7 +254,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ApiResponse (ExternalAppAuthParamsDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<ExternalAppAuthParamsDTO>> ExternalAppsGetExternalAppAuthParamsAsyncWithHttpInfo (int? externalAppType);
         /// <summary>
@@ -264,7 +264,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         System.Threading.Tasks.Task<List<ExternalAppProfilationModeDTO>> ExternalAppsGetProfilationOptionsAsync (int? externalAppType);
 
@@ -275,7 +275,7 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ApiResponse (List&lt;ExternalAppProfilationModeDTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<ExternalAppProfilationModeDTO>>> ExternalAppsGetProfilationOptionsAsyncWithHttpInfo (int? externalAppType);
         /// <summary>
@@ -909,7 +909,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns authorization parameters for retrieve access token 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ExternalAppAuthParamsDTO</returns>
         public ExternalAppAuthParamsDTO ExternalAppsGetExternalAppAuthParams (int? externalAppType)
         {
@@ -921,7 +921,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns authorization parameters for retrieve access token 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ApiResponse of ExternalAppAuthParamsDTO</returns>
         public ApiResponse< ExternalAppAuthParamsDTO > ExternalAppsGetExternalAppAuthParamsWithHttpInfo (int? externalAppType)
         {
@@ -983,7 +983,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns authorization parameters for retrieve access token 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ExternalAppAuthParamsDTO</returns>
         public async System.Threading.Tasks.Task<ExternalAppAuthParamsDTO> ExternalAppsGetExternalAppAuthParamsAsync (int? externalAppType)
         {
@@ -996,7 +996,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns authorization parameters for retrieve access token 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ApiResponse (ExternalAppAuthParamsDTO)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<ExternalAppAuthParamsDTO>> ExternalAppsGetExternalAppAuthParamsAsyncWithHttpInfo (int? externalAppType)
         {
@@ -1058,7 +1058,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns profilation options for a new office document in ARXivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         public List<ExternalAppProfilationModeDTO> ExternalAppsGetProfilationOptions (int? externalAppType)
         {
@@ -1070,7 +1070,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns profilation options for a new office document in ARXivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>ApiResponse of List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         public ApiResponse< List<ExternalAppProfilationModeDTO> > ExternalAppsGetProfilationOptionsWithHttpInfo (int? externalAppType)
         {
@@ -1132,7 +1132,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns profilation options for a new office document in ARXivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of List&lt;ExternalAppProfilationModeDTO&gt;</returns>
         public async System.Threading.Tasks.Task<List<ExternalAppProfilationModeDTO>> ExternalAppsGetProfilationOptionsAsync (int? externalAppType)
         {
@@ -1145,7 +1145,7 @@ namespace ARXivarNEXT.Client.Api
         /// Returns profilation options for a new office document in ARXivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="externalAppType">Possible values:  0: Office365 </param>
+        /// <param name="externalAppType">Possible values:  0: Office365  1: Outlook365 </param>
         /// <returns>Task of ApiResponse (List&lt;ExternalAppProfilationModeDTO&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<ExternalAppProfilationModeDTO>>> ExternalAppsGetProfilationOptionsAsyncWithHttpInfo (int? externalAppType)
         {

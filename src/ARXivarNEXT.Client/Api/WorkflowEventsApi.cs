@@ -46,6 +46,46 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> WorkflowEventsDeleteEventWithHttpInfo (string eventId);
         /// <summary>
+        /// Use this call to get the filters in all the event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EventFiltersContextDTO&gt;</returns>
+        List<EventFiltersContextDTO> WorkflowEventsGetContextFilters ();
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EventFiltersContextDTO&gt;</returns>
+        ApiResponse<List<EventFiltersContextDTO>> WorkflowEventsGetContextFiltersWithHttpInfo ();
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>EventFiltersContextDTO</returns>
+        EventFiltersContextDTO WorkflowEventsGetContextFilters_0 (int? context);
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>ApiResponse of EventFiltersContextDTO</returns>
+        ApiResponse<EventFiltersContextDTO> WorkflowEventsGetContextFilters_0WithHttpInfo (int? context);
+        /// <summary>
         /// This call retrieves a specific V2 event
         /// </summary>
         /// <remarks>
@@ -192,6 +232,46 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="eventId">Identifier of workflow event</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> WorkflowEventsDeleteEventAsyncWithHttpInfo (string eventId);
+        /// <summary>
+        /// Use this call to get the filters in all the event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EventFiltersContextDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<EventFiltersContextDTO>> WorkflowEventsGetContextFiltersAsync ();
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EventFiltersContextDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<EventFiltersContextDTO>>> WorkflowEventsGetContextFiltersAsyncWithHttpInfo ();
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>Task of EventFiltersContextDTO</returns>
+        System.Threading.Tasks.Task<EventFiltersContextDTO> WorkflowEventsGetContextFilters_0Async (int? context);
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>Task of ApiResponse (EventFiltersContextDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EventFiltersContextDTO>> WorkflowEventsGetContextFilters_0AsyncWithHttpInfo (int? context);
         /// <summary>
         /// This call retrieves a specific V2 event
         /// </summary>
@@ -553,6 +633,292 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;EventFiltersContextDTO&gt;</returns>
+        public List<EventFiltersContextDTO> WorkflowEventsGetContextFilters ()
+        {
+             ApiResponse<List<EventFiltersContextDTO>> localVarResponse = WorkflowEventsGetContextFiltersWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;EventFiltersContextDTO&gt;</returns>
+        public ApiResponse< List<EventFiltersContextDTO> > WorkflowEventsGetContextFiltersWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/WorkflowEvents/event/all-context-filters";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowEventsGetContextFilters", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<EventFiltersContextDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<EventFiltersContextDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EventFiltersContextDTO>)));
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;EventFiltersContextDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<EventFiltersContextDTO>> WorkflowEventsGetContextFiltersAsync ()
+        {
+             ApiResponse<List<EventFiltersContextDTO>> localVarResponse = await WorkflowEventsGetContextFiltersAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in all the event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;EventFiltersContextDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<EventFiltersContextDTO>>> WorkflowEventsGetContextFiltersAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/WorkflowEvents/event/all-context-filters";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowEventsGetContextFilters", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<EventFiltersContextDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<EventFiltersContextDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<EventFiltersContextDTO>)));
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>EventFiltersContextDTO</returns>
+        public EventFiltersContextDTO WorkflowEventsGetContextFilters_0 (int? context)
+        {
+             ApiResponse<EventFiltersContextDTO> localVarResponse = WorkflowEventsGetContextFilters_0WithHttpInfo(context);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>ApiResponse of EventFiltersContextDTO</returns>
+        public ApiResponse< EventFiltersContextDTO > WorkflowEventsGetContextFilters_0WithHttpInfo (int? context)
+        {
+            // verify the required parameter 'context' is set
+            if (context == null)
+                throw new ApiException(400, "Missing required parameter 'context' when calling WorkflowEventsApi->WorkflowEventsGetContextFilters_0");
+
+            var localVarPath = "./api/WorkflowEvents/event/context-filters/{context}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (context != null) localVarPathParams.Add("context", this.Configuration.ApiClient.ParameterToString(context)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowEventsGetContextFilters_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EventFiltersContextDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (EventFiltersContextDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EventFiltersContextDTO)));
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>Task of EventFiltersContextDTO</returns>
+        public async System.Threading.Tasks.Task<EventFiltersContextDTO> WorkflowEventsGetContextFilters_0Async (int? context)
+        {
+             ApiResponse<EventFiltersContextDTO> localVarResponse = await WorkflowEventsGetContextFilters_0AsyncWithHttpInfo(context);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Use this call to get the filters in for a specific event context 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="context">Possible values:  0: Profile  1: Folders  2: Binder  3: Contacts  4: Sharing  5: ManualStart  6: ExpiredDocument </param>
+        /// <returns>Task of ApiResponse (EventFiltersContextDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<EventFiltersContextDTO>> WorkflowEventsGetContextFilters_0AsyncWithHttpInfo (int? context)
+        {
+            // verify the required parameter 'context' is set
+            if (context == null)
+                throw new ApiException(400, "Missing required parameter 'context' when calling WorkflowEventsApi->WorkflowEventsGetContextFilters_0");
+
+            var localVarPath = "./api/WorkflowEvents/event/context-filters/{context}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (context != null) localVarPathParams.Add("context", this.Configuration.ApiClient.ParameterToString(context)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowEventsGetContextFilters_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<EventFiltersContextDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (EventFiltersContextDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EventFiltersContextDTO)));
         }
 
         /// <summary>

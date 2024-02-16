@@ -33,7 +33,7 @@ namespace ARXivarNEXT.Client.Model
         /// </summary>
         /// <param name="countPages">Number of pages.</param>
         /// <param name="status">Possible values:  0: Ok  1: Error  2: Pending .</param>
-        /// <param name="errorMessage">errorMessage.</param>
+        /// <param name="errorMessage">The error message.</param>
         public PreviewSchemaDTO(int? countPages = default(int?), int? status = default(int?), string errorMessage = default(string))
         {
             this.CountPages = countPages;
@@ -56,8 +56,9 @@ namespace ARXivarNEXT.Client.Model
         public int? Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets ErrorMessage
+        /// The error message
         /// </summary>
+        /// <value>The error message</value>
         [DataMember(Name="errorMessage", EmitDefaultValue=false)]
         public string ErrorMessage { get; set; }
 

@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call insert new barcode
+        /// This call inserts new barcode
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace ARXivarNEXT.Client.Api
         BarcodeDTO BarcodeBarcodeInsert (BarcodeInsertRequestDTO barcodeInsertRequest);
 
         /// <summary>
-        /// This call insert new barcode
+        /// This call inserts new barcode
         /// </summary>
         /// <remarks>
         /// 
@@ -45,6 +45,90 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
         /// <returns>ApiResponse of BarcodeDTO</returns>
         ApiResponse<BarcodeDTO> BarcodeBarcodeInsertWithHttpInfo (BarcodeInsertRequestDTO barcodeInsertRequest);
+        /// <summary>
+        /// This call inserts new ArxBarcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>BarcodeDTO</returns>
+        BarcodeDTO BarcodeBarcodeInsertArxBarcode (BarcodeInsertArxBarcodeRequestDTO request);
+
+        /// <summary>
+        /// This call inserts new ArxBarcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>ApiResponse of BarcodeDTO</returns>
+        ApiResponse<BarcodeDTO> BarcodeBarcodeInsertArxBarcodeWithHttpInfo (BarcodeInsertArxBarcodeRequestDTO request);
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        void BarcodeDeleteAll (List<int?> ids);
+
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeDeleteAllWithHttpInfo (List<int?> ids);
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns></returns>
+        void BarcodeDeleteBarcode (int? id);
+
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeDeleteBarcodeWithHttpInfo (int? id);
+        /// <summary>
+        /// Deletes a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns></returns>
+        void BarcodeDeleteBarcodeUserServiceRuleById (int? ruleId);
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeDeleteBarcodeUserServiceRuleByIdWithHttpInfo (int? ruleId);
         /// <summary>
         /// This call returns the barcode grapich user template
         /// </summary>
@@ -66,6 +150,46 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="dmTipidocumentoId">Document type identifier</param>
         /// <returns>ApiResponse of BarcodeGraphicTemplateDto</returns>
         ApiResponse<BarcodeGraphicTemplateDto> BarcodeGetBarcodeGraphicUserTemplateWithHttpInfo (int? dmTipidocumentoId);
+        /// <summary>
+        /// Gets a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        BarcodeServiceRuleDTO BarcodeGetBarcodeUserServiceRuleById (int? ruleId);
+
+        /// <summary>
+        /// Gets a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        ApiResponse<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRuleByIdWithHttpInfo (int? ruleId);
+        /// <summary>
+        /// Get the barcode service rule for the connected user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        BarcodeServiceRuleDTO BarcodeGetBarcodeUserServiceRules ();
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        ApiResponse<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRulesWithHttpInfo ();
         /// <summary>
         /// This call returns the barcode user default settings
         /// </summary>
@@ -128,15 +252,56 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of DefaultBarcodeTemplateDto</returns>
         ApiResponse<DefaultBarcodeTemplateDto> BarcodeGetDefaultTemplateWithHttpInfo (string printerFamilyValue);
         /// <summary>
+        /// Saves a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        BarcodeServiceRuleDTO BarcodeInsertBarcodeUserServiceRule (BarcodeServiceRuleDTO barcodeServiceRule);
+
+        /// <summary>
+        /// Saves a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        ApiResponse<BarcodeServiceRuleDTO> BarcodeInsertBarcodeUserServiceRuleWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule);
+        /// <summary>
+        /// This method matches the barcode with the relative profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        void BarcodeMatchDocument (List<int?> ids);
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeMatchDocumentWithHttpInfo (List<int?> ids);
+        /// <summary>
         /// This call executes the print of barcode in format Arxivar
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>BarcodePrintResultDto</returns>
-        BarcodePrintResultDto BarcodePrintArxBarcode (int? docnumber);
+        BarcodePrintResultDto BarcodePrintArxBarcode ();
 
         /// <summary>
         /// This call executes the print of barcode in format Arxivar
@@ -145,9 +310,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        ApiResponse<BarcodePrintResultDto> BarcodePrintArxBarcodeWithHttpInfo (int? docnumber);
+        ApiResponse<BarcodePrintResultDto> BarcodePrintArxBarcodeWithHttpInfo ();
         /// <summary>
         /// This call executes the print of barcode for attachment of document
         /// </summary>
@@ -156,8 +320,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        BarcodePrintResultDto BarcodePrintAttachmentByDocnumber (int? docnumber);
+        BarcodePrintResultDto BarcodePrintAttachmentByDocnumber (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode for attachment of document
@@ -167,8 +332,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        ApiResponse<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberWithHttpInfo (int? docnumber);
+        ApiResponse<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null);
         /// <summary>
         /// This call executes the print of barcode associated with a document
         /// </summary>
@@ -177,8 +343,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        BarcodePrintResultDto BarcodePrintByDocnumber (int? docnumber);
+        BarcodePrintResultDto BarcodePrintByDocnumber (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode associated with a document
@@ -188,8 +355,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        ApiResponse<BarcodePrintResultDto> BarcodePrintByDocnumberWithHttpInfo (int? docnumber);
+        ApiResponse<BarcodePrintResultDto> BarcodePrintByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null);
         /// <summary>
         /// This call executes the print of barcode
         /// </summary>
@@ -219,8 +387,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        BarcodePrintResultDto BarcodePrintRevisionByDocnumber (int? docnumber);
+        BarcodePrintResultDto BarcodePrintRevisionByDocnumber (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode for revision of document
@@ -230,8 +399,32 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        ApiResponse<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberWithHttpInfo (int? docnumber);
+        ApiResponse<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null);
+        /// <summary>
+        /// This method renames a barcode with a specified id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns></returns>
+        void BarcodeRenameBarcode (int? id, string name);
+
+        /// <summary>
+        /// This method renames a barcode with a specified id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeRenameBarcodeWithHttpInfo (int? id, string name);
         /// <summary>
         /// This call sets the barcode graphic user template
         /// </summary>
@@ -295,10 +488,52 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="templateDto">Barcode Template</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> BarcodeSetBarcodeUserTemplateWithHttpInfo (BarcodeTemplateDto templateDto);
+        /// <summary>
+        /// This method detaches a document from a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        void BarcodeUnMatchDocument (List<int?> ids);
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> BarcodeUnMatchDocumentWithHttpInfo (List<int?> ids);
+        /// <summary>
+        /// Updates a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        BarcodeServiceRuleDTO BarcodeUpdateBarcodeUserServiceRule (BarcodeServiceRuleDTO barcodeServiceRule);
+
+        /// <summary>
+        /// Updates a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        ApiResponse<BarcodeServiceRuleDTO> BarcodeUpdateBarcodeUserServiceRuleWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call insert new barcode
+        /// This call inserts new barcode
         /// </summary>
         /// <remarks>
         /// 
@@ -309,7 +544,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task<BarcodeDTO> BarcodeBarcodeInsertAsync (BarcodeInsertRequestDTO barcodeInsertRequest);
 
         /// <summary>
-        /// This call insert new barcode
+        /// This call inserts new barcode
         /// </summary>
         /// <remarks>
         /// 
@@ -318,6 +553,90 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
         /// <returns>Task of ApiResponse (BarcodeDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<BarcodeDTO>> BarcodeBarcodeInsertAsyncWithHttpInfo (BarcodeInsertRequestDTO barcodeInsertRequest);
+        /// <summary>
+        /// This call inserts new ArxBarcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>Task of BarcodeDTO</returns>
+        System.Threading.Tasks.Task<BarcodeDTO> BarcodeBarcodeInsertArxBarcodeAsync (BarcodeInsertArxBarcodeRequestDTO request);
+
+        /// <summary>
+        /// This call inserts new ArxBarcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>Task of ApiResponse (BarcodeDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BarcodeDTO>> BarcodeBarcodeInsertArxBarcodeAsyncWithHttpInfo (BarcodeInsertArxBarcodeRequestDTO request);
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeDeleteAllAsync (List<int?> ids);
+
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteAllAsyncWithHttpInfo (List<int?> ids);
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeDeleteBarcodeAsync (int? id);
+
+        /// <summary>
+        /// This method deletes a barcode by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteBarcodeAsyncWithHttpInfo (int? id);
+        /// <summary>
+        /// Deletes a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeDeleteBarcodeUserServiceRuleByIdAsync (int? ruleId);
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteBarcodeUserServiceRuleByIdAsyncWithHttpInfo (int? ruleId);
         /// <summary>
         /// This call returns the barcode grapich user template
         /// </summary>
@@ -339,6 +658,46 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="dmTipidocumentoId">Document type identifier</param>
         /// <returns>Task of ApiResponse (BarcodeGraphicTemplateDto)</returns>
         System.Threading.Tasks.Task<ApiResponse<BarcodeGraphicTemplateDto>> BarcodeGetBarcodeGraphicUserTemplateAsyncWithHttpInfo (int? dmTipidocumentoId);
+        /// <summary>
+        /// Gets a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRuleByIdAsync (int? ruleId);
+
+        /// <summary>
+        /// Gets a barcode service rule by its id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeGetBarcodeUserServiceRuleByIdAsyncWithHttpInfo (int? ruleId);
+        /// <summary>
+        /// Get the barcode service rule for the connected user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRulesAsync ();
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeGetBarcodeUserServiceRulesAsyncWithHttpInfo ();
         /// <summary>
         /// This call returns the barcode user default settings
         /// </summary>
@@ -401,15 +760,56 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (DefaultBarcodeTemplateDto)</returns>
         System.Threading.Tasks.Task<ApiResponse<DefaultBarcodeTemplateDto>> BarcodeGetDefaultTemplateAsyncWithHttpInfo (string printerFamilyValue);
         /// <summary>
+        /// Saves a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeInsertBarcodeUserServiceRuleAsync (BarcodeServiceRuleDTO barcodeServiceRule);
+
+        /// <summary>
+        /// Saves a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeInsertBarcodeUserServiceRuleAsyncWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule);
+        /// <summary>
+        /// This method matches the barcode with the relative profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeMatchDocumentAsync (List<int?> ids);
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeMatchDocumentAsyncWithHttpInfo (List<int?> ids);
+        /// <summary>
         /// This call executes the print of barcode in format Arxivar
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintArxBarcodeAsync (int? docnumber);
+        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintArxBarcodeAsync ();
 
         /// <summary>
         /// This call executes the print of barcode in format Arxivar
@@ -418,9 +818,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintArxBarcodeAsyncWithHttpInfo (int? docnumber);
+        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintArxBarcodeAsyncWithHttpInfo ();
         /// <summary>
         /// This call executes the print of barcode for attachment of document
         /// </summary>
@@ -429,8 +828,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberAsync (int? docnumber);
+        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberAsync (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode for attachment of document
@@ -440,8 +840,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo (int? docnumber);
+        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null);
         /// <summary>
         /// This call executes the print of barcode associated with a document
         /// </summary>
@@ -450,8 +851,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintByDocnumberAsync (int? docnumber);
+        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintByDocnumberAsync (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode associated with a document
@@ -461,8 +863,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintByDocnumberAsyncWithHttpInfo (int? docnumber);
+        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null);
         /// <summary>
         /// This call executes the print of barcode
         /// </summary>
@@ -492,8 +895,9 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberAsync (int? docnumber);
+        System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberAsync (int? docnumber, bool? insertRecord = null);
 
         /// <summary>
         /// This call executes the print of barcode for revision of document
@@ -503,8 +907,32 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintRevisionByDocnumberAsyncWithHttpInfo (int? docnumber);
+        System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintRevisionByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null);
+        /// <summary>
+        /// This method renames a barcode with a specified id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeRenameBarcodeAsync (int? id, string name);
+
+        /// <summary>
+        /// This method renames a barcode with a specified id
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeRenameBarcodeAsyncWithHttpInfo (int? id, string name);
         /// <summary>
         /// This call sets the barcode graphic user template
         /// </summary>
@@ -568,6 +996,48 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="templateDto">Barcode Template</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeSetBarcodeUserTemplateAsyncWithHttpInfo (BarcodeTemplateDto templateDto);
+        /// <summary>
+        /// This method detaches a document from a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task BarcodeUnMatchDocumentAsync (List<int?> ids);
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeUnMatchDocumentAsyncWithHttpInfo (List<int?> ids);
+        /// <summary>
+        /// Updates a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeUpdateBarcodeUserServiceRuleAsync (BarcodeServiceRuleDTO barcodeServiceRule);
+
+        /// <summary>
+        /// Updates a barcode service rule
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeUpdateBarcodeUserServiceRuleAsyncWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule);
         #endregion Asynchronous Operations
     }
 
@@ -669,7 +1139,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call insert new barcode 
+        /// This call inserts new barcode 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
@@ -681,7 +1151,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call insert new barcode 
+        /// This call inserts new barcode 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
@@ -755,7 +1225,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call insert new barcode 
+        /// This call inserts new barcode 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
@@ -768,7 +1238,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call insert new barcode 
+        /// This call inserts new barcode 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="barcodeInsertRequest">Barcode insert request</param>
@@ -839,6 +1309,620 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<BarcodeDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (BarcodeDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeDTO)));
+        }
+
+        /// <summary>
+        /// This call inserts new ArxBarcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>BarcodeDTO</returns>
+        public BarcodeDTO BarcodeBarcodeInsertArxBarcode (BarcodeInsertArxBarcodeRequestDTO request)
+        {
+             ApiResponse<BarcodeDTO> localVarResponse = BarcodeBarcodeInsertArxBarcodeWithHttpInfo(request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call inserts new ArxBarcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>ApiResponse of BarcodeDTO</returns>
+        public ApiResponse< BarcodeDTO > BarcodeBarcodeInsertArxBarcodeWithHttpInfo (BarcodeInsertArxBarcodeRequestDTO request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BarcodeApi->BarcodeBarcodeInsertArxBarcode");
+
+            var localVarPath = "./api/Barcode/arxBarcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeBarcodeInsertArxBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeDTO)));
+        }
+
+        /// <summary>
+        /// This call inserts new ArxBarcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>Task of BarcodeDTO</returns>
+        public async System.Threading.Tasks.Task<BarcodeDTO> BarcodeBarcodeInsertArxBarcodeAsync (BarcodeInsertArxBarcodeRequestDTO request)
+        {
+             ApiResponse<BarcodeDTO> localVarResponse = await BarcodeBarcodeInsertArxBarcodeAsyncWithHttpInfo(request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call inserts new ArxBarcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="request">Barcode insert request</param>
+        /// <returns>Task of ApiResponse (BarcodeDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodeDTO>> BarcodeBarcodeInsertArxBarcodeAsyncWithHttpInfo (BarcodeInsertArxBarcodeRequestDTO request)
+        {
+            // verify the required parameter 'request' is set
+            if (request == null)
+                throw new ApiException(400, "Missing required parameter 'request' when calling BarcodeApi->BarcodeBarcodeInsertArxBarcode");
+
+            var localVarPath = "./api/Barcode/arxBarcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeBarcodeInsertArxBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeDTO)));
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        public void BarcodeDeleteAll (List<int?> ids)
+        {
+             BarcodeDeleteAllWithHttpInfo(ids);
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeDeleteAllWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeDeleteAll");
+
+            var localVarPath = "./api/Barcode/DeleteAll";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteAll", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeDeleteAllAsync (List<int?> ids)
+        {
+             await BarcodeDeleteAllAsyncWithHttpInfo(ids);
+
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteAllAsyncWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeDeleteAll");
+
+            var localVarPath = "./api/Barcode/DeleteAll";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteAll", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns></returns>
+        public void BarcodeDeleteBarcode (int? id)
+        {
+             BarcodeDeleteBarcodeWithHttpInfo(id);
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeDeleteBarcodeWithHttpInfo (int? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling BarcodeApi->BarcodeDeleteBarcode");
+
+            var localVarPath = "./api/Barcode/Delete/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeDeleteBarcodeAsync (int? id)
+        {
+             await BarcodeDeleteBarcodeAsyncWithHttpInfo(id);
+
+        }
+
+        /// <summary>
+        /// This method deletes a barcode by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteBarcodeAsyncWithHttpInfo (int? id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling BarcodeApi->BarcodeDeleteBarcode");
+
+            var localVarPath = "./api/Barcode/Delete/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns></returns>
+        public void BarcodeDeleteBarcodeUserServiceRuleById (int? ruleId)
+        {
+             BarcodeDeleteBarcodeUserServiceRuleByIdWithHttpInfo(ruleId);
+        }
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeDeleteBarcodeUserServiceRuleByIdWithHttpInfo (int? ruleId)
+        {
+            // verify the required parameter 'ruleId' is set
+            if (ruleId == null)
+                throw new ApiException(400, "Missing required parameter 'ruleId' when calling BarcodeApi->BarcodeDeleteBarcodeUserServiceRuleById");
+
+            var localVarPath = "./api/Barcode/UserServiceRule/{ruleId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ruleId != null) localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteBarcodeUserServiceRuleById", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeDeleteBarcodeUserServiceRuleByIdAsync (int? ruleId)
+        {
+             await BarcodeDeleteBarcodeUserServiceRuleByIdAsyncWithHttpInfo(ruleId);
+
+        }
+
+        /// <summary>
+        /// Deletes a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeDeleteBarcodeUserServiceRuleByIdAsyncWithHttpInfo (int? ruleId)
+        {
+            // verify the required parameter 'ruleId' is set
+            if (ruleId == null)
+                throw new ApiException(400, "Missing required parameter 'ruleId' when calling BarcodeApi->BarcodeDeleteBarcodeUserServiceRuleById");
+
+            var localVarPath = "./api/Barcode/UserServiceRule/{ruleId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ruleId != null) localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeDeleteBarcodeUserServiceRuleById", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -988,6 +2072,292 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<BarcodeGraphicTemplateDto>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (BarcodeGraphicTemplateDto) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeGraphicTemplateDto)));
+        }
+
+        /// <summary>
+        /// Gets a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        public BarcodeServiceRuleDTO BarcodeGetBarcodeUserServiceRuleById (int? ruleId)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = BarcodeGetBarcodeUserServiceRuleByIdWithHttpInfo(ruleId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        public ApiResponse< BarcodeServiceRuleDTO > BarcodeGetBarcodeUserServiceRuleByIdWithHttpInfo (int? ruleId)
+        {
+            // verify the required parameter 'ruleId' is set
+            if (ruleId == null)
+                throw new ApiException(400, "Missing required parameter 'ruleId' when calling BarcodeApi->BarcodeGetBarcodeUserServiceRuleById");
+
+            var localVarPath = "./api/Barcode/UserServiceRule/{ruleId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ruleId != null) localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeGetBarcodeUserServiceRuleById", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// Gets a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        public async System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRuleByIdAsync (int? ruleId)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = await BarcodeGetBarcodeUserServiceRuleByIdAsyncWithHttpInfo(ruleId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Gets a barcode service rule by its id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ruleId">The rule Id</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeGetBarcodeUserServiceRuleByIdAsyncWithHttpInfo (int? ruleId)
+        {
+            // verify the required parameter 'ruleId' is set
+            if (ruleId == null)
+                throw new ApiException(400, "Missing required parameter 'ruleId' when calling BarcodeApi->BarcodeGetBarcodeUserServiceRuleById");
+
+            var localVarPath = "./api/Barcode/UserServiceRule/{ruleId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ruleId != null) localVarPathParams.Add("ruleId", this.Configuration.ApiClient.ParameterToString(ruleId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeGetBarcodeUserServiceRuleById", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        public BarcodeServiceRuleDTO BarcodeGetBarcodeUserServiceRules ()
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = BarcodeGetBarcodeUserServiceRulesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        public ApiResponse< BarcodeServiceRuleDTO > BarcodeGetBarcodeUserServiceRulesWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeGetBarcodeUserServiceRules", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        public async System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeGetBarcodeUserServiceRulesAsync ()
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = await BarcodeGetBarcodeUserServiceRulesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the barcode service rule for the connected user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeGetBarcodeUserServiceRulesAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeGetBarcodeUserServiceRules", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
         }
 
         /// <summary>
@@ -1426,14 +2796,349 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
+        /// Saves a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        public BarcodeServiceRuleDTO BarcodeInsertBarcodeUserServiceRule (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = BarcodeInsertBarcodeUserServiceRuleWithHttpInfo(barcodeServiceRule);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Saves a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        public ApiResponse< BarcodeServiceRuleDTO > BarcodeInsertBarcodeUserServiceRuleWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+            // verify the required parameter 'barcodeServiceRule' is set
+            if (barcodeServiceRule == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeServiceRule' when calling BarcodeApi->BarcodeInsertBarcodeUserServiceRule");
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeServiceRule != null && barcodeServiceRule.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeServiceRule); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeServiceRule; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeInsertBarcodeUserServiceRule", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// Saves a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        public async System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeInsertBarcodeUserServiceRuleAsync (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = await BarcodeInsertBarcodeUserServiceRuleAsyncWithHttpInfo(barcodeServiceRule);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Saves a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeInsertBarcodeUserServiceRuleAsyncWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+            // verify the required parameter 'barcodeServiceRule' is set
+            if (barcodeServiceRule == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeServiceRule' when calling BarcodeApi->BarcodeInsertBarcodeUserServiceRule");
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeServiceRule != null && barcodeServiceRule.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeServiceRule); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeServiceRule; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeInsertBarcodeUserServiceRule", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        public void BarcodeMatchDocument (List<int?> ids)
+        {
+             BarcodeMatchDocumentWithHttpInfo(ids);
+        }
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeMatchDocumentWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeMatchDocument");
+
+            var localVarPath = "./api/Barcode/Match";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeMatchDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeMatchDocumentAsync (List<int?> ids)
+        {
+             await BarcodeMatchDocumentAsyncWithHttpInfo(ids);
+
+        }
+
+        /// <summary>
+        /// This method matches the barcode with the relative profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeMatchDocumentAsyncWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeMatchDocument");
+
+            var localVarPath = "./api/Barcode/Match";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeMatchDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
         /// This call executes the print of barcode in format Arxivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>BarcodePrintResultDto</returns>
-        public BarcodePrintResultDto BarcodePrintArxBarcode (int? docnumber)
+        public BarcodePrintResultDto BarcodePrintArxBarcode ()
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintArxBarcodeWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintArxBarcodeWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1441,13 +3146,9 @@ namespace ARXivarNEXT.Client.Api
         /// This call executes the print of barcode in format Arxivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        public ApiResponse< BarcodePrintResultDto > BarcodePrintArxBarcodeWithHttpInfo (int? docnumber)
+        public ApiResponse< BarcodePrintResultDto > BarcodePrintArxBarcodeWithHttpInfo ()
         {
-            // verify the required parameter 'docnumber' is set
-            if (docnumber == null)
-                throw new ApiException(400, "Missing required parameter 'docnumber' when calling BarcodeApi->BarcodePrintArxBarcode");
 
             var localVarPath = "./api/Barcode/printArxBarcode";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1473,7 +3174,6 @@ namespace ARXivarNEXT.Client.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (docnumber != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "docnumber", docnumber)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1503,11 +3203,10 @@ namespace ARXivarNEXT.Client.Api
         /// This call executes the print of barcode in format Arxivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintArxBarcodeAsync (int? docnumber)
+        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintArxBarcodeAsync ()
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintArxBarcodeAsyncWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintArxBarcodeAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1516,13 +3215,9 @@ namespace ARXivarNEXT.Client.Api
         /// This call executes the print of barcode in format Arxivar 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="docnumber">Document identifier</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintArxBarcodeAsyncWithHttpInfo (int? docnumber)
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintArxBarcodeAsyncWithHttpInfo ()
         {
-            // verify the required parameter 'docnumber' is set
-            if (docnumber == null)
-                throw new ApiException(400, "Missing required parameter 'docnumber' when calling BarcodeApi->BarcodePrintArxBarcode");
 
             var localVarPath = "./api/Barcode/printArxBarcode";
             var localVarPathParams = new Dictionary<String, String>();
@@ -1548,7 +3243,6 @@ namespace ARXivarNEXT.Client.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (docnumber != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "docnumber", docnumber)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1579,10 +3273,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        public BarcodePrintResultDto BarcodePrintAttachmentByDocnumber (int? docnumber)
+        public BarcodePrintResultDto BarcodePrintAttachmentByDocnumber (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintAttachmentByDocnumberWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintAttachmentByDocnumberWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
         }
 
@@ -1591,8 +3286,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        public ApiResponse< BarcodePrintResultDto > BarcodePrintAttachmentByDocnumberWithHttpInfo (int? docnumber)
+        public ApiResponse< BarcodePrintResultDto > BarcodePrintAttachmentByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -1623,6 +3319,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1653,10 +3350,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberAsync (int? docnumber)
+        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintAttachmentByDocnumberAsync (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
 
         }
@@ -1666,8 +3364,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo (int? docnumber)
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintAttachmentByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -1698,6 +3397,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1728,10 +3428,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        public BarcodePrintResultDto BarcodePrintByDocnumber (int? docnumber)
+        public BarcodePrintResultDto BarcodePrintByDocnumber (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintByDocnumberWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintByDocnumberWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
         }
 
@@ -1740,8 +3441,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        public ApiResponse< BarcodePrintResultDto > BarcodePrintByDocnumberWithHttpInfo (int? docnumber)
+        public ApiResponse< BarcodePrintResultDto > BarcodePrintByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -1772,6 +3474,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1802,10 +3505,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintByDocnumberAsync (int? docnumber)
+        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintByDocnumberAsync (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintByDocnumberAsyncWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintByDocnumberAsyncWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
 
         }
@@ -1815,8 +3519,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintByDocnumberAsyncWithHttpInfo (int? docnumber)
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -1847,6 +3552,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2026,10 +3732,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>BarcodePrintResultDto</returns>
-        public BarcodePrintResultDto BarcodePrintRevisionByDocnumber (int? docnumber)
+        public BarcodePrintResultDto BarcodePrintRevisionByDocnumber (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintRevisionByDocnumberWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = BarcodePrintRevisionByDocnumberWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
         }
 
@@ -2038,8 +3745,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>ApiResponse of BarcodePrintResultDto</returns>
-        public ApiResponse< BarcodePrintResultDto > BarcodePrintRevisionByDocnumberWithHttpInfo (int? docnumber)
+        public ApiResponse< BarcodePrintResultDto > BarcodePrintRevisionByDocnumberWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -2070,6 +3778,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2100,10 +3809,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of BarcodePrintResultDto</returns>
-        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberAsync (int? docnumber)
+        public async System.Threading.Tasks.Task<BarcodePrintResultDto> BarcodePrintRevisionByDocnumberAsync (int? docnumber, bool? insertRecord = null)
         {
-             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintRevisionByDocnumberAsyncWithHttpInfo(docnumber);
+             ApiResponse<BarcodePrintResultDto> localVarResponse = await BarcodePrintRevisionByDocnumberAsyncWithHttpInfo(docnumber, insertRecord);
              return localVarResponse.Data;
 
         }
@@ -2113,8 +3823,9 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docnumber">Document identifier</param>
+        /// <param name="insertRecord">Create the barcode record (optional)</param>
         /// <returns>Task of ApiResponse (BarcodePrintResultDto)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintRevisionByDocnumberAsyncWithHttpInfo (int? docnumber)
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodePrintResultDto>> BarcodePrintRevisionByDocnumberAsyncWithHttpInfo (int? docnumber, bool? insertRecord = null)
         {
             // verify the required parameter 'docnumber' is set
             if (docnumber == null)
@@ -2145,6 +3856,7 @@ namespace ARXivarNEXT.Client.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (docnumber != null) localVarPathParams.Add("docnumber", this.Configuration.ApiClient.ParameterToString(docnumber)); // path parameter
+            if (insertRecord != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "insertRecord", insertRecord)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2168,6 +3880,181 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<BarcodePrintResultDto>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (BarcodePrintResultDto) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodePrintResultDto)));
+        }
+
+        /// <summary>
+        /// This method renames a barcode with a specified id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns></returns>
+        public void BarcodeRenameBarcode (int? id, string name)
+        {
+             BarcodeRenameBarcodeWithHttpInfo(id, name);
+        }
+
+        /// <summary>
+        /// This method renames a barcode with a specified id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeRenameBarcodeWithHttpInfo (int? id, string name)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling BarcodeApi->BarcodeRenameBarcode");
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling BarcodeApi->BarcodeRenameBarcode");
+
+            var localVarPath = "./api/Barcode/Rename/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (name != null && name.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(name); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = name; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeRenameBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method renames a barcode with a specified id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeRenameBarcodeAsync (int? id, string name)
+        {
+             await BarcodeRenameBarcodeAsyncWithHttpInfo(id, name);
+
+        }
+
+        /// <summary>
+        /// This method renames a barcode with a specified id 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The barcode id</param>
+        /// <param name="name">The new name</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeRenameBarcodeAsyncWithHttpInfo (int? id, string name)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling BarcodeApi->BarcodeRenameBarcode");
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling BarcodeApi->BarcodeRenameBarcode");
+
+            var localVarPath = "./api/Barcode/Rename/{id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (name != null && name.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(name); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = name; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeRenameBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -2657,6 +4544,342 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 null);
+        }
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns></returns>
+        public void BarcodeUnMatchDocument (List<int?> ids)
+        {
+             BarcodeUnMatchDocumentWithHttpInfo(ids);
+        }
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> BarcodeUnMatchDocumentWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeUnMatchDocument");
+
+            var localVarPath = "./api/Barcode/UnMatch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeUnMatchDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task BarcodeUnMatchDocumentAsync (List<int?> ids)
+        {
+             await BarcodeUnMatchDocumentAsyncWithHttpInfo(ids);
+
+        }
+
+        /// <summary>
+        /// This method detaches a document from a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="ids">The barcode ids</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> BarcodeUnMatchDocumentAsyncWithHttpInfo (List<int?> ids)
+        {
+            // verify the required parameter 'ids' is set
+            if (ids == null)
+                throw new ApiException(400, "Missing required parameter 'ids' when calling BarcodeApi->BarcodeUnMatchDocument");
+
+            var localVarPath = "./api/Barcode/UnMatch";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (ids != null && ids.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(ids); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = ids; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeUnMatchDocument", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Updates a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>BarcodeServiceRuleDTO</returns>
+        public BarcodeServiceRuleDTO BarcodeUpdateBarcodeUserServiceRule (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = BarcodeUpdateBarcodeUserServiceRuleWithHttpInfo(barcodeServiceRule);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Updates a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>ApiResponse of BarcodeServiceRuleDTO</returns>
+        public ApiResponse< BarcodeServiceRuleDTO > BarcodeUpdateBarcodeUserServiceRuleWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+            // verify the required parameter 'barcodeServiceRule' is set
+            if (barcodeServiceRule == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeServiceRule' when calling BarcodeApi->BarcodeUpdateBarcodeUserServiceRule");
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeServiceRule != null && barcodeServiceRule.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeServiceRule); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeServiceRule; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeUpdateBarcodeUserServiceRule", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
+        }
+
+        /// <summary>
+        /// Updates a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of BarcodeServiceRuleDTO</returns>
+        public async System.Threading.Tasks.Task<BarcodeServiceRuleDTO> BarcodeUpdateBarcodeUserServiceRuleAsync (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+             ApiResponse<BarcodeServiceRuleDTO> localVarResponse = await BarcodeUpdateBarcodeUserServiceRuleAsyncWithHttpInfo(barcodeServiceRule);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Updates a barcode service rule 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeServiceRule">The barcode service rule</param>
+        /// <returns>Task of ApiResponse (BarcodeServiceRuleDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<BarcodeServiceRuleDTO>> BarcodeUpdateBarcodeUserServiceRuleAsyncWithHttpInfo (BarcodeServiceRuleDTO barcodeServiceRule)
+        {
+            // verify the required parameter 'barcodeServiceRule' is set
+            if (barcodeServiceRule == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeServiceRule' when calling BarcodeApi->BarcodeUpdateBarcodeUserServiceRule");
+
+            var localVarPath = "./api/Barcode/UserServiceRule";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeServiceRule != null && barcodeServiceRule.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeServiceRule); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeServiceRule; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BarcodeUpdateBarcodeUserServiceRule", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<BarcodeServiceRuleDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (BarcodeServiceRuleDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BarcodeServiceRuleDTO)));
         }
 
     }

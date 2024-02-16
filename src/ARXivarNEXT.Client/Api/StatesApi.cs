@@ -46,6 +46,25 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of List&lt;StateBaseDto&gt;</returns>
         ApiResponse<List<StateBaseDto>> StatesGetWithHttpInfo (int? documentTypeId);
         /// <summary>
+        /// This call returns all the states in ARXivar
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;StateBaseDto&gt;</returns>
+        List<StateBaseDto> StatesGetAll ();
+
+        /// <summary>
+        /// This call returns all the states in ARXivar
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;StateBaseDto&gt;</returns>
+        ApiResponse<List<StateBaseDto>> StatesGetAllWithHttpInfo ();
+        /// <summary>
         /// This call returns the document states for a document
         /// </summary>
         /// <remarks>
@@ -108,6 +127,25 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="documentTypeId">Document Type Identifier</param>
         /// <returns>Task of ApiResponse (List&lt;StateBaseDto&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<StateBaseDto>>> StatesGetAsyncWithHttpInfo (int? documentTypeId);
+        /// <summary>
+        /// This call returns all the states in ARXivar
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;StateBaseDto&gt;</returns>
+        System.Threading.Tasks.Task<List<StateBaseDto>> StatesGetAllAsync ();
+
+        /// <summary>
+        /// This call returns all the states in ARXivar
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;StateBaseDto&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<StateBaseDto>>> StatesGetAllAsyncWithHttpInfo ();
         /// <summary>
         /// This call returns the document states for a document
         /// </summary>
@@ -389,6 +427,143 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("StatesGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<StateBaseDto>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<StateBaseDto>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<StateBaseDto>)));
+        }
+
+        /// <summary>
+        /// This call returns all the states in ARXivar 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;StateBaseDto&gt;</returns>
+        public List<StateBaseDto> StatesGetAll ()
+        {
+             ApiResponse<List<StateBaseDto>> localVarResponse = StatesGetAllWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns all the states in ARXivar 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;StateBaseDto&gt;</returns>
+        public ApiResponse< List<StateBaseDto> > StatesGetAllWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/States/All";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StatesGetAll", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<StateBaseDto>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<StateBaseDto>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<StateBaseDto>)));
+        }
+
+        /// <summary>
+        /// This call returns all the states in ARXivar 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;StateBaseDto&gt;</returns>
+        public async System.Threading.Tasks.Task<List<StateBaseDto>> StatesGetAllAsync ()
+        {
+             ApiResponse<List<StateBaseDto>> localVarResponse = await StatesGetAllAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns all the states in ARXivar 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;StateBaseDto&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<StateBaseDto>>> StatesGetAllAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/States/All";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("StatesGetAll", localVarResponse);
                 if (exception != null) throw exception;
             }
 

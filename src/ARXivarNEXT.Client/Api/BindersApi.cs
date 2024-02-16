@@ -336,6 +336,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of PermissionsDTO</returns>
         ApiResponse<PermissionsDTO> BindersGetBinderTypePermissionWithHttpInfo (int? binderTypeId);
         /// <summary>
+        /// This call returns the permission of the current user for a binder type
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>UserPermissionsDTO</returns>
+        UserPermissionsDTO BindersGetBinderTypeUserPermission (int? binderTypeId);
+
+        /// <summary>
+        /// This call returns the permission of the current user for a binder type
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>ApiResponse of UserPermissionsDTO</returns>
+        ApiResponse<UserPermissionsDTO> BindersGetBinderTypeUserPermissionWithHttpInfo (int? binderTypeId);
+        /// <summary>
         /// This call returns the binder custom fields by binder type
         /// </summary>
         /// <remarks>
@@ -356,6 +377,25 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="binderType">Binder type identifier</param>
         /// <returns>ApiResponse of List&lt;FieldBaseDTO&gt;</returns>
         ApiResponse<List<FieldBaseDTO>> BindersGetBindersFieldsByTypeWithHttpInfo (int? binderType);
+        /// <summary>
+        /// This call returns the binder custom fields
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;BinderFieldSummaryDTO&gt;</returns>
+        List<BinderFieldSummaryDTO> BindersGetBindersFieldsSummary ();
+
+        /// <summary>
+        /// This call returns the binder custom fields
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;BinderFieldSummaryDTO&gt;</returns>
+        ApiResponse<List<BinderFieldSummaryDTO>> BindersGetBindersFieldsSummaryWithHttpInfo ();
         /// <summary>
         /// This method allows to find binders that contains docnumber
         /// </summary>
@@ -1010,6 +1050,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (PermissionsDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<PermissionsDTO>> BindersGetBinderTypePermissionAsyncWithHttpInfo (int? binderTypeId);
         /// <summary>
+        /// This call returns the permission of the current user for a binder type
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>Task of UserPermissionsDTO</returns>
+        System.Threading.Tasks.Task<UserPermissionsDTO> BindersGetBinderTypeUserPermissionAsync (int? binderTypeId);
+
+        /// <summary>
+        /// This call returns the permission of the current user for a binder type
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>Task of ApiResponse (UserPermissionsDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserPermissionsDTO>> BindersGetBinderTypeUserPermissionAsyncWithHttpInfo (int? binderTypeId);
+        /// <summary>
         /// This call returns the binder custom fields by binder type
         /// </summary>
         /// <remarks>
@@ -1030,6 +1091,25 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="binderType">Binder type identifier</param>
         /// <returns>Task of ApiResponse (List&lt;FieldBaseDTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FieldBaseDTO>>> BindersGetBindersFieldsByTypeAsyncWithHttpInfo (int? binderType);
+        /// <summary>
+        /// This call returns the binder custom fields
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;BinderFieldSummaryDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<BinderFieldSummaryDTO>> BindersGetBindersFieldsSummaryAsync ();
+
+        /// <summary>
+        /// This call returns the binder custom fields
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;BinderFieldSummaryDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<BinderFieldSummaryDTO>>> BindersGetBindersFieldsSummaryAsyncWithHttpInfo ();
         /// <summary>
         /// This method allows to find binders that contains docnumber
         /// </summary>
@@ -3728,6 +3808,155 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
+        /// This call returns the permission of the current user for a binder type 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>UserPermissionsDTO</returns>
+        public UserPermissionsDTO BindersGetBinderTypeUserPermission (int? binderTypeId)
+        {
+             ApiResponse<UserPermissionsDTO> localVarResponse = BindersGetBinderTypeUserPermissionWithHttpInfo(binderTypeId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the permission of the current user for a binder type 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>ApiResponse of UserPermissionsDTO</returns>
+        public ApiResponse< UserPermissionsDTO > BindersGetBinderTypeUserPermissionWithHttpInfo (int? binderTypeId)
+        {
+            // verify the required parameter 'binderTypeId' is set
+            if (binderTypeId == null)
+                throw new ApiException(400, "Missing required parameter 'binderTypeId' when calling BindersApi->BindersGetBinderTypeUserPermission");
+
+            var localVarPath = "./api/Binders/bindertypeuserpermission/{binderTypeId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (binderTypeId != null) localVarPathParams.Add("binderTypeId", this.Configuration.ApiClient.ParameterToString(binderTypeId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetBinderTypeUserPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionsDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (UserPermissionsDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionsDTO)));
+        }
+
+        /// <summary>
+        /// This call returns the permission of the current user for a binder type 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>Task of UserPermissionsDTO</returns>
+        public async System.Threading.Tasks.Task<UserPermissionsDTO> BindersGetBinderTypeUserPermissionAsync (int? binderTypeId)
+        {
+             ApiResponse<UserPermissionsDTO> localVarResponse = await BindersGetBinderTypeUserPermissionAsyncWithHttpInfo(binderTypeId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the permission of the current user for a binder type 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="binderTypeId">The binder type identifier</param>
+        /// <returns>Task of ApiResponse (UserPermissionsDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserPermissionsDTO>> BindersGetBinderTypeUserPermissionAsyncWithHttpInfo (int? binderTypeId)
+        {
+            // verify the required parameter 'binderTypeId' is set
+            if (binderTypeId == null)
+                throw new ApiException(400, "Missing required parameter 'binderTypeId' when calling BindersApi->BindersGetBinderTypeUserPermission");
+
+            var localVarPath = "./api/Binders/bindertypeuserpermission/{binderTypeId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (binderTypeId != null) localVarPathParams.Add("binderTypeId", this.Configuration.ApiClient.ParameterToString(binderTypeId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetBinderTypeUserPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionsDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (UserPermissionsDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionsDTO)));
+        }
+
+        /// <summary>
         /// This call returns the binder custom fields by binder type 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3874,6 +4103,143 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<List<FieldBaseDTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<FieldBaseDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<FieldBaseDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns the binder custom fields 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;BinderFieldSummaryDTO&gt;</returns>
+        public List<BinderFieldSummaryDTO> BindersGetBindersFieldsSummary ()
+        {
+             ApiResponse<List<BinderFieldSummaryDTO>> localVarResponse = BindersGetBindersFieldsSummaryWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the binder custom fields 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;BinderFieldSummaryDTO&gt;</returns>
+        public ApiResponse< List<BinderFieldSummaryDTO> > BindersGetBindersFieldsSummaryWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/Binders/binderfields/summary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetBindersFieldsSummary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<BinderFieldSummaryDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<BinderFieldSummaryDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BinderFieldSummaryDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns the binder custom fields 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;BinderFieldSummaryDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<BinderFieldSummaryDTO>> BindersGetBindersFieldsSummaryAsync ()
+        {
+             ApiResponse<List<BinderFieldSummaryDTO>> localVarResponse = await BindersGetBindersFieldsSummaryAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the binder custom fields 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;BinderFieldSummaryDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<BinderFieldSummaryDTO>>> BindersGetBindersFieldsSummaryAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/Binders/binderfields/summary";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("BindersGetBindersFieldsSummary", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<BinderFieldSummaryDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<BinderFieldSummaryDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BinderFieldSummaryDTO>)));
         }
 
         /// <summary>

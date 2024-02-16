@@ -210,6 +210,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of RemoteSignResponseDTO</returns>
         ApiResponse<RemoteSignResponseDTO> SignRemoteSignWithHttpInfo (RemoteSignRequestDTO remoteSignRequest);
         /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>RemoteSignResponseDTO</returns>
+        RemoteSignResponseDTO SignRemoteSignTaskV2 (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request);
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>ApiResponse of RemoteSignResponseDTO</returns>
+        ApiResponse<RemoteSignResponseDTO> SignRemoteSignTaskV2WithHttpInfo (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request);
+        /// <summary>
         /// This call executes a remote signature operation on a TaskWork list
         /// </summary>
         /// <remarks>
@@ -486,6 +507,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="remoteSignRequest">List of documents to sign</param>
         /// <returns>Task of ApiResponse (RemoteSignResponseDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<RemoteSignResponseDTO>> SignRemoteSignAsyncWithHttpInfo (RemoteSignRequestDTO remoteSignRequest);
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>Task of RemoteSignResponseDTO</returns>
+        System.Threading.Tasks.Task<RemoteSignResponseDTO> SignRemoteSignTaskV2Async (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request);
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call)
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>Task of ApiResponse (RemoteSignResponseDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RemoteSignResponseDTO>> SignRemoteSignTaskV2AsyncWithHttpInfo (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request);
         /// <summary>
         /// This call executes a remote signature operation on a TaskWork list
         /// </summary>
@@ -2047,6 +2089,179 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("SignRemoteSign", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RemoteSignResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (RemoteSignResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RemoteSignResponseDTO)));
+        }
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call) 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>RemoteSignResponseDTO</returns>
+        public RemoteSignResponseDTO SignRemoteSignTaskV2 (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request)
+        {
+             ApiResponse<RemoteSignResponseDTO> localVarResponse = SignRemoteSignTaskV2WithHttpInfo(remoteSignTaskV2Request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call) 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>ApiResponse of RemoteSignResponseDTO</returns>
+        public ApiResponse< RemoteSignResponseDTO > SignRemoteSignTaskV2WithHttpInfo (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request)
+        {
+            // verify the required parameter 'remoteSignTaskV2Request' is set
+            if (remoteSignTaskV2Request == null)
+                throw new ApiException(400, "Missing required parameter 'remoteSignTaskV2Request' when calling SignApi->SignRemoteSignTaskV2");
+
+            var localVarPath = "./api/Sign/RemoteSignTaskV2";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (remoteSignTaskV2Request != null && remoteSignTaskV2Request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(remoteSignTaskV2Request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = remoteSignTaskV2Request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SignRemoteSignTaskV2", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<RemoteSignResponseDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (RemoteSignResponseDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(RemoteSignResponseDTO)));
+        }
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call) 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>Task of RemoteSignResponseDTO</returns>
+        public async System.Threading.Tasks.Task<RemoteSignResponseDTO> SignRemoteSignTaskV2Async (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request)
+        {
+             ApiResponse<RemoteSignResponseDTO> localVarResponse = await SignRemoteSignTaskV2AsyncWithHttpInfo(remoteSignTaskV2Request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call executes a remote signature operation on a TaskWork V2 (Backend permission restricted call) 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="remoteSignTaskV2Request">List of taskWorks to sign</param>
+        /// <returns>Task of ApiResponse (RemoteSignResponseDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<RemoteSignResponseDTO>> SignRemoteSignTaskV2AsyncWithHttpInfo (RemoteSignTaskV2RequestDTO remoteSignTaskV2Request)
+        {
+            // verify the required parameter 'remoteSignTaskV2Request' is set
+            if (remoteSignTaskV2Request == null)
+                throw new ApiException(400, "Missing required parameter 'remoteSignTaskV2Request' when calling SignApi->SignRemoteSignTaskV2");
+
+            var localVarPath = "./api/Sign/RemoteSignTaskV2";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (remoteSignTaskV2Request != null && remoteSignTaskV2Request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(remoteSignTaskV2Request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = remoteSignTaskV2Request; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SignRemoteSignTaskV2", localVarResponse);
                 if (exception != null) throw exception;
             }
 

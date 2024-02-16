@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call delete an existent layout
+        /// This call deletes an existent layout
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace ARXivarNEXT.Client.Api
         void LayoutDelete (int? layoutId);
 
         /// <summary>
-        /// This call delete an existent layout
+        /// This call deletes an existent layout
         /// </summary>
         /// <remarks>
         /// 
@@ -157,7 +157,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of LayoutDTO</returns>
         ApiResponse<LayoutDTO> LayoutPostWithHttpInfo (LayoutDTO layout);
         /// <summary>
-        /// This call update a layout
+        /// This call updates a layout
         /// </summary>
         /// <remarks>
         /// 
@@ -169,7 +169,7 @@ namespace ARXivarNEXT.Client.Api
         void LayoutPut (int? id, LayoutDTO layout);
 
         /// <summary>
-        /// This call update a layout
+        /// This call updates a layout
         /// </summary>
         /// <remarks>
         /// 
@@ -205,7 +205,7 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call delete an existent layout
+        /// This call deletes an existent layout
         /// </summary>
         /// <remarks>
         /// 
@@ -216,7 +216,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task LayoutDeleteAsync (int? layoutId);
 
         /// <summary>
-        /// This call delete an existent layout
+        /// This call deletes an existent layout
         /// </summary>
         /// <remarks>
         /// 
@@ -337,7 +337,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (LayoutDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<LayoutDTO>> LayoutPostAsyncWithHttpInfo (LayoutDTO layout);
         /// <summary>
-        /// This call update a layout
+        /// This call updates a layout
         /// </summary>
         /// <remarks>
         /// 
@@ -349,7 +349,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task LayoutPutAsync (int? id, LayoutDTO layout);
 
         /// <summary>
-        /// This call update a layout
+        /// This call updates a layout
         /// </summary>
         /// <remarks>
         /// 
@@ -483,7 +483,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an existent layout 
+        /// This call deletes an existent layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="layoutId">Id of the layout to be deleted</param>
@@ -494,7 +494,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an existent layout 
+        /// This call deletes an existent layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="layoutId">Id of the layout to be deleted</param>
@@ -552,7 +552,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an existent layout 
+        /// This call deletes an existent layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="layoutId">Id of the layout to be deleted</param>
@@ -564,7 +564,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an existent layout 
+        /// This call deletes an existent layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="layoutId">Id of the layout to be deleted</param>
@@ -1427,7 +1427,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a layout 
+        /// This call updates a layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of the wanted layout</param>
@@ -1439,7 +1439,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a layout 
+        /// This call updates a layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of the wanted layout</param>
@@ -1514,7 +1514,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a layout 
+        /// This call updates a layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of the wanted layout</param>
@@ -1527,7 +1527,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a layout 
+        /// This call updates a layout 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">id of the wanted layout</param>

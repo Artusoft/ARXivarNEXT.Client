@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -35,7 +35,7 @@ namespace ARXivarNEXT.Client.Api
         void SearchesDelete ();
 
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -415,7 +415,7 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -425,7 +425,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task SearchesDeleteAsync ();
 
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -903,7 +903,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -913,7 +913,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -966,7 +966,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
@@ -977,7 +977,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>

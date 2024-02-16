@@ -116,8 +116,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        void ReportGetById (string id);
+        /// <returns>ReportDTO</returns>
+        ReportDTO ReportGetById (string id);
 
         /// <summary>
         /// Returns the report specified by id
@@ -127,8 +127,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReportGetByIdWithHttpInfo (string id);
+        /// <returns>ApiResponse of ReportDTO</returns>
+        ApiResponse<ReportDTO> ReportGetByIdWithHttpInfo (string id);
         /// <summary>
         /// Get Find Group by Id considering report permissions
         /// </summary>
@@ -180,8 +180,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        void ReportGetList ();
+        /// <returns>List&lt;ReportBaseDTO&gt;</returns>
+        List<ReportBaseDTO> ReportGetList ();
 
         /// <summary>
         /// Returns the list of all the report available for the user
@@ -190,8 +190,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ReportGetListWithHttpInfo ();
+        /// <returns>ApiResponse of List&lt;ReportBaseDTO&gt;</returns>
+        ApiResponse<List<ReportBaseDTO>> ReportGetListWithHttpInfo ();
         /// <summary>
         /// Returns permissions of report
         /// </summary>
@@ -502,8 +502,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReportGetByIdAsync (string id);
+        /// <returns>Task of ReportDTO</returns>
+        System.Threading.Tasks.Task<ReportDTO> ReportGetByIdAsync (string id);
 
         /// <summary>
         /// Returns the report specified by id
@@ -513,8 +513,8 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReportGetByIdAsyncWithHttpInfo (string id);
+        /// <returns>Task of ApiResponse (ReportDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ReportDTO>> ReportGetByIdAsyncWithHttpInfo (string id);
         /// <summary>
         /// Get Find Group by Id considering report permissions
         /// </summary>
@@ -566,8 +566,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ReportGetListAsync ();
+        /// <returns>Task of List&lt;ReportBaseDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<ReportBaseDTO>> ReportGetListAsync ();
 
         /// <summary>
         /// Returns the list of all the report available for the user
@@ -576,8 +576,8 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ReportGetListAsyncWithHttpInfo ();
+        /// <returns>Task of ApiResponse (List&lt;ReportBaseDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ReportBaseDTO>>> ReportGetListAsyncWithHttpInfo ();
         /// <summary>
         /// Returns permissions of report
         /// </summary>
@@ -1495,10 +1495,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns></returns>
-        public void ReportGetById (string id)
+        /// <returns>ReportDTO</returns>
+        public ReportDTO ReportGetById (string id)
         {
-             ReportGetByIdWithHttpInfo(id);
+             ApiResponse<ReportDTO> localVarResponse = ReportGetByIdWithHttpInfo(id);
+             return localVarResponse.Data;
         }
 
         /// <summary>
@@ -1506,8 +1507,8 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ReportGetByIdWithHttpInfo (string id)
+        /// <returns>ApiResponse of ReportDTO</returns>
+        public ApiResponse< ReportDTO > ReportGetByIdWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1558,9 +1559,9 @@ namespace ARXivarNEXT.Client.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<ReportDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (ReportDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReportDTO)));
         }
 
         /// <summary>
@@ -1568,10 +1569,11 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReportGetByIdAsync (string id)
+        /// <returns>Task of ReportDTO</returns>
+        public async System.Threading.Tasks.Task<ReportDTO> ReportGetByIdAsync (string id)
         {
-             await ReportGetByIdAsyncWithHttpInfo(id);
+             ApiResponse<ReportDTO> localVarResponse = await ReportGetByIdAsyncWithHttpInfo(id);
+             return localVarResponse.Data;
 
         }
 
@@ -1580,8 +1582,8 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ReportGetByIdAsyncWithHttpInfo (string id)
+        /// <returns>Task of ApiResponse (ReportDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ReportDTO>> ReportGetByIdAsyncWithHttpInfo (string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1632,9 +1634,9 @@ namespace ARXivarNEXT.Client.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<ReportDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (ReportDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ReportDTO)));
         }
 
         /// <summary>
@@ -1951,18 +1953,19 @@ namespace ARXivarNEXT.Client.Api
         /// Returns the list of all the report available for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        public void ReportGetList ()
+        /// <returns>List&lt;ReportBaseDTO&gt;</returns>
+        public List<ReportBaseDTO> ReportGetList ()
         {
-             ReportGetListWithHttpInfo();
+             ApiResponse<List<ReportBaseDTO>> localVarResponse = ReportGetListWithHttpInfo();
+             return localVarResponse.Data;
         }
 
         /// <summary>
         /// Returns the list of all the report available for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> ReportGetListWithHttpInfo ()
+        /// <returns>ApiResponse of List&lt;ReportBaseDTO&gt;</returns>
+        public ApiResponse< List<ReportBaseDTO> > ReportGetListWithHttpInfo ()
         {
 
             var localVarPath = "./api/Report";
@@ -2009,19 +2012,20 @@ namespace ARXivarNEXT.Client.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<List<ReportBaseDTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (List<ReportBaseDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ReportBaseDTO>)));
         }
 
         /// <summary>
         /// Returns the list of all the report available for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ReportGetListAsync ()
+        /// <returns>Task of List&lt;ReportBaseDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ReportBaseDTO>> ReportGetListAsync ()
         {
-             await ReportGetListAsyncWithHttpInfo();
+             ApiResponse<List<ReportBaseDTO>> localVarResponse = await ReportGetListAsyncWithHttpInfo();
+             return localVarResponse.Data;
 
         }
 
@@ -2029,8 +2033,8 @@ namespace ARXivarNEXT.Client.Api
         /// Returns the list of all the report available for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> ReportGetListAsyncWithHttpInfo ()
+        /// <returns>Task of ApiResponse (List&lt;ReportBaseDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<ReportBaseDTO>>> ReportGetListAsyncWithHttpInfo ()
         {
 
             var localVarPath = "./api/Report";
@@ -2077,9 +2081,9 @@ namespace ARXivarNEXT.Client.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Object>(localVarStatusCode,
+            return new ApiResponse<List<ReportBaseDTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
+                (List<ReportBaseDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ReportBaseDTO>)));
         }
 
         /// <summary>

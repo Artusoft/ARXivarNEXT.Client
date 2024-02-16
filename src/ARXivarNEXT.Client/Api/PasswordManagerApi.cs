@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call changes the password of connected user
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace ARXivarNEXT.Client.Api
         void PasswordManagerChangePassword (ChangePasswordRequestDTO passwordRequest);
 
         /// <summary>
-        /// This call changes the password of connected user
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated
         /// </summary>
         /// <remarks>
         /// 
@@ -49,7 +49,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call changes the password of connected user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -60,7 +60,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call changes the password of connected user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -128,7 +128,7 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call changes the password of connected user
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated
         /// </summary>
         /// <remarks>
         /// 
@@ -139,7 +139,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task PasswordManagerChangePasswordAsync (ChangePasswordRequestDTO passwordRequest);
 
         /// <summary>
-        /// This call changes the password of connected user
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated
         /// </summary>
         /// <remarks>
         /// 
@@ -152,7 +152,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call changes the password of connected user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -163,7 +163,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call changes the password of connected user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -329,7 +329,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -340,7 +340,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -410,7 +410,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -422,7 +422,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user.  The call return Forbidden if impersonated 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -492,7 +492,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -503,7 +503,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -573,7 +573,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>
@@ -585,7 +585,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call changes the password of connected user 
+        /// This call changes the password of connected user Due to security reasons this call returns now a 403. Use the ChangePassword call instead
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="passwordRequest">Password request to change</param>

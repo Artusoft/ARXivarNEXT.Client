@@ -35,12 +35,14 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="forView">forView.</param>
         /// <param name="createZip">createZip.</param>
         /// <param name="addAttachments">addAttachments.</param>
-        public MailMassiveForProcessDocRequestDTO(List<MailMassiveForProcessDocItemRequestDTO> items = default(List<MailMassiveForProcessDocItemRequestDTO>), bool? forView = default(bool?), bool? createZip = default(bool?), bool? addAttachments = default(bool?))
+        /// <param name="convertToPdf">convertToPdf.</param>
+        public MailMassiveForProcessDocRequestDTO(List<MailMassiveForProcessDocItemRequestDTO> items = default(List<MailMassiveForProcessDocItemRequestDTO>), bool? forView = default(bool?), bool? createZip = default(bool?), bool? addAttachments = default(bool?), bool? convertToPdf = default(bool?))
         {
             this.Items = items;
             this.ForView = forView;
             this.CreateZip = createZip;
             this.AddAttachments = addAttachments;
+            this.ConvertToPdf = convertToPdf;
         }
         
         /// <summary>
@@ -68,6 +70,12 @@ namespace ARXivarNEXT.Client.Model
         public bool? AddAttachments { get; set; }
 
         /// <summary>
+        /// Gets or Sets ConvertToPdf
+        /// </summary>
+        [DataMember(Name="convertToPdf", EmitDefaultValue=false)]
+        public bool? ConvertToPdf { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -79,6 +87,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  ForView: ").Append(ForView).Append("\n");
             sb.Append("  CreateZip: ").Append(CreateZip).Append("\n");
             sb.Append("  AddAttachments: ").Append(AddAttachments).Append("\n");
+            sb.Append("  ConvertToPdf: ").Append(ConvertToPdf).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -132,6 +141,11 @@ namespace ARXivarNEXT.Client.Model
                     this.AddAttachments == input.AddAttachments ||
                     (this.AddAttachments != null &&
                     this.AddAttachments.Equals(input.AddAttachments))
+                ) && 
+                (
+                    this.ConvertToPdf == input.ConvertToPdf ||
+                    (this.ConvertToPdf != null &&
+                    this.ConvertToPdf.Equals(input.ConvertToPdf))
                 );
         }
 
@@ -152,6 +166,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.CreateZip.GetHashCode();
                 if (this.AddAttachments != null)
                     hashCode = hashCode * 59 + this.AddAttachments.GetHashCode();
+                if (this.ConvertToPdf != null)
+                    hashCode = hashCode * 59 + this.ConvertToPdf.GetHashCode();
                 return hashCode;
             }
         }

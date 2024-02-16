@@ -86,6 +86,48 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of WorkFlowChainMasterDTO</returns>
         ApiResponse<WorkFlowChainMasterDTO> WorkflowConnectorGetByChainMasterIdWithHttpInfo (string chainMasterId);
         /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        List<WorkFlowChainMasterDTO> WorkflowConnectorGetByCorrelationId (string correlationId, bool? excludeLast);
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>ApiResponse of List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        ApiResponse<List<WorkFlowChainMasterDTO>> WorkflowConnectorGetByCorrelationIdWithHttpInfo (string correlationId, bool? excludeLast);
+        /// <summary>
+        /// This call returns all the last workflow chains
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        List<WorkFlowChainMasterSummaryDTO> WorkflowConnectorGetLastChainMaster ();
+
+        /// <summary>
+        /// This call returns all the last workflow chains
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        ApiResponse<List<WorkFlowChainMasterSummaryDTO>> WorkflowConnectorGetLastChainMasterWithHttpInfo ();
+        /// <summary>
         /// This call inserts a new workflow chain
         /// </summary>
         /// <remarks>
@@ -190,6 +232,48 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="chainMasterId">Chain Master identifier</param>
         /// <returns>Task of ApiResponse (WorkFlowChainMasterDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkFlowChainMasterDTO>> WorkflowConnectorGetByChainMasterIdAsyncWithHttpInfo (string chainMasterId);
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>Task of List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkFlowChainMasterDTO>> WorkflowConnectorGetByCorrelationIdAsync (string correlationId, bool? excludeLast);
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkFlowChainMasterDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkFlowChainMasterDTO>>> WorkflowConnectorGetByCorrelationIdAsyncWithHttpInfo (string correlationId, bool? excludeLast);
+        /// <summary>
+        /// This call returns all the last workflow chains
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        System.Threading.Tasks.Task<List<WorkFlowChainMasterSummaryDTO>> WorkflowConnectorGetLastChainMasterAsync ();
+
+        /// <summary>
+        /// This call returns all the last workflow chains
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;WorkFlowChainMasterSummaryDTO&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<WorkFlowChainMasterSummaryDTO>>> WorkflowConnectorGetLastChainMasterAsyncWithHttpInfo ();
         /// <summary>
         /// This call inserts a new workflow chain
         /// </summary>
@@ -755,6 +839,304 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<WorkFlowChainMasterDTO>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (WorkFlowChainMasterDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorkFlowChainMasterDTO)));
+        }
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        public List<WorkFlowChainMasterDTO> WorkflowConnectorGetByCorrelationId (string correlationId, bool? excludeLast)
+        {
+             ApiResponse<List<WorkFlowChainMasterDTO>> localVarResponse = WorkflowConnectorGetByCorrelationIdWithHttpInfo(correlationId, excludeLast);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>ApiResponse of List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        public ApiResponse< List<WorkFlowChainMasterDTO> > WorkflowConnectorGetByCorrelationIdWithHttpInfo (string correlationId, bool? excludeLast)
+        {
+            // verify the required parameter 'correlationId' is set
+            if (correlationId == null)
+                throw new ApiException(400, "Missing required parameter 'correlationId' when calling WorkflowConnectorApi->WorkflowConnectorGetByCorrelationId");
+            // verify the required parameter 'excludeLast' is set
+            if (excludeLast == null)
+                throw new ApiException(400, "Missing required parameter 'excludeLast' when calling WorkflowConnectorApi->WorkflowConnectorGetByCorrelationId");
+
+            var localVarPath = "./api/WorkflowConnector/correlation-id/{correlationId}/{excludeLast}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (correlationId != null) localVarPathParams.Add("correlationId", this.Configuration.ApiClient.ParameterToString(correlationId)); // path parameter
+            if (excludeLast != null) localVarPathParams.Add("excludeLast", this.Configuration.ApiClient.ParameterToString(excludeLast)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowConnectorGetByCorrelationId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkFlowChainMasterDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkFlowChainMasterDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkFlowChainMasterDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>Task of List&lt;WorkFlowChainMasterDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkFlowChainMasterDTO>> WorkflowConnectorGetByCorrelationIdAsync (string correlationId, bool? excludeLast)
+        {
+             ApiResponse<List<WorkFlowChainMasterDTO>> localVarResponse = await WorkflowConnectorGetByCorrelationIdAsyncWithHttpInfo(correlationId, excludeLast);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns all the workflow chain by its correlation identifier 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="correlationId">Correlation Chain identifier</param>
+        /// <param name="excludeLast">Indicates if the last correlated chain must be excluded</param>
+        /// <returns>Task of ApiResponse (List&lt;WorkFlowChainMasterDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<WorkFlowChainMasterDTO>>> WorkflowConnectorGetByCorrelationIdAsyncWithHttpInfo (string correlationId, bool? excludeLast)
+        {
+            // verify the required parameter 'correlationId' is set
+            if (correlationId == null)
+                throw new ApiException(400, "Missing required parameter 'correlationId' when calling WorkflowConnectorApi->WorkflowConnectorGetByCorrelationId");
+            // verify the required parameter 'excludeLast' is set
+            if (excludeLast == null)
+                throw new ApiException(400, "Missing required parameter 'excludeLast' when calling WorkflowConnectorApi->WorkflowConnectorGetByCorrelationId");
+
+            var localVarPath = "./api/WorkflowConnector/correlation-id/{correlationId}/{excludeLast}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (correlationId != null) localVarPathParams.Add("correlationId", this.Configuration.ApiClient.ParameterToString(correlationId)); // path parameter
+            if (excludeLast != null) localVarPathParams.Add("excludeLast", this.Configuration.ApiClient.ParameterToString(excludeLast)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowConnectorGetByCorrelationId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkFlowChainMasterDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkFlowChainMasterDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkFlowChainMasterDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns all the last workflow chains 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        public List<WorkFlowChainMasterSummaryDTO> WorkflowConnectorGetLastChainMaster ()
+        {
+             ApiResponse<List<WorkFlowChainMasterSummaryDTO>> localVarResponse = WorkflowConnectorGetLastChainMasterWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns all the last workflow chains 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        public ApiResponse< List<WorkFlowChainMasterSummaryDTO> > WorkflowConnectorGetLastChainMasterWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/WorkflowConnector/last";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowConnectorGetLastChainMaster", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkFlowChainMasterSummaryDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkFlowChainMasterSummaryDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkFlowChainMasterSummaryDTO>)));
+        }
+
+        /// <summary>
+        /// This call returns all the last workflow chains 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of List&lt;WorkFlowChainMasterSummaryDTO&gt;</returns>
+        public async System.Threading.Tasks.Task<List<WorkFlowChainMasterSummaryDTO>> WorkflowConnectorGetLastChainMasterAsync ()
+        {
+             ApiResponse<List<WorkFlowChainMasterSummaryDTO>> localVarResponse = await WorkflowConnectorGetLastChainMasterAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns all the last workflow chains 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (List&lt;WorkFlowChainMasterSummaryDTO&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<WorkFlowChainMasterSummaryDTO>>> WorkflowConnectorGetLastChainMasterAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/WorkflowConnector/last";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("WorkflowConnectorGetLastChainMaster", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<WorkFlowChainMasterSummaryDTO>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<WorkFlowChainMasterSummaryDTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorkFlowChainMasterSummaryDTO>)));
         }
 
         /// <summary>

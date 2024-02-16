@@ -46,6 +46,27 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> FoldersAutoinsertInFolderByDocnumberWithHttpInfo (int? docnumber);
         /// <summary>
+        /// This method recalculate folder for a list of profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns></returns>
+        void FoldersAutoinsertInFolderByDocnumbers (List<int?> docnumbers);
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> FoldersAutoinsertInFolderByDocnumbersWithHttpInfo (List<int?> docnumbers);
+        /// <summary>
         /// This method allow to delete a folder
         /// </summary>
         /// <remarks>
@@ -87,6 +108,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="id">The identifier of the configuration</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> FoldersDeleteArxDriveConfigurationWithHttpInfo (int? id);
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns></returns>
+        void FoldersDeleteFolderUserPermission (int? id, DeleteFolderUserPermissionDTO permissions);
+
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> FoldersDeleteFolderUserPermissionWithHttpInfo (int? id, DeleteFolderUserPermissionDTO permissions);
         /// <summary>
         /// This method allows to find folders that contains docnumber
         /// </summary>
@@ -531,6 +575,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="permissions">The folder permissions</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> FoldersSetFolderPermissionWithHttpInfo (int? id, FolderPermissionsDTO permissions);
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns></returns>
+        void FoldersSetFolderUserPermission (int? id, SetFolderUserPermissionDTO permissions);
+
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> FoldersSetFolderUserPermissionWithHttpInfo (int? id, SetFolderUserPermissionDTO permissions);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -554,6 +621,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="docnumber">The identifier of the profile</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FoldersAutoinsertInFolderByDocnumberAsyncWithHttpInfo (int? docnumber);
+        /// <summary>
+        /// This method recalculate folder for a list of profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task FoldersAutoinsertInFolderByDocnumbersAsync (List<int?> docnumbers);
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> FoldersAutoinsertInFolderByDocnumbersAsyncWithHttpInfo (List<int?> docnumbers);
         /// <summary>
         /// This method allow to delete a folder
         /// </summary>
@@ -596,6 +684,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="id">The identifier of the configuration</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FoldersDeleteArxDriveConfigurationAsyncWithHttpInfo (int? id);
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task FoldersDeleteFolderUserPermissionAsync (int? id, DeleteFolderUserPermissionDTO permissions);
+
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> FoldersDeleteFolderUserPermissionAsyncWithHttpInfo (int? id, DeleteFolderUserPermissionDTO permissions);
         /// <summary>
         /// This method allows to find folders that contains docnumber
         /// </summary>
@@ -1040,6 +1151,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="permissions">The folder permissions</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> FoldersSetFolderPermissionAsyncWithHttpInfo (int? id, FolderPermissionsDTO permissions);
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task FoldersSetFolderUserPermissionAsync (int? id, SetFolderUserPermissionDTO permissions);
+
+        /// <summary>
+        /// This methods set the folder permission for a user
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> FoldersSetFolderUserPermissionAsyncWithHttpInfo (int? id, SetFolderUserPermissionDTO permissions);
         #endregion Asynchronous Operations
     }
 
@@ -1271,6 +1405,169 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("FoldersAutoinsertInFolderByDocnumber", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns></returns>
+        public void FoldersAutoinsertInFolderByDocnumbers (List<int?> docnumbers)
+        {
+             FoldersAutoinsertInFolderByDocnumbersWithHttpInfo(docnumbers);
+        }
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> FoldersAutoinsertInFolderByDocnumbersWithHttpInfo (List<int?> docnumbers)
+        {
+            // verify the required parameter 'docnumbers' is set
+            if (docnumbers == null)
+                throw new ApiException(400, "Missing required parameter 'docnumbers' when calling FoldersApi->FoldersAutoinsertInFolderByDocnumbers");
+
+            var localVarPath = "./api/Folders/autoinsert";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docnumbers != null && docnumbers.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(docnumbers); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = docnumbers; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersAutoinsertInFolderByDocnumbers", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task FoldersAutoinsertInFolderByDocnumbersAsync (List<int?> docnumbers)
+        {
+             await FoldersAutoinsertInFolderByDocnumbersAsyncWithHttpInfo(docnumbers);
+
+        }
+
+        /// <summary>
+        /// This method recalculate folder for a list of profiles 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docnumbers">The profile identifiers</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> FoldersAutoinsertInFolderByDocnumbersAsyncWithHttpInfo (List<int?> docnumbers)
+        {
+            // verify the required parameter 'docnumbers' is set
+            if (docnumbers == null)
+                throw new ApiException(400, "Missing required parameter 'docnumbers' when calling FoldersApi->FoldersAutoinsertInFolderByDocnumbers");
+
+            var localVarPath = "./api/Folders/autoinsert";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docnumbers != null && docnumbers.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(docnumbers); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = docnumbers; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersAutoinsertInFolderByDocnumbers", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1549,6 +1846,181 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("FoldersDeleteArxDriveConfiguration", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns></returns>
+        public void FoldersDeleteFolderUserPermission (int? id, DeleteFolderUserPermissionDTO permissions)
+        {
+             FoldersDeleteFolderUserPermissionWithHttpInfo(id, permissions);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> FoldersDeleteFolderUserPermissionWithHttpInfo (int? id, DeleteFolderUserPermissionDTO permissions)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FoldersApi->FoldersDeleteFolderUserPermission");
+            // verify the required parameter 'permissions' is set
+            if (permissions == null)
+                throw new ApiException(400, "Missing required parameter 'permissions' when calling FoldersApi->FoldersDeleteFolderUserPermission");
+
+            var localVarPath = "./api/Folders/{id}/permissions/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (permissions != null && permissions.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(permissions); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = permissions; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersDeleteFolderUserPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task FoldersDeleteFolderUserPermissionAsync (int? id, DeleteFolderUserPermissionDTO permissions)
+        {
+             await FoldersDeleteFolderUserPermissionAsyncWithHttpInfo(id, permissions);
+
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> FoldersDeleteFolderUserPermissionAsyncWithHttpInfo (int? id, DeleteFolderUserPermissionDTO permissions)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FoldersApi->FoldersDeleteFolderUserPermission");
+            // verify the required parameter 'permissions' is set
+            if (permissions == null)
+                throw new ApiException(400, "Missing required parameter 'permissions' when calling FoldersApi->FoldersDeleteFolderUserPermission");
+
+            var localVarPath = "./api/Folders/{id}/permissions/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (permissions != null && permissions.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(permissions); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = permissions; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersDeleteFolderUserPermission", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -4761,6 +5233,181 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("FoldersSetFolderPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns></returns>
+        public void FoldersSetFolderUserPermission (int? id, SetFolderUserPermissionDTO permissions)
+        {
+             FoldersSetFolderUserPermissionWithHttpInfo(id, permissions);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> FoldersSetFolderUserPermissionWithHttpInfo (int? id, SetFolderUserPermissionDTO permissions)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FoldersApi->FoldersSetFolderUserPermission");
+            // verify the required parameter 'permissions' is set
+            if (permissions == null)
+                throw new ApiException(400, "Missing required parameter 'permissions' when calling FoldersApi->FoldersSetFolderUserPermission");
+
+            var localVarPath = "./api/Folders/{id}/permissions/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (permissions != null && permissions.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(permissions); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = permissions; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersSetFolderUserPermission", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task FoldersSetFolderUserPermissionAsync (int? id, SetFolderUserPermissionDTO permissions)
+        {
+             await FoldersSetFolderUserPermissionAsyncWithHttpInfo(id, permissions);
+
+        }
+
+        /// <summary>
+        /// This methods set the folder permission for a user 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">The identifier of the folder</param>
+        /// <param name="permissions">Folder Permission for the user</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> FoldersSetFolderUserPermissionAsyncWithHttpInfo (int? id, SetFolderUserPermissionDTO permissions)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling FoldersApi->FoldersSetFolderUserPermission");
+            // verify the required parameter 'permissions' is set
+            if (permissions == null)
+                throw new ApiException(400, "Missing required parameter 'permissions' when calling FoldersApi->FoldersSetFolderUserPermission");
+
+            var localVarPath = "./api/Folders/{id}/permissions/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", this.Configuration.ApiClient.ParameterToString(id)); // path parameter
+            if (permissions != null && permissions.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(permissions); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = permissions; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FoldersSetFolderUserPermission", localVarResponse);
                 if (exception != null) throw exception;
             }
 

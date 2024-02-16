@@ -25,6 +25,27 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Gets a find by its externalId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>FindDTO</returns>
+        FindDTO FindGetFindByExternalId (string externalId);
+
+        /// <summary>
+        /// Gets a find by its externalId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>ApiResponse of FindDTO</returns>
+        ApiResponse<FindDTO> FindGetFindByExternalIdWithHttpInfo (string externalId);
+        /// <summary>
         /// Get Find Group by Id
         /// </summary>
         /// <remarks>
@@ -66,6 +87,27 @@ namespace ARXivarNEXT.Client.Api
         ApiResponse<List<FindGroupDTO>> FindGetFindGroupListWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Gets a find by its externalId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>Task of FindDTO</returns>
+        System.Threading.Tasks.Task<FindDTO> FindGetFindByExternalIdAsync (string externalId);
+
+        /// <summary>
+        /// Gets a find by its externalId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>Task of ApiResponse (FindDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<FindDTO>> FindGetFindByExternalIdAsyncWithHttpInfo (string externalId);
         /// <summary>
         /// Get Find Group by Id
         /// </summary>
@@ -204,6 +246,155 @@ namespace ARXivarNEXT.Client.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// Gets a find by its externalId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>FindDTO</returns>
+        public FindDTO FindGetFindByExternalId (string externalId)
+        {
+             ApiResponse<FindDTO> localVarResponse = FindGetFindByExternalIdWithHttpInfo(externalId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets a find by its externalId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>ApiResponse of FindDTO</returns>
+        public ApiResponse< FindDTO > FindGetFindByExternalIdWithHttpInfo (string externalId)
+        {
+            // verify the required parameter 'externalId' is set
+            if (externalId == null)
+                throw new ApiException(400, "Missing required parameter 'externalId' when calling FindApi->FindGetFindByExternalId");
+
+            var localVarPath = "./api/Find/ExternalId/{externalId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (externalId != null) localVarPathParams.Add("externalId", this.Configuration.ApiClient.ParameterToString(externalId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FindGetFindByExternalId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FindDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (FindDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FindDTO)));
+        }
+
+        /// <summary>
+        /// Gets a find by its externalId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>Task of FindDTO</returns>
+        public async System.Threading.Tasks.Task<FindDTO> FindGetFindByExternalIdAsync (string externalId)
+        {
+             ApiResponse<FindDTO> localVarResponse = await FindGetFindByExternalIdAsyncWithHttpInfo(externalId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Gets a find by its externalId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="externalId">The externalId</param>
+        /// <returns>Task of ApiResponse (FindDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<FindDTO>> FindGetFindByExternalIdAsyncWithHttpInfo (string externalId)
+        {
+            // verify the required parameter 'externalId' is set
+            if (externalId == null)
+                throw new ApiException(400, "Missing required parameter 'externalId' when calling FindApi->FindGetFindByExternalId");
+
+            var localVarPath = "./api/Find/ExternalId/{externalId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (externalId != null) localVarPathParams.Add("externalId", this.Configuration.ApiClient.ParameterToString(externalId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FindGetFindByExternalId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<FindDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (FindDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FindDTO)));
         }
 
         /// <summary>

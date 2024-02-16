@@ -23,7 +23,7 @@ using SwaggerDateConverter = ARXivarNEXT.Client.Client.SwaggerDateConverter;
 namespace ARXivarNEXT.Client.Model
 {
     /// <summary>
-    /// Int key value
+    /// Double key value
     /// </summary>
     [DataContract]
     public partial class DoubleKeyValueDTO : GenericKeyValueDTO,  IEquatable<DoubleKeyValueDTO>

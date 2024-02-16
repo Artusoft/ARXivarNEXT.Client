@@ -39,7 +39,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="type3">Classe documentale di terso livello..</param>
         /// <param name="idModel">Identificativo del modello office di riferimento..</param>
         /// <param name="fieldsMatrixModule">fieldsMatrixModule.</param>
-        public FieldsModuleDTO(string profileField = default(string), string label = default(string), string modelField = default(string), int? type1 = default(int?), int? type2 = default(int?), int? type3 = default(int?), int? idModel = default(int?), List<FieldsMatrixModuleDTO> fieldsMatrixModule = default(List<FieldsMatrixModuleDTO>))
+        /// <param name="linkedDocumentType">linkedDocumentType.</param>
+        public FieldsModuleDTO(string profileField = default(string), string label = default(string), string modelField = default(string), int? type1 = default(int?), int? type2 = default(int?), int? type3 = default(int?), int? idModel = default(int?), List<FieldsMatrixModuleDTO> fieldsMatrixModule = default(List<FieldsMatrixModuleDTO>), DocumentTypeIdsDTO linkedDocumentType = default(DocumentTypeIdsDTO))
         {
             this.ProfileField = profileField;
             this.Label = label;
@@ -49,6 +50,7 @@ namespace ARXivarNEXT.Client.Model
             this.Type3 = type3;
             this.IdModel = idModel;
             this.FieldsMatrixModule = fieldsMatrixModule;
+            this.LinkedDocumentType = linkedDocumentType;
         }
         
         /// <summary>
@@ -107,6 +109,12 @@ namespace ARXivarNEXT.Client.Model
         public List<FieldsMatrixModuleDTO> FieldsMatrixModule { get; set; }
 
         /// <summary>
+        /// Gets or Sets LinkedDocumentType
+        /// </summary>
+        [DataMember(Name="linkedDocumentType", EmitDefaultValue=false)]
+        public DocumentTypeIdsDTO LinkedDocumentType { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -122,6 +130,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Type3: ").Append(Type3).Append("\n");
             sb.Append("  IdModel: ").Append(IdModel).Append("\n");
             sb.Append("  FieldsMatrixModule: ").Append(FieldsMatrixModule).Append("\n");
+            sb.Append("  LinkedDocumentType: ").Append(LinkedDocumentType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -195,6 +204,11 @@ namespace ARXivarNEXT.Client.Model
                     this.FieldsMatrixModule == input.FieldsMatrixModule ||
                     this.FieldsMatrixModule != null &&
                     this.FieldsMatrixModule.SequenceEqual(input.FieldsMatrixModule)
+                ) && 
+                (
+                    this.LinkedDocumentType == input.LinkedDocumentType ||
+                    (this.LinkedDocumentType != null &&
+                    this.LinkedDocumentType.Equals(input.LinkedDocumentType))
                 );
         }
 
@@ -223,6 +237,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.IdModel.GetHashCode();
                 if (this.FieldsMatrixModule != null)
                     hashCode = hashCode * 59 + this.FieldsMatrixModule.GetHashCode();
+                if (this.LinkedDocumentType != null)
+                    hashCode = hashCode * 59 + this.LinkedDocumentType.GetHashCode();
                 return hashCode;
             }
         }

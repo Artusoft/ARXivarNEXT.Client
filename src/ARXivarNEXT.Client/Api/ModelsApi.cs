@@ -67,6 +67,29 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> ModelsDeleteWithHttpInfo (int? id);
         /// <summary>
+        /// This call re-generate a document based on a model by its profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Object</returns>
+        Object ModelsGetDocumentByProfileAndModel (int? docNumber, int? modelId);
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> ModelsGetDocumentByProfileAndModelWithHttpInfo (int? docNumber, int? modelId);
+        /// <summary>
         /// This call returns the template preview file for a model
         /// </summary>
         /// <remarks>
@@ -324,6 +347,29 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="id">Model Identifier</param>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ModelsDeleteAsyncWithHttpInfo (int? id);
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> ModelsGetDocumentByProfileAndModelAsync (int? docNumber, int? modelId);
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ModelsGetDocumentByProfileAndModelAsyncWithHttpInfo (int? docNumber, int? modelId);
         /// <summary>
         /// This call returns the template preview file for a model
         /// </summary>
@@ -918,6 +964,167 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("ModelsDelete", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Object</returns>
+        public Object ModelsGetDocumentByProfileAndModel (int? docNumber, int? modelId)
+        {
+             ApiResponse<Object> localVarResponse = ModelsGetDocumentByProfileAndModelWithHttpInfo(docNumber, modelId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > ModelsGetDocumentByProfileAndModelWithHttpInfo (int? docNumber, int? modelId)
+        {
+            // verify the required parameter 'docNumber' is set
+            if (docNumber == null)
+                throw new ApiException(400, "Missing required parameter 'docNumber' when calling ModelsApi->ModelsGetDocumentByProfileAndModel");
+            // verify the required parameter 'modelId' is set
+            if (modelId == null)
+                throw new ApiException(400, "Missing required parameter 'modelId' when calling ModelsApi->ModelsGetDocumentByProfileAndModel");
+
+            var localVarPath = "./api/Models/{modelId}/ByProfile/{docNumber}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docNumber != null) localVarPathParams.Add("docNumber", this.Configuration.ApiClient.ParameterToString(docNumber)); // path parameter
+            if (modelId != null) localVarPathParams.Add("modelId", this.Configuration.ApiClient.ParameterToString(modelId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModelsGetDocumentByProfileAndModel", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> ModelsGetDocumentByProfileAndModelAsync (int? docNumber, int? modelId)
+        {
+             ApiResponse<Object> localVarResponse = await ModelsGetDocumentByProfileAndModelAsyncWithHttpInfo(docNumber, modelId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call re-generate a document based on a model by its profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="docNumber">Document number</param>
+        /// <param name="modelId">Model identifier</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> ModelsGetDocumentByProfileAndModelAsyncWithHttpInfo (int? docNumber, int? modelId)
+        {
+            // verify the required parameter 'docNumber' is set
+            if (docNumber == null)
+                throw new ApiException(400, "Missing required parameter 'docNumber' when calling ModelsApi->ModelsGetDocumentByProfileAndModel");
+            // verify the required parameter 'modelId' is set
+            if (modelId == null)
+                throw new ApiException(400, "Missing required parameter 'modelId' when calling ModelsApi->ModelsGetDocumentByProfileAndModel");
+
+            var localVarPath = "./api/Models/{modelId}/ByProfile/{docNumber}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (docNumber != null) localVarPathParams.Add("docNumber", this.Configuration.ApiClient.ParameterToString(docNumber)); // path parameter
+            if (modelId != null) localVarPathParams.Add("modelId", this.Configuration.ApiClient.ParameterToString(modelId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModelsGetDocumentByProfileAndModel", localVarResponse);
                 if (exception != null) throw exception;
             }
 

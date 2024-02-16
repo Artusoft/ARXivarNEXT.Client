@@ -31,9 +31,9 @@ namespace ARXivarNEXT.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BarcodeInsertRequestDTO" /> class.
         /// </summary>
-        /// <param name="docnumber">docnumber.</param>
+        /// <param name="docnumber">Docnumber.</param>
         /// <param name="barcodeType">Possible values:  0: Document  1: Attachment  2: Revision .</param>
-        /// <param name="barcode">barcode.</param>
+        /// <param name="barcode">Barcode.</param>
         public BarcodeInsertRequestDTO(int? docnumber = default(int?), int? barcodeType = default(int?), string barcode = default(string))
         {
             this.Docnumber = docnumber;
@@ -42,8 +42,9 @@ namespace ARXivarNEXT.Client.Model
         }
         
         /// <summary>
-        /// Gets or Sets Docnumber
+        /// Docnumber
         /// </summary>
+        /// <value>Docnumber</value>
         [DataMember(Name="docnumber", EmitDefaultValue=false)]
         public int? Docnumber { get; set; }
 
@@ -55,8 +56,9 @@ namespace ARXivarNEXT.Client.Model
         public int? BarcodeType { get; set; }
 
         /// <summary>
-        /// Gets or Sets Barcode
+        /// Barcode
         /// </summary>
+        /// <value>Barcode</value>
         [DataMember(Name="barcode", EmitDefaultValue=false)]
         public string Barcode { get; set; }
 

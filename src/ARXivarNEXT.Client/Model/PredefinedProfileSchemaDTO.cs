@@ -43,7 +43,9 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="authorityData">Authority Data.</param>
         /// <param name="generatePaProtocol">Defines if a protocol has been generated.</param>
         /// <param name="fileWritingSettings">File Writing Settings.</param>
-        public PredefinedProfileSchemaDTO(int? predefinedProfileId = default(int?), int? id = default(int?), FileDTO document = default(FileDTO), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), List<PostProfilationActionDTO> postProfilationActions = default(List<PostProfilationActionDTO>), int? constrainRoleBehaviour = default(int?), List<string> attachments = default(List<string>), List<NoteDTO> notes = default(List<NoteDTO>), List<string> paNotes = default(List<string>), AuthorityDataDTO authorityData = default(AuthorityDataDTO), bool? generatePaProtocol = default(bool?), DocumentsWritingSettingsDTO fileWritingSettings = default(DocumentsWritingSettingsDTO))
+        /// <param name="fileRequired">fileRequired.</param>
+        /// <param name="fileMandatoryCondition">fileMandatoryCondition.</param>
+        public PredefinedProfileSchemaDTO(int? predefinedProfileId = default(int?), int? id = default(int?), FileDTO document = default(FileDTO), List<FieldBaseDTO> fields = default(List<FieldBaseDTO>), List<PostProfilationActionDTO> postProfilationActions = default(List<PostProfilationActionDTO>), int? constrainRoleBehaviour = default(int?), List<string> attachments = default(List<string>), List<NoteDTO> notes = default(List<NoteDTO>), List<string> paNotes = default(List<string>), AuthorityDataDTO authorityData = default(AuthorityDataDTO), bool? generatePaProtocol = default(bool?), DocumentsWritingSettingsDTO fileWritingSettings = default(DocumentsWritingSettingsDTO), bool? fileRequired = default(bool?), string fileMandatoryCondition = default(string))
         {
             this.PredefinedProfileId = predefinedProfileId;
             this.Id = id;
@@ -57,6 +59,8 @@ namespace ARXivarNEXT.Client.Model
             this.AuthorityData = authorityData;
             this.GeneratePaProtocol = generatePaProtocol;
             this.FileWritingSettings = fileWritingSettings;
+            this.FileRequired = fileRequired;
+            this.FileMandatoryCondition = fileMandatoryCondition;
         }
         
         /// <summary>
@@ -144,6 +148,18 @@ namespace ARXivarNEXT.Client.Model
         public DocumentsWritingSettingsDTO FileWritingSettings { get; set; }
 
         /// <summary>
+        /// Gets or Sets FileRequired
+        /// </summary>
+        [DataMember(Name="fileRequired", EmitDefaultValue=false)]
+        public bool? FileRequired { get; set; }
+
+        /// <summary>
+        /// Gets or Sets FileMandatoryCondition
+        /// </summary>
+        [DataMember(Name="fileMandatoryCondition", EmitDefaultValue=false)]
+        public string FileMandatoryCondition { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -163,6 +179,8 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  AuthorityData: ").Append(AuthorityData).Append("\n");
             sb.Append("  GeneratePaProtocol: ").Append(GeneratePaProtocol).Append("\n");
             sb.Append("  FileWritingSettings: ").Append(FileWritingSettings).Append("\n");
+            sb.Append("  FileRequired: ").Append(FileRequired).Append("\n");
+            sb.Append("  FileMandatoryCondition: ").Append(FileMandatoryCondition).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -256,6 +274,16 @@ namespace ARXivarNEXT.Client.Model
                     this.FileWritingSettings == input.FileWritingSettings ||
                     (this.FileWritingSettings != null &&
                     this.FileWritingSettings.Equals(input.FileWritingSettings))
+                ) && 
+                (
+                    this.FileRequired == input.FileRequired ||
+                    (this.FileRequired != null &&
+                    this.FileRequired.Equals(input.FileRequired))
+                ) && 
+                (
+                    this.FileMandatoryCondition == input.FileMandatoryCondition ||
+                    (this.FileMandatoryCondition != null &&
+                    this.FileMandatoryCondition.Equals(input.FileMandatoryCondition))
                 );
         }
 
@@ -292,6 +320,10 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.GeneratePaProtocol.GetHashCode();
                 if (this.FileWritingSettings != null)
                     hashCode = hashCode * 59 + this.FileWritingSettings.GetHashCode();
+                if (this.FileRequired != null)
+                    hashCode = hashCode * 59 + this.FileRequired.GetHashCode();
+                if (this.FileMandatoryCondition != null)
+                    hashCode = hashCode * 59 + this.FileMandatoryCondition.GetHashCode();
                 return hashCode;
             }
         }

@@ -155,6 +155,48 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DocumentsExportMassiveForProfile_0WithHttpInfo (ExportMassiveForProcessDocRequestDTO exportMassiveForProcessDocRequest);
         /// <summary>
+        /// Get the document related to a specific attachment
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream DocumentsGetByMailAttachmentId (int? attachmentId);
+
+        /// <summary>
+        /// Get the document related to a specific attachment
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> DocumentsGetByMailAttachmentIdWithHttpInfo (int? attachmentId);
+        /// <summary>
+        /// Gets the document related to a specific mail message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream DocumentsGetByMailMessageId (int? messageId);
+
+        /// <summary>
+        /// Gets the document related to a specific mail message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> DocumentsGetByMailMessageIdWithHttpInfo (int? messageId);
+        /// <summary>
         /// This call returns the document associated to a specified revision
         /// </summary>
         /// <remarks>
@@ -177,6 +219,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelope removed and stylesheet applied if available (optional)</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DocumentsGetDocumentByRevisionIdWithHttpInfo (int? revisionId, bool? forView = null);
+        /// <summary>
+        /// This call returns the file associated with a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream DocumentsGetDocumentForBarcode (int? idBarcode);
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> DocumentsGetDocumentForBarcodeWithHttpInfo (int? idBarcode);
         /// <summary>
         /// This call returns the file, contained in the signature, associated with the profile
         /// </summary>
@@ -362,8 +425,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream DocumentsGetForMail (int? id, bool? forView, bool? createZip, bool? addAttachments);
+        System.IO.Stream DocumentsGetForMail (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
 
         /// <summary>
         /// This call gets the document as attachment inside of an eml file
@@ -376,8 +440,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DocumentsGetForMailWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments);
+        ApiResponse<System.IO.Stream> DocumentsGetForMailWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
         /// <summary>
         /// This call returns the file associated with the attachment into in a process workflow
         /// </summary>
@@ -643,8 +708,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>System.IO.Stream</returns>
-        System.IO.Stream DocumentsGetProcessdocForMail (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments);
+        System.IO.Stream DocumentsGetProcessdocForMail (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
 
         /// <summary>
         /// This call gets the process document as attachment inside of an eml file
@@ -658,8 +724,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        ApiResponse<System.IO.Stream> DocumentsGetProcessdocForMailWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments);
+        ApiResponse<System.IO.Stream> DocumentsGetProcessdocForMailWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
         /// <summary>
         /// This call retrieve the attachemnt file by its revision
         /// </summary>
@@ -686,7 +753,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of System.IO.Stream</returns>
         ApiResponse<System.IO.Stream> DocumentsGetRevisionDocumentByIdWithHttpInfo (int? attachmentId, int? revisionId, bool? forView = null);
         /// <summary>
-        /// This call update a file associated to a profile
+        /// This call updates a file associated to a profile
         /// </summary>
         /// <remarks>
         /// 
@@ -698,7 +765,7 @@ namespace ARXivarNEXT.Client.Api
         void DocumentsSetDocument (string cacheId, int? docNumber);
 
         /// <summary>
-        /// This call update a file associated to a profile
+        /// This call updates a file associated to a profile
         /// </summary>
         /// <remarks>
         /// 
@@ -709,7 +776,28 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DocumentsSetDocumentWithHttpInfo (string cacheId, int? docNumber);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This method matches a barcode with a document by its bufferId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns></returns>
+        void DocumentsSetDocumentForBarcode (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest);
+
+        /// <summary>
+        /// This method matches a barcode with a document by its bufferId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> DocumentsSetDocumentForBarcodeWithHttpInfo (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest);
+        /// <summary>
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -722,7 +810,7 @@ namespace ARXivarNEXT.Client.Api
         void DocumentsSetDocumentWithOption (string cacheId, int? docNumber, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -734,7 +822,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DocumentsSetDocumentWithOptionWithHttpInfo (string cacheId, int? docNumber, int? updateOption);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -747,7 +835,7 @@ namespace ARXivarNEXT.Client.Api
         void DocumentsSetDocumentWithOptionForProcessV2 (string cacheId, int? docNumber, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -759,7 +847,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DocumentsSetDocumentWithOptionForProcessV2WithHttpInfo (string cacheId, int? docNumber, int? updateOption);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -773,7 +861,7 @@ namespace ARXivarNEXT.Client.Api
         void DocumentsSetDocumentWithOptionForTaskV2 (string cacheId, int? docNumber, Guid? processDocId, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -918,6 +1006,48 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsExportMassiveForProfile_0AsyncWithHttpInfo (ExportMassiveForProcessDocRequestDTO exportMassiveForProcessDocRequest);
         /// <summary>
+        /// Get the document related to a specific attachment
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetByMailAttachmentIdAsync (int? attachmentId);
+
+        /// <summary>
+        /// Get the document related to a specific attachment
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetByMailAttachmentIdAsyncWithHttpInfo (int? attachmentId);
+        /// <summary>
+        /// Gets the document related to a specific mail message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetByMailMessageIdAsync (int? messageId);
+
+        /// <summary>
+        /// Gets the document related to a specific mail message
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetByMailMessageIdAsyncWithHttpInfo (int? messageId);
+        /// <summary>
         /// This call returns the document associated to a specified revision
         /// </summary>
         /// <remarks>
@@ -940,6 +1070,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelope removed and stylesheet applied if available (optional)</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetDocumentByRevisionIdAsyncWithHttpInfo (int? revisionId, bool? forView = null);
+        /// <summary>
+        /// This call returns the file associated with a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetDocumentForBarcodeAsync (int? idBarcode);
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetDocumentForBarcodeAsyncWithHttpInfo (int? idBarcode);
         /// <summary>
         /// This call returns the file, contained in the signature, associated with the profile
         /// </summary>
@@ -1125,8 +1276,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetForMailAsync (int? id, bool? forView, bool? createZip, bool? addAttachments);
+        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetForMailAsync (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
 
         /// <summary>
         /// This call gets the document as attachment inside of an eml file
@@ -1139,8 +1291,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetForMailAsyncWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetForMailAsyncWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
         /// <summary>
         /// This call returns the file associated with the attachment into in a process workflow
         /// </summary>
@@ -1406,8 +1559,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of System.IO.Stream</returns>
-        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetProcessdocForMailAsync (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments);
+        System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetProcessdocForMailAsync (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
 
         /// <summary>
         /// This call gets the process document as attachment inside of an eml file
@@ -1421,8 +1575,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetProcessdocForMailAsyncWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments);
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetProcessdocForMailAsyncWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf);
         /// <summary>
         /// This call retrieve the attachemnt file by its revision
         /// </summary>
@@ -1449,7 +1604,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
         System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetRevisionDocumentByIdAsyncWithHttpInfo (int? attachmentId, int? revisionId, bool? forView = null);
         /// <summary>
-        /// This call update a file associated to a profile
+        /// This call updates a file associated to a profile
         /// </summary>
         /// <remarks>
         /// 
@@ -1461,7 +1616,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DocumentsSetDocumentAsync (string cacheId, int? docNumber);
 
         /// <summary>
-        /// This call update a file associated to a profile
+        /// This call updates a file associated to a profile
         /// </summary>
         /// <remarks>
         /// 
@@ -1472,7 +1627,28 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DocumentsSetDocumentAsyncWithHttpInfo (string cacheId, int? docNumber);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This method matches a barcode with a document by its bufferId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task DocumentsSetDocumentForBarcodeAsync (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest);
+
+        /// <summary>
+        /// This method matches a barcode with a document by its bufferId
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> DocumentsSetDocumentForBarcodeAsyncWithHttpInfo (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest);
+        /// <summary>
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -1485,7 +1661,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DocumentsSetDocumentWithOptionAsync (string cacheId, int? docNumber, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -1497,7 +1673,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DocumentsSetDocumentWithOptionAsyncWithHttpInfo (string cacheId, int? docNumber, int? updateOption);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -1510,7 +1686,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DocumentsSetDocumentWithOptionForProcessV2Async (string cacheId, int? docNumber, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -1522,7 +1698,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DocumentsSetDocumentWithOptionForProcessV2AsyncWithHttpInfo (string cacheId, int? docNumber, int? updateOption);
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -1536,7 +1712,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DocumentsSetDocumentWithOptionForTaskV2Async (string cacheId, int? docNumber, Guid? processDocId, int? updateOption);
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter
         /// </summary>
         /// <remarks>
         /// 
@@ -2573,6 +2749,292 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
+        /// Get the document related to a specific attachment 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream DocumentsGetByMailAttachmentId (int? attachmentId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetByMailAttachmentIdWithHttpInfo(attachmentId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Get the document related to a specific attachment 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > DocumentsGetByMailAttachmentIdWithHttpInfo (int? attachmentId)
+        {
+            // verify the required parameter 'attachmentId' is set
+            if (attachmentId == null)
+                throw new ApiException(400, "Missing required parameter 'attachmentId' when calling DocumentsApi->DocumentsGetByMailAttachmentId");
+
+            var localVarPath = "./api/Documents/attachment/{attachmentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (attachmentId != null) localVarPathParams.Add("attachmentId", this.Configuration.ApiClient.ParameterToString(attachmentId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetByMailAttachmentId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Get the document related to a specific attachment 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetByMailAttachmentIdAsync (int? attachmentId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetByMailAttachmentIdAsyncWithHttpInfo(attachmentId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Get the document related to a specific attachment 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="attachmentId">The attachment Id</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetByMailAttachmentIdAsyncWithHttpInfo (int? attachmentId)
+        {
+            // verify the required parameter 'attachmentId' is set
+            if (attachmentId == null)
+                throw new ApiException(400, "Missing required parameter 'attachmentId' when calling DocumentsApi->DocumentsGetByMailAttachmentId");
+
+            var localVarPath = "./api/Documents/attachment/{attachmentId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (attachmentId != null) localVarPathParams.Add("attachmentId", this.Configuration.ApiClient.ParameterToString(attachmentId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetByMailAttachmentId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Gets the document related to a specific mail message 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream DocumentsGetByMailMessageId (int? messageId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetByMailMessageIdWithHttpInfo(messageId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Gets the document related to a specific mail message 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > DocumentsGetByMailMessageIdWithHttpInfo (int? messageId)
+        {
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling DocumentsApi->DocumentsGetByMailMessageId");
+
+            var localVarPath = "./api/Documents/message/{messageId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (messageId != null) localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetByMailMessageId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// Gets the document related to a specific mail message 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetByMailMessageIdAsync (int? messageId)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetByMailMessageIdAsyncWithHttpInfo(messageId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Gets the document related to a specific mail message 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="messageId">The message Id</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetByMailMessageIdAsyncWithHttpInfo (int? messageId)
+        {
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling DocumentsApi->DocumentsGetByMailMessageId");
+
+            var localVarPath = "./api/Documents/message/{messageId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (messageId != null) localVarPathParams.Add("messageId", this.Configuration.ApiClient.ParameterToString(messageId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetByMailMessageId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
         /// This call returns the document associated to a specified revision 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -2713,6 +3175,149 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("DocumentsGetDocumentByRevisionId", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream DocumentsGetDocumentForBarcode (int? idBarcode)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetDocumentForBarcodeWithHttpInfo(idBarcode);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > DocumentsGetDocumentForBarcodeWithHttpInfo (int? idBarcode)
+        {
+            // verify the required parameter 'idBarcode' is set
+            if (idBarcode == null)
+                throw new ApiException(400, "Missing required parameter 'idBarcode' when calling DocumentsApi->DocumentsGetDocumentForBarcode");
+
+            var localVarPath = "./api/Documents/ForBarcode/{idBarcode}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (idBarcode != null) localVarPathParams.Add("idBarcode", this.Configuration.ApiClient.ParameterToString(idBarcode)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetDocumentForBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (System.IO.Stream) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
+        }
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetDocumentForBarcodeAsync (int? idBarcode)
+        {
+             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetDocumentForBarcodeAsyncWithHttpInfo(idBarcode);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call returns the file associated with a specified barcode 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="idBarcode">Barcode Identifier</param>
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetDocumentForBarcodeAsyncWithHttpInfo (int? idBarcode)
+        {
+            // verify the required parameter 'idBarcode' is set
+            if (idBarcode == null)
+                throw new ApiException(400, "Missing required parameter 'idBarcode' when calling DocumentsApi->DocumentsGetDocumentForBarcode");
+
+            var localVarPath = "./api/Documents/ForBarcode/{idBarcode}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/octet-stream"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (idBarcode != null) localVarPathParams.Add("idBarcode", this.Configuration.ApiClient.ParameterToString(idBarcode)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsGetDocumentForBarcode", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -3903,10 +4508,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DocumentsGetForMail (int? id, bool? forView, bool? createZip, bool? addAttachments)
+        public System.IO.Stream DocumentsGetForMail (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetForMailWithHttpInfo(id, forView, createZip, addAttachments);
+             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetForMailWithHttpInfo(id, forView, createZip, addAttachments, convertToPdf);
              return localVarResponse.Data;
         }
 
@@ -3918,8 +4524,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse< System.IO.Stream > DocumentsGetForMailWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments)
+        public ApiResponse< System.IO.Stream > DocumentsGetForMailWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3933,6 +4540,9 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'addAttachments' is set
             if (addAttachments == null)
                 throw new ApiException(400, "Missing required parameter 'addAttachments' when calling DocumentsApi->DocumentsGetForMail");
+            // verify the required parameter 'convertToPdf' is set
+            if (convertToPdf == null)
+                throw new ApiException(400, "Missing required parameter 'convertToPdf' when calling DocumentsApi->DocumentsGetForMail");
 
             var localVarPath = "./api/Documents/GetMail/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -3959,6 +4569,7 @@ namespace ARXivarNEXT.Client.Api
             if (forView != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "forView", forView)); // query parameter
             if (createZip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createZip", createZip)); // query parameter
             if (addAttachments != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "addAttachments", addAttachments)); // query parameter
+            if (convertToPdf != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "convertToPdf", convertToPdf)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -3992,10 +4603,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetForMailAsync (int? id, bool? forView, bool? createZip, bool? addAttachments)
+        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetForMailAsync (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetForMailAsyncWithHttpInfo(id, forView, createZip, addAttachments);
+             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetForMailAsyncWithHttpInfo(id, forView, createZip, addAttachments, convertToPdf);
              return localVarResponse.Data;
 
         }
@@ -4008,8 +4620,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetForMailAsyncWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetForMailAsyncWithHttpInfo (int? id, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4023,6 +4636,9 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'addAttachments' is set
             if (addAttachments == null)
                 throw new ApiException(400, "Missing required parameter 'addAttachments' when calling DocumentsApi->DocumentsGetForMail");
+            // verify the required parameter 'convertToPdf' is set
+            if (convertToPdf == null)
+                throw new ApiException(400, "Missing required parameter 'convertToPdf' when calling DocumentsApi->DocumentsGetForMail");
 
             var localVarPath = "./api/Documents/GetMail/{id}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -4049,6 +4665,7 @@ namespace ARXivarNEXT.Client.Api
             if (forView != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "forView", forView)); // query parameter
             if (createZip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createZip", createZip)); // query parameter
             if (addAttachments != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "addAttachments", addAttachments)); // query parameter
+            if (convertToPdf != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "convertToPdf", convertToPdf)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5824,10 +6441,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>System.IO.Stream</returns>
-        public System.IO.Stream DocumentsGetProcessdocForMail (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments)
+        public System.IO.Stream DocumentsGetProcessdocForMail (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetProcessdocForMailWithHttpInfo(processDocId, taskWorkId, forView, createZip, addAttachments);
+             ApiResponse<System.IO.Stream> localVarResponse = DocumentsGetProcessdocForMailWithHttpInfo(processDocId, taskWorkId, forView, createZip, addAttachments, convertToPdf);
              return localVarResponse.Data;
         }
 
@@ -5840,8 +6458,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>ApiResponse of System.IO.Stream</returns>
-        public ApiResponse< System.IO.Stream > DocumentsGetProcessdocForMailWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments)
+        public ApiResponse< System.IO.Stream > DocumentsGetProcessdocForMailWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
             // verify the required parameter 'processDocId' is set
             if (processDocId == null)
@@ -5858,6 +6477,9 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'addAttachments' is set
             if (addAttachments == null)
                 throw new ApiException(400, "Missing required parameter 'addAttachments' when calling DocumentsApi->DocumentsGetProcessdocForMail");
+            // verify the required parameter 'convertToPdf' is set
+            if (convertToPdf == null)
+                throw new ApiException(400, "Missing required parameter 'convertToPdf' when calling DocumentsApi->DocumentsGetProcessdocForMail");
 
             var localVarPath = "./api/Documents/GetMail/ForTask/{processDocId}/{taskWorkId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5885,6 +6507,7 @@ namespace ARXivarNEXT.Client.Api
             if (forView != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "forView", forView)); // query parameter
             if (createZip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createZip", createZip)); // query parameter
             if (addAttachments != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "addAttachments", addAttachments)); // query parameter
+            if (convertToPdf != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "convertToPdf", convertToPdf)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -5919,10 +6542,11 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of System.IO.Stream</returns>
-        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetProcessdocForMailAsync (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments)
+        public async System.Threading.Tasks.Task<System.IO.Stream> DocumentsGetProcessdocForMailAsync (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
-             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetProcessdocForMailAsyncWithHttpInfo(processDocId, taskWorkId, forView, createZip, addAttachments);
+             ApiResponse<System.IO.Stream> localVarResponse = await DocumentsGetProcessdocForMailAsyncWithHttpInfo(processDocId, taskWorkId, forView, createZip, addAttachments, convertToPdf);
              return localVarResponse.Data;
 
         }
@@ -5936,8 +6560,9 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="forView">Cryptographic envelopes will be removed and stylesheet applied</param>
         /// <param name="createZip">Attachment as zip</param>
         /// <param name="addAttachments">Add also the documents attachments</param>
+        /// <param name="convertToPdf">Try to convert the documents to PDF</param>
         /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetProcessdocForMailAsyncWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments)
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> DocumentsGetProcessdocForMailAsyncWithHttpInfo (int? processDocId, int? taskWorkId, bool? forView, bool? createZip, bool? addAttachments, bool? convertToPdf)
         {
             // verify the required parameter 'processDocId' is set
             if (processDocId == null)
@@ -5954,6 +6579,9 @@ namespace ARXivarNEXT.Client.Api
             // verify the required parameter 'addAttachments' is set
             if (addAttachments == null)
                 throw new ApiException(400, "Missing required parameter 'addAttachments' when calling DocumentsApi->DocumentsGetProcessdocForMail");
+            // verify the required parameter 'convertToPdf' is set
+            if (convertToPdf == null)
+                throw new ApiException(400, "Missing required parameter 'convertToPdf' when calling DocumentsApi->DocumentsGetProcessdocForMail");
 
             var localVarPath = "./api/Documents/GetMail/ForTask/{processDocId}/{taskWorkId}";
             var localVarPathParams = new Dictionary<String, String>();
@@ -5981,6 +6609,7 @@ namespace ARXivarNEXT.Client.Api
             if (forView != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "forView", forView)); // query parameter
             if (createZip != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "createZip", createZip)); // query parameter
             if (addAttachments != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "addAttachments", addAttachments)); // query parameter
+            if (convertToPdf != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "convertToPdf", convertToPdf)); // query parameter
 
             // authentication (Authorization) required
             if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -6168,7 +6797,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile 
+        /// This call updates a file associated to a profile 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6180,7 +6809,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile 
+        /// This call updates a file associated to a profile 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6243,7 +6872,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile 
+        /// This call updates a file associated to a profile 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6256,7 +6885,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile 
+        /// This call updates a file associated to a profile 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6319,7 +6948,170 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This method matches a barcode with a document by its bufferId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns></returns>
+        public void DocumentsSetDocumentForBarcode (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest)
+        {
+             DocumentsSetDocumentForBarcodeWithHttpInfo(barcodeSetDocumentRequest);
+        }
+
+        /// <summary>
+        /// This method matches a barcode with a document by its bufferId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> DocumentsSetDocumentForBarcodeWithHttpInfo (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest)
+        {
+            // verify the required parameter 'barcodeSetDocumentRequest' is set
+            if (barcodeSetDocumentRequest == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeSetDocumentRequest' when calling DocumentsApi->DocumentsSetDocumentForBarcode");
+
+            var localVarPath = "./api/Documents/ForBarcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeSetDocumentRequest != null && barcodeSetDocumentRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeSetDocumentRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeSetDocumentRequest; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsSetDocumentForBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This method matches a barcode with a document by its bufferId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task DocumentsSetDocumentForBarcodeAsync (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest)
+        {
+             await DocumentsSetDocumentForBarcodeAsyncWithHttpInfo(barcodeSetDocumentRequest);
+
+        }
+
+        /// <summary>
+        /// This method matches a barcode with a document by its bufferId 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="barcodeSetDocumentRequest">The barcode set document request</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> DocumentsSetDocumentForBarcodeAsyncWithHttpInfo (BarcodeSetDocumentRequestDto barcodeSetDocumentRequest)
+        {
+            // verify the required parameter 'barcodeSetDocumentRequest' is set
+            if (barcodeSetDocumentRequest == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeSetDocumentRequest' when calling DocumentsApi->DocumentsSetDocumentForBarcode");
+
+            var localVarPath = "./api/Documents/ForBarcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (barcodeSetDocumentRequest != null && barcodeSetDocumentRequest.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeSetDocumentRequest); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeSetDocumentRequest; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DocumentsSetDocumentForBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6332,7 +7124,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6400,7 +7192,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6414,7 +7206,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6482,7 +7274,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6495,7 +7287,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6563,7 +7355,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6577,7 +7369,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6645,7 +7437,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6659,7 +7451,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6732,7 +7524,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>
@@ -6747,7 +7539,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a file associated to a profile. The update mode is specified by the update option parameter 
+        /// This call updates a file associated to a profile. The update mode is specified by the update option parameter 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cacheId">Identifier of cache</param>

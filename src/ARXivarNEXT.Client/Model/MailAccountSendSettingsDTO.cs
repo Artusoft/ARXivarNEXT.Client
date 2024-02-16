@@ -47,7 +47,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="isClientSecretSet">Gets or sets whether the client secret is set.</param>
         /// <param name="isAuthorizationResponseSet">Gets or sets whether the authorization response is set.</param>
         /// <param name="authorizationResponse">The authorization response.</param>
-        public MailAccountSendSettingsDTO(string className = default(string), int? authenticationMode = default(int?), string tenantId = default(string), string clientId = default(string), string clientSecret = default(string), bool? isClientSecretSet = default(bool?), bool? isAuthorizationResponseSet = default(bool?), string authorizationResponse = default(string))
+        /// <param name="isPasswordSet">Whether the password is set.</param>
+        public MailAccountSendSettingsDTO(string className = default(string), int? authenticationMode = default(int?), string tenantId = default(string), string clientId = default(string), string clientSecret = default(string), bool? isClientSecretSet = default(bool?), bool? isAuthorizationResponseSet = default(bool?), string authorizationResponse = default(string), bool? isPasswordSet = default(bool?))
         {
             // to ensure "className" is required (not null)
             if (className == null)
@@ -65,6 +66,7 @@ namespace ARXivarNEXT.Client.Model
             this.IsClientSecretSet = isClientSecretSet;
             this.IsAuthorizationResponseSet = isAuthorizationResponseSet;
             this.AuthorizationResponse = authorizationResponse;
+            this.IsPasswordSet = isPasswordSet;
         }
         
         /// <summary>
@@ -124,6 +126,13 @@ namespace ARXivarNEXT.Client.Model
         public string AuthorizationResponse { get; set; }
 
         /// <summary>
+        /// Whether the password is set
+        /// </summary>
+        /// <value>Whether the password is set</value>
+        [DataMember(Name="isPasswordSet", EmitDefaultValue=false)]
+        public bool? IsPasswordSet { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -139,6 +148,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  IsClientSecretSet: ").Append(IsClientSecretSet).Append("\n");
             sb.Append("  IsAuthorizationResponseSet: ").Append(IsAuthorizationResponseSet).Append("\n");
             sb.Append("  AuthorizationResponse: ").Append(AuthorizationResponse).Append("\n");
+            sb.Append("  IsPasswordSet: ").Append(IsPasswordSet).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -212,6 +222,11 @@ namespace ARXivarNEXT.Client.Model
                     this.AuthorizationResponse == input.AuthorizationResponse ||
                     (this.AuthorizationResponse != null &&
                     this.AuthorizationResponse.Equals(input.AuthorizationResponse))
+                ) && 
+                (
+                    this.IsPasswordSet == input.IsPasswordSet ||
+                    (this.IsPasswordSet != null &&
+                    this.IsPasswordSet.Equals(input.IsPasswordSet))
                 );
         }
 
@@ -240,6 +255,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.IsAuthorizationResponseSet.GetHashCode();
                 if (this.AuthorizationResponse != null)
                     hashCode = hashCode * 59 + this.AuthorizationResponse.GetHashCode();
+                if (this.IsPasswordSet != null)
+                    hashCode = hashCode * 59 + this.IsPasswordSet.GetHashCode();
                 return hashCode;
             }
         }

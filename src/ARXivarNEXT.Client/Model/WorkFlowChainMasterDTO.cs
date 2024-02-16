@@ -37,10 +37,13 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="WorkFlowChainMasterDTO" /> class.
         /// </summary>
         /// <param name="id">Master chain identifier.</param>
+        /// <param name="correlationId">Master chain correlation identifier.</param>
+        /// <param name="creationDate">Master chain Creation Date.</param>
+        /// <param name="followRevision">Master chain Creation Date.</param>
         /// <param name="name">The name (required).</param>
         /// <param name="description">The description.</param>
         /// <param name="wfChains">The list of Workflow chain vars.</param>
-        public WorkFlowChainMasterDTO(string id = default(string), string name = default(string), string description = default(string), List<WorkFlowChainDTO> wfChains = default(List<WorkFlowChainDTO>))
+        public WorkFlowChainMasterDTO(string id = default(string), string correlationId = default(string), DateTime? creationDate = default(DateTime?), bool? followRevision = default(bool?), string name = default(string), string description = default(string), List<WorkFlowChainDTO> wfChains = default(List<WorkFlowChainDTO>))
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -52,6 +55,9 @@ namespace ARXivarNEXT.Client.Model
                 this.Name = name;
             }
             this.Id = id;
+            this.CorrelationId = correlationId;
+            this.CreationDate = creationDate;
+            this.FollowRevision = followRevision;
             this.Description = description;
             this.WfChains = wfChains;
         }
@@ -62,6 +68,27 @@ namespace ARXivarNEXT.Client.Model
         /// <value>Master chain identifier</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Master chain correlation identifier
+        /// </summary>
+        /// <value>Master chain correlation identifier</value>
+        [DataMember(Name="correlationId", EmitDefaultValue=false)]
+        public string CorrelationId { get; set; }
+
+        /// <summary>
+        /// Master chain Creation Date
+        /// </summary>
+        /// <value>Master chain Creation Date</value>
+        [DataMember(Name="creationDate", EmitDefaultValue=false)]
+        public DateTime? CreationDate { get; set; }
+
+        /// <summary>
+        /// Master chain Creation Date
+        /// </summary>
+        /// <value>Master chain Creation Date</value>
+        [DataMember(Name="followRevision", EmitDefaultValue=false)]
+        public bool? FollowRevision { get; set; }
 
         /// <summary>
         /// The name
@@ -93,6 +120,9 @@ namespace ARXivarNEXT.Client.Model
             var sb = new StringBuilder();
             sb.Append("class WorkFlowChainMasterDTO {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  CorrelationId: ").Append(CorrelationId).Append("\n");
+            sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  FollowRevision: ").Append(FollowRevision).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  WfChains: ").Append(WfChains).Append("\n");
@@ -136,6 +166,21 @@ namespace ARXivarNEXT.Client.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
+                    this.CorrelationId == input.CorrelationId ||
+                    (this.CorrelationId != null &&
+                    this.CorrelationId.Equals(input.CorrelationId))
+                ) && 
+                (
+                    this.CreationDate == input.CreationDate ||
+                    (this.CreationDate != null &&
+                    this.CreationDate.Equals(input.CreationDate))
+                ) && 
+                (
+                    this.FollowRevision == input.FollowRevision ||
+                    (this.FollowRevision != null &&
+                    this.FollowRevision.Equals(input.FollowRevision))
+                ) && 
+                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
@@ -163,6 +208,12 @@ namespace ARXivarNEXT.Client.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.CorrelationId != null)
+                    hashCode = hashCode * 59 + this.CorrelationId.GetHashCode();
+                if (this.CreationDate != null)
+                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.FollowRevision != null)
+                    hashCode = hashCode * 59 + this.FollowRevision.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Description != null)

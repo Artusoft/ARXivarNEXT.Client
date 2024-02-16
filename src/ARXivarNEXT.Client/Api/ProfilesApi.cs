@@ -25,6 +25,31 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ProfileResultDTO</returns>
+        ProfileResultDTO ProfilesArchiveMailForWorkflowV2 (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null);
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ApiResponse of ProfileResultDTO</returns>
+        ApiResponse<ProfileResultDTO> ProfilesArchiveMailForWorkflowV2WithHttpInfo (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null);
+        /// <summary>
         /// This call insert new profile from automatic monitored folder file
         /// </summary>
         /// <remarks>
@@ -413,7 +438,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of EditProfileSchemaDTO</returns>
         ApiResponse<EditProfileSchemaDTO> ProfilesGetForTaskWithHttpInfo (int? docNumber, int? taskId);
         /// <summary>
-        /// This call return the mask schema of a document in a task V2
+        /// This call returns the mask schema of a document in a task V2
         /// </summary>
         /// <remarks>
         /// 
@@ -424,7 +449,7 @@ namespace ARXivarNEXT.Client.Api
         EditProfileSchemaDTO ProfilesGetForTaskV2 (TaskV2SchemaRequestDTO request);
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2
+        /// This call returns the mask schema of a document in a task V2
         /// </summary>
         /// <remarks>
         /// 
@@ -442,7 +467,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>EditProfileSchemaDTO</returns>
         EditProfileSchemaDTO ProfilesGetForTask_0 (int? docNumber, int? taskId, bool? switched);
 
@@ -455,7 +480,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>ApiResponse of EditProfileSchemaDTO</returns>
         ApiResponse<EditProfileSchemaDTO> ProfilesGetForTask_0WithHttpInfo (int? docNumber, int? taskId, bool? switched);
         /// <summary>
@@ -806,6 +831,31 @@ namespace ARXivarNEXT.Client.Api
         ApiResponse<ValidationFieldResultDTO> ProfilesValidateForArchiveWithHttpInfo (FieldValidationCalculateArchiveCriteriaDto fieldcriteria = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ProfileResultDTO</returns>
+        System.Threading.Tasks.Task<ProfileResultDTO> ProfilesArchiveMailForWorkflowV2Async (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null);
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ApiResponse (ProfileResultDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProfileResultDTO>> ProfilesArchiveMailForWorkflowV2AsyncWithHttpInfo (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null);
         /// <summary>
         /// This call insert new profile from automatic monitored folder file
         /// </summary>
@@ -1195,7 +1245,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (EditProfileSchemaDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<EditProfileSchemaDTO>> ProfilesGetForTaskAsyncWithHttpInfo (int? docNumber, int? taskId);
         /// <summary>
-        /// This call return the mask schema of a document in a task V2
+        /// This call returns the mask schema of a document in a task V2
         /// </summary>
         /// <remarks>
         /// 
@@ -1206,7 +1256,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task<EditProfileSchemaDTO> ProfilesGetForTaskV2Async (TaskV2SchemaRequestDTO request);
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2
+        /// This call returns the mask schema of a document in a task V2
         /// </summary>
         /// <remarks>
         /// 
@@ -1224,7 +1274,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>Task of EditProfileSchemaDTO</returns>
         System.Threading.Tasks.Task<EditProfileSchemaDTO> ProfilesGetForTask_0Async (int? docNumber, int? taskId, bool? switched);
 
@@ -1237,7 +1287,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>Task of ApiResponse (EditProfileSchemaDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<EditProfileSchemaDTO>> ProfilesGetForTask_0AsyncWithHttpInfo (int? docNumber, int? taskId, bool? switched);
         /// <summary>
@@ -1684,6 +1734,187 @@ namespace ARXivarNEXT.Client.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ProfileResultDTO</returns>
+        public ProfileResultDTO ProfilesArchiveMailForWorkflowV2 (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null)
+        {
+             ApiResponse<ProfileResultDTO> localVarResponse = ProfilesArchiveMailForWorkflowV2WithHttpInfo(predefinedProfileId, messageId, mapping);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>ApiResponse of ProfileResultDTO</returns>
+        public ApiResponse< ProfileResultDTO > ProfilesArchiveMailForWorkflowV2WithHttpInfo (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null)
+        {
+            // verify the required parameter 'predefinedProfileId' is set
+            if (predefinedProfileId == null)
+                throw new ApiException(400, "Missing required parameter 'predefinedProfileId' when calling ProfilesApi->ProfilesArchiveMailForWorkflowV2");
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling ProfilesApi->ProfilesArchiveMailForWorkflowV2");
+
+            var localVarPath = "./api/Profiles/forMailWfV2";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (predefinedProfileId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "predefinedProfileId", predefinedProfileId)); // query parameter
+            if (messageId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "messageId", messageId)); // query parameter
+            if (mapping != null && mapping.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(mapping); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mapping; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ProfilesArchiveMailForWorkflowV2", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProfileResultDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (ProfileResultDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProfileResultDTO)));
+        }
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ProfileResultDTO</returns>
+        public async System.Threading.Tasks.Task<ProfileResultDTO> ProfilesArchiveMailForWorkflowV2Async (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null)
+        {
+             ApiResponse<ProfileResultDTO> localVarResponse = await ProfilesArchiveMailForWorkflowV2AsyncWithHttpInfo(predefinedProfileId, messageId, mapping);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call inserts a new profile from a mail using a predefined profile 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="predefinedProfileId"></param>
+        /// <param name="messageId"></param>
+        /// <param name="mapping"> (optional)</param>
+        /// <returns>Task of ApiResponse (ProfileResultDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ProfileResultDTO>> ProfilesArchiveMailForWorkflowV2AsyncWithHttpInfo (int? predefinedProfileId, int? messageId, ProcessVariablesMappingDTO mapping = null)
+        {
+            // verify the required parameter 'predefinedProfileId' is set
+            if (predefinedProfileId == null)
+                throw new ApiException(400, "Missing required parameter 'predefinedProfileId' when calling ProfilesApi->ProfilesArchiveMailForWorkflowV2");
+            // verify the required parameter 'messageId' is set
+            if (messageId == null)
+                throw new ApiException(400, "Missing required parameter 'messageId' when calling ProfilesApi->ProfilesArchiveMailForWorkflowV2");
+
+            var localVarPath = "./api/Profiles/forMailWfV2";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (predefinedProfileId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "predefinedProfileId", predefinedProfileId)); // query parameter
+            if (messageId != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "messageId", messageId)); // query parameter
+            if (mapping != null && mapping.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(mapping); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = mapping; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ProfilesArchiveMailForWorkflowV2", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ProfileResultDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (ProfileResultDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProfileResultDTO)));
         }
 
         /// <summary>
@@ -4473,7 +4704,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2 
+        /// This call returns the mask schema of a document in a task V2 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
@@ -4485,7 +4716,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2 
+        /// This call returns the mask schema of a document in a task V2 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
@@ -4559,7 +4790,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2 
+        /// This call returns the mask schema of a document in a task V2 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
@@ -4572,7 +4803,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the mask schema of a document in a task V2 
+        /// This call returns the mask schema of a document in a task V2 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"></param>
@@ -4651,7 +4882,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>EditProfileSchemaDTO</returns>
         public EditProfileSchemaDTO ProfilesGetForTask_0 (int? docNumber, int? taskId, bool? switched)
         {
@@ -4665,7 +4896,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>ApiResponse of EditProfileSchemaDTO</returns>
         public ApiResponse< EditProfileSchemaDTO > ProfilesGetForTask_0WithHttpInfo (int? docNumber, int? taskId, bool? switched)
         {
@@ -4737,7 +4968,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>Task of EditProfileSchemaDTO</returns>
         public async System.Threading.Tasks.Task<EditProfileSchemaDTO> ProfilesGetForTask_0Async (int? docNumber, int? taskId, bool? switched)
         {
@@ -4752,7 +4983,7 @@ namespace ARXivarNEXT.Client.Api
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="docNumber">Document Identifier</param>
         /// <param name="taskId">TaskWork Identifier</param>
-        /// <param name="switched"></param>
+        /// <param name="switched">Switched param</param>
         /// <returns>Task of ApiResponse (EditProfileSchemaDTO)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<EditProfileSchemaDTO>> ProfilesGetForTask_0AsyncWithHttpInfo (int? docNumber, int? taskId, bool? switched)
         {

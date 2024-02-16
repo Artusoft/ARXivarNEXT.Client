@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call delete an addressbook category by its Id
+        /// This call deletes an addressbook category by its Id
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace ARXivarNEXT.Client.Api
         void AddressBookCategoryDelete (int? categoryId);
 
         /// <summary>
-        /// This call delete an addressbook category by its Id
+        /// This call deletes an addressbook category by its Id
         /// </summary>
         /// <remarks>
         /// 
@@ -130,7 +130,7 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call delete an addressbook category by its Id
+        /// This call deletes an addressbook category by its Id
         /// </summary>
         /// <remarks>
         /// 
@@ -141,7 +141,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task AddressBookCategoryDeleteAsync (int? categoryId);
 
         /// <summary>
-        /// This call delete an addressbook category by its Id
+        /// This call deletes an addressbook category by its Id
         /// </summary>
         /// <remarks>
         /// 
@@ -333,7 +333,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an addressbook category by its Id 
+        /// This call deletes an addressbook category by its Id 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
@@ -344,7 +344,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an addressbook category by its Id 
+        /// This call deletes an addressbook category by its Id 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
@@ -402,7 +402,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an addressbook category by its Id 
+        /// This call deletes an addressbook category by its Id 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>
@@ -414,7 +414,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete an addressbook category by its Id 
+        /// This call deletes an addressbook category by its Id 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="categoryId"></param>

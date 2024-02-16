@@ -25,7 +25,47 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call clears the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns></returns>
+        void SearchesV3ClearSearchForBarcode ();
+
+        /// <summary>
+        /// This call clears the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SearchesV3ClearSearchForBarcodeWithHttpInfo ();
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Object</returns>
+        Object SearchesV3DefaultSearchBarcode (SelectDTO selectDto);
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> SearchesV3DefaultSearchBarcodeWithHttpInfo (SelectDTO selectDto);
+        /// <summary>
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -35,7 +75,7 @@ namespace ARXivarNEXT.Client.Api
         void SearchesV3Delete ();
 
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -363,6 +403,48 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SearchesV3ResetSelectWithHttpInfo ();
         /// <summary>
+        /// This call performs a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Object</returns>
+        Object SearchesV3SearchBarcode (bool? saveSearch, SearchCriteriaDto searchwebapidto = null);
+
+        /// <summary>
+        /// This call performs a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> SearchesV3SearchBarcodeWithHttpInfo (bool? saveSearch, SearchCriteriaDto searchwebapidto = null);
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SearchDTO</returns>
+        SearchDTO SearchesV3SearchBarcode_0 ();
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SearchDTO</returns>
+        ApiResponse<SearchDTO> SearchesV3SearchBarcode_0WithHttpInfo ();
+        /// <summary>
         /// This call saves the default search for the user
         /// </summary>
         /// <remarks>
@@ -404,10 +486,71 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="searchwebapidto"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> SearchesV3SetLastSearchWithHttpInfo (SearchCriteriaMultipleDto searchwebapidto = null);
+        /// <summary>
+        /// This call sets the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns></returns>
+        void SearchesV3SetSearchBarcode (SearchCriteriaDto searchwebapidto = null);
+
+        /// <summary>
+        /// This call sets the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> SearchesV3SetSearchBarcodeWithHttpInfo (SearchCriteriaDto searchwebapidto = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call clears the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SearchesV3ClearSearchForBarcodeAsync ();
+
+        /// <summary>
+        /// This call clears the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3ClearSearchForBarcodeAsyncWithHttpInfo ();
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> SearchesV3DefaultSearchBarcodeAsync (SelectDTO selectDto);
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3DefaultSearchBarcodeAsyncWithHttpInfo (SelectDTO selectDto);
+        /// <summary>
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -417,7 +560,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task SearchesV3DeleteAsync ();
 
         /// <summary>
-        /// This call delete the default search for the user
+        /// This call deletes the default search for the user
         /// </summary>
         /// <remarks>
         /// 
@@ -745,6 +888,48 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3ResetSelectAsyncWithHttpInfo ();
         /// <summary>
+        /// This call performs a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> SearchesV3SearchBarcodeAsync (bool? saveSearch, SearchCriteriaDto searchwebapidto = null);
+
+        /// <summary>
+        /// This call performs a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3SearchBarcodeAsyncWithHttpInfo (bool? saveSearch, SearchCriteriaDto searchwebapidto = null);
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of SearchDTO</returns>
+        System.Threading.Tasks.Task<SearchDTO> SearchesV3SearchBarcode_0Async ();
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (SearchDTO)</returns>
+        System.Threading.Tasks.Task<ApiResponse<SearchDTO>> SearchesV3SearchBarcode_0AsyncWithHttpInfo ();
+        /// <summary>
         /// This call saves the default search for the user
         /// </summary>
         /// <remarks>
@@ -786,6 +971,27 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="searchwebapidto"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3SetLastSearchAsyncWithHttpInfo (SearchCriteriaMultipleDto searchwebapidto = null);
+        /// <summary>
+        /// This call sets the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task SearchesV3SetSearchBarcodeAsync (SearchCriteriaDto searchwebapidto = null);
+
+        /// <summary>
+        /// This call sets the default search related to barcodes
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3SetSearchBarcodeAsyncWithHttpInfo (SearchCriteriaDto searchwebapidto = null);
         #endregion Asynchronous Operations
     }
 
@@ -887,7 +1093,307 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call clears the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns></returns>
+        public void SearchesV3ClearSearchForBarcode ()
+        {
+             SearchesV3ClearSearchForBarcodeWithHttpInfo();
+        }
+
+        /// <summary>
+        /// This call clears the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> SearchesV3ClearSearchForBarcodeWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode/ClearDefault";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3ClearSearchForBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call clears the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SearchesV3ClearSearchForBarcodeAsync ()
+        {
+             await SearchesV3ClearSearchForBarcodeAsyncWithHttpInfo();
+
+        }
+
+        /// <summary>
+        /// This call clears the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3ClearSearchForBarcodeAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode/ClearDefault";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3ClearSearchForBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Object</returns>
+        public Object SearchesV3DefaultSearchBarcode (SelectDTO selectDto)
+        {
+             ApiResponse<Object> localVarResponse = SearchesV3DefaultSearchBarcodeWithHttpInfo(selectDto);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > SearchesV3DefaultSearchBarcodeWithHttpInfo (SelectDTO selectDto)
+        {
+            // verify the required parameter 'selectDto' is set
+            if (selectDto == null)
+                throw new ApiException(400, "Missing required parameter 'selectDto' when calling SearchesV3Api->SearchesV3DefaultSearchBarcode");
+
+            var localVarPath = "./api/v3/searches/Barcode/Default";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (selectDto != null && selectDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(selectDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = selectDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3DefaultSearchBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> SearchesV3DefaultSearchBarcodeAsync (SelectDTO selectDto)
+        {
+             ApiResponse<Object> localVarResponse = await SearchesV3DefaultSearchBarcodeAsyncWithHttpInfo(selectDto);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call performs the default search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="selectDto">Contains the select fields</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3DefaultSearchBarcodeAsyncWithHttpInfo (SelectDTO selectDto)
+        {
+            // verify the required parameter 'selectDto' is set
+            if (selectDto == null)
+                throw new ApiException(400, "Missing required parameter 'selectDto' when calling SearchesV3Api->SearchesV3DefaultSearchBarcode");
+
+            var localVarPath = "./api/v3/searches/Barcode/Default";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (selectDto != null && selectDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(selectDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = selectDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3DefaultSearchBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -897,7 +1403,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -950,7 +1456,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
@@ -961,7 +1467,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete the default search for the user 
+        /// This call deletes the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
@@ -3335,6 +3841,312 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
+        /// This call performs a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Object</returns>
+        public Object SearchesV3SearchBarcode (bool? saveSearch, SearchCriteriaDto searchwebapidto = null)
+        {
+             ApiResponse<Object> localVarResponse = SearchesV3SearchBarcodeWithHttpInfo(saveSearch, searchwebapidto);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call performs a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>ApiResponse of Object</returns>
+        public ApiResponse< Object > SearchesV3SearchBarcodeWithHttpInfo (bool? saveSearch, SearchCriteriaDto searchwebapidto = null)
+        {
+            // verify the required parameter 'saveSearch' is set
+            if (saveSearch == null)
+                throw new ApiException(400, "Missing required parameter 'saveSearch' when calling SearchesV3Api->SearchesV3SearchBarcode");
+
+            var localVarPath = "./api/v3/searches/Barcode/{saveSearch}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (saveSearch != null) localVarPathParams.Add("saveSearch", this.Configuration.ApiClient.ParameterToString(saveSearch)); // path parameter
+            if (searchwebapidto != null && searchwebapidto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchwebapidto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchwebapidto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SearchBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call performs a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> SearchesV3SearchBarcodeAsync (bool? saveSearch, SearchCriteriaDto searchwebapidto = null)
+        {
+             ApiResponse<Object> localVarResponse = await SearchesV3SearchBarcodeAsyncWithHttpInfo(saveSearch, searchwebapidto);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call performs a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="saveSearch">Saves the search as the default search</param>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3SearchBarcodeAsyncWithHttpInfo (bool? saveSearch, SearchCriteriaDto searchwebapidto = null)
+        {
+            // verify the required parameter 'saveSearch' is set
+            if (saveSearch == null)
+                throw new ApiException(400, "Missing required parameter 'saveSearch' when calling SearchesV3Api->SearchesV3SearchBarcode");
+
+            var localVarPath = "./api/v3/searches/Barcode/{saveSearch}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (saveSearch != null) localVarPathParams.Add("saveSearch", this.Configuration.ApiClient.ParameterToString(saveSearch)); // path parameter
+            if (searchwebapidto != null && searchwebapidto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchwebapidto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchwebapidto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SearchBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (Object) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>SearchDTO</returns>
+        public SearchDTO SearchesV3SearchBarcode_0 ()
+        {
+             ApiResponse<SearchDTO> localVarResponse = SearchesV3SearchBarcode_0WithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of SearchDTO</returns>
+        public ApiResponse< SearchDTO > SearchesV3SearchBarcode_0WithHttpInfo ()
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SearchBarcode_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SearchDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (SearchDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchDTO)));
+        }
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of SearchDTO</returns>
+        public async System.Threading.Tasks.Task<SearchDTO> SearchesV3SearchBarcode_0Async ()
+        {
+             ApiResponse<SearchDTO> localVarResponse = await SearchesV3SearchBarcode_0AsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call gets a search for profiles related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (SearchDTO)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<SearchDTO>> SearchesV3SearchBarcode_0AsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SearchBarcode_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<SearchDTO>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (SearchDTO) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(SearchDTO)));
+        }
+
+        /// <summary>
         /// This call saves the default search for the user 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
@@ -3620,6 +4432,153 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("SearchesV3SetLastSearch", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call sets the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns></returns>
+        public void SearchesV3SetSearchBarcode (SearchCriteriaDto searchwebapidto = null)
+        {
+             SearchesV3SetSearchBarcodeWithHttpInfo(searchwebapidto);
+        }
+
+        /// <summary>
+        /// This call sets the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> SearchesV3SetSearchBarcodeWithHttpInfo (SearchCriteriaDto searchwebapidto = null)
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode/SetDefault";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (searchwebapidto != null && searchwebapidto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchwebapidto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchwebapidto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SetSearchBarcode", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call sets the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task SearchesV3SetSearchBarcodeAsync (SearchCriteriaDto searchwebapidto = null)
+        {
+             await SearchesV3SetSearchBarcodeAsyncWithHttpInfo(searchwebapidto);
+
+        }
+
+        /// <summary>
+        /// This call sets the default search related to barcodes 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="searchwebapidto"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> SearchesV3SetSearchBarcodeAsyncWithHttpInfo (SearchCriteriaDto searchwebapidto = null)
+        {
+
+            var localVarPath = "./api/v3/searches/Barcode/SetDefault";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (searchwebapidto != null && searchwebapidto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(searchwebapidto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = searchwebapidto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("SearchesV3SetSearchBarcode", localVarResponse);
                 if (exception != null) throw exception;
             }
 

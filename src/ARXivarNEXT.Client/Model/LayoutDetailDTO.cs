@@ -32,7 +32,7 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="LayoutDetailDTO" /> class.
         /// </summary>
         /// <param name="id">Identifier.</param>
-        /// <param name="label">label.</param>
+        /// <param name="label">Label of the detail.</param>
         /// <param name="elementType">Element Type.</param>
         /// <param name="elementId">Element Identifier.</param>
         /// <param name="elementAction">Element Action.</param>
@@ -43,7 +43,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="favourite">favourite.</param>
         /// <param name="translations">Translated Labels.</param>
         /// <param name="childs">Details of child layout.</param>
-        public LayoutDetailDTO(int? id = default(int?), string label = default(string), int? elementType = default(int?), string elementId = default(string), int? elementAction = default(int?), int? orderIndex = default(int?), int? parentId = default(int?), int? layoutId = default(int?), int? operation = default(int?), bool? favourite = default(bool?), List<LabelTranslationsDto> translations = default(List<LabelTranslationsDto>), List<LayoutDetailDTO> childs = default(List<LayoutDetailDTO>))
+        /// <param name="icon">Identifier of the custom icon.</param>
+        public LayoutDetailDTO(int? id = default(int?), string label = default(string), int? elementType = default(int?), string elementId = default(string), int? elementAction = default(int?), int? orderIndex = default(int?), int? parentId = default(int?), int? layoutId = default(int?), int? operation = default(int?), bool? favourite = default(bool?), List<LabelTranslationsDto> translations = default(List<LabelTranslationsDto>), List<LayoutDetailDTO> childs = default(List<LayoutDetailDTO>), int? icon = default(int?))
         {
             this.Id = id;
             this.Label = label;
@@ -57,6 +58,7 @@ namespace ARXivarNEXT.Client.Model
             this.Favourite = favourite;
             this.Translations = translations;
             this.Childs = childs;
+            this.Icon = icon;
         }
         
         /// <summary>
@@ -67,8 +69,9 @@ namespace ARXivarNEXT.Client.Model
         public int? Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Label
+        /// Label of the detail
         /// </summary>
+        /// <value>Label of the detail</value>
         [DataMember(Name="label", EmitDefaultValue=false)]
         public string Label { get; set; }
 
@@ -142,6 +145,13 @@ namespace ARXivarNEXT.Client.Model
         public List<LayoutDetailDTO> Childs { get; set; }
 
         /// <summary>
+        /// Identifier of the custom icon
+        /// </summary>
+        /// <value>Identifier of the custom icon</value>
+        [DataMember(Name="icon", EmitDefaultValue=false)]
+        public int? Icon { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -161,6 +171,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  Favourite: ").Append(Favourite).Append("\n");
             sb.Append("  Translations: ").Append(Translations).Append("\n");
             sb.Append("  Childs: ").Append(Childs).Append("\n");
+            sb.Append("  Icon: ").Append(Icon).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -254,6 +265,11 @@ namespace ARXivarNEXT.Client.Model
                     this.Childs == input.Childs ||
                     this.Childs != null &&
                     this.Childs.SequenceEqual(input.Childs)
+                ) && 
+                (
+                    this.Icon == input.Icon ||
+                    (this.Icon != null &&
+                    this.Icon.Equals(input.Icon))
                 );
         }
 
@@ -290,6 +306,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.Translations.GetHashCode();
                 if (this.Childs != null)
                     hashCode = hashCode * 59 + this.Childs.GetHashCode();
+                if (this.Icon != null)
+                    hashCode = hashCode * 59 + this.Icon.GetHashCode();
                 return hashCode;
             }
         }

@@ -42,7 +42,8 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="descriptionFieldName">Transcoding: Field name for description.</param>
         /// <param name="validationType">Possible values:  0: None  1: Regex  2: Formula .</param>
         /// <param name="validationString">Validation string (formula/regex).</param>
-        public AdditionalFieldManagementNumericDTO(int? decimals = default(int?), bool? autocomplete = default(bool?), string autocompleteCharacter = default(string), int? autocompleteAlign = default(int?), bool? locked = default(bool?), bool? transcoding = default(bool?), string tableName = default(string), string codeFieldName = default(string), string descriptionFieldName = default(string), int? validationType = default(int?), string validationString = default(string))
+        /// <param name="showThousandsSeparator">showThousandsSeparator.</param>
+        public AdditionalFieldManagementNumericDTO(int? decimals = default(int?), bool? autocomplete = default(bool?), string autocompleteCharacter = default(string), int? autocompleteAlign = default(int?), bool? locked = default(bool?), bool? transcoding = default(bool?), string tableName = default(string), string codeFieldName = default(string), string descriptionFieldName = default(string), int? validationType = default(int?), string validationString = default(string), bool? showThousandsSeparator = default(bool?))
         {
             this.Decimals = decimals;
             this.Autocomplete = autocomplete;
@@ -55,6 +56,7 @@ namespace ARXivarNEXT.Client.Model
             this.DescriptionFieldName = descriptionFieldName;
             this.ValidationType = validationType;
             this.ValidationString = validationString;
+            this.ShowThousandsSeparator = showThousandsSeparator;
         }
         
         /// <summary>
@@ -135,6 +137,12 @@ namespace ARXivarNEXT.Client.Model
         public string ValidationString { get; set; }
 
         /// <summary>
+        /// Gets or Sets ShowThousandsSeparator
+        /// </summary>
+        [DataMember(Name="showThousandsSeparator", EmitDefaultValue=false)]
+        public bool? ShowThousandsSeparator { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -153,6 +161,7 @@ namespace ARXivarNEXT.Client.Model
             sb.Append("  DescriptionFieldName: ").Append(DescriptionFieldName).Append("\n");
             sb.Append("  ValidationType: ").Append(ValidationType).Append("\n");
             sb.Append("  ValidationString: ").Append(ValidationString).Append("\n");
+            sb.Append("  ShowThousandsSeparator: ").Append(ShowThousandsSeparator).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -241,6 +250,11 @@ namespace ARXivarNEXT.Client.Model
                     this.ValidationString == input.ValidationString ||
                     (this.ValidationString != null &&
                     this.ValidationString.Equals(input.ValidationString))
+                ) && 
+                (
+                    this.ShowThousandsSeparator == input.ShowThousandsSeparator ||
+                    (this.ShowThousandsSeparator != null &&
+                    this.ShowThousandsSeparator.Equals(input.ShowThousandsSeparator))
                 );
         }
 
@@ -275,6 +289,8 @@ namespace ARXivarNEXT.Client.Model
                     hashCode = hashCode * 59 + this.ValidationType.GetHashCode();
                 if (this.ValidationString != null)
                     hashCode = hashCode * 59 + this.ValidationString.GetHashCode();
+                if (this.ShowThousandsSeparator != null)
+                    hashCode = hashCode * 59 + this.ShowThousandsSeparator.GetHashCode();
                 return hashCode;
             }
         }

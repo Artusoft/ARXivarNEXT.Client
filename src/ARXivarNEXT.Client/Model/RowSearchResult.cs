@@ -31,7 +31,7 @@ namespace ARXivarNEXT.Client.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RowSearchResult" /> class.
         /// </summary>
-        /// <param name="rowSerchResultContext">Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users .</param>
+        /// <param name="rowSerchResultContext">Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users  13: Binders .</param>
         /// <param name="columns">columns.</param>
         public RowSearchResult(int? rowSerchResultContext = default(int?), List<ColumnSearchResult> columns = default(List<ColumnSearchResult>))
         {
@@ -40,9 +40,9 @@ namespace ARXivarNEXT.Client.Model
         }
         
         /// <summary>
-        /// Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users 
+        /// Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users  13: Binders 
         /// </summary>
-        /// <value>Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users </value>
+        /// <value>Possible values:  0: None  1: Profiles  2: InternalAttachments  3: ExternalAttachments  4: AddressBook  5: CheckInOut  6: TaskWork  7: TaskWorkAttachements  8: TaskNotes  9: TaskWorkHistory  10: SqlQuery  11: ApiCall  12: Users  13: Binders </value>
         [DataMember(Name="rowSerchResultContext", EmitDefaultValue=false)]
         public int? RowSerchResultContext { get; set; }
 

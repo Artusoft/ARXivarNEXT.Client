@@ -25,7 +25,7 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// This call delete items from desktop
+        /// This call deletes items from desktop
         /// </summary>
         /// <remarks>
         /// 
@@ -36,7 +36,7 @@ namespace ARXivarNEXT.Client.Api
         void DesktopDeleteItem (DesktopItemDeleteRequestDTO desktopItemDeleteRequestDTO);
 
         /// <summary>
-        /// This call delete items from desktop
+        /// This call deletes items from desktop
         /// </summary>
         /// <remarks>
         /// 
@@ -193,7 +193,7 @@ namespace ARXivarNEXT.Client.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// This call delete items from desktop
+        /// This call deletes items from desktop
         /// </summary>
         /// <remarks>
         /// 
@@ -204,7 +204,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DesktopDeleteItemAsync (DesktopItemDeleteRequestDTO desktopItemDeleteRequestDTO);
 
         /// <summary>
-        /// This call delete items from desktop
+        /// This call deletes items from desktop
         /// </summary>
         /// <remarks>
         /// 
@@ -459,7 +459,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete items from desktop 
+        /// This call deletes items from desktop 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="desktopItemDeleteRequestDTO"></param>
@@ -470,7 +470,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete items from desktop 
+        /// This call deletes items from desktop 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="desktopItemDeleteRequestDTO"></param>
@@ -540,7 +540,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete items from desktop 
+        /// This call deletes items from desktop 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="desktopItemDeleteRequestDTO"></param>
@@ -552,7 +552,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call delete items from desktop 
+        /// This call deletes items from desktop 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="desktopItemDeleteRequestDTO"></param>

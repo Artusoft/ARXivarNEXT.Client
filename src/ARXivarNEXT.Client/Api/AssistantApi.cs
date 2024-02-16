@@ -25,6 +25,29 @@ namespace ARXivarNEXT.Client.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns></returns>
+        void AssistantBarcodeImport (string connectionId, BarcodeImportDto barcodeImportDto);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AssistantBarcodeImportWithHttpInfo (string connectionId, BarcodeImportDto barcodeImportDto);
+        /// <summary>
         /// This call notifies the specified user that a document has been added to buffer from monitored folder
         /// </summary>
         /// <remarks>
@@ -119,6 +142,31 @@ namespace ARXivarNEXT.Client.Api
         /// 
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns></returns>
+        void AssistantNotifyOperationWf2Executed (Guid? operationId, Guid? taskWorkId, Guid? processId);
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> AssistantNotifyOperationWf2ExecutedWithHttpInfo (Guid? operationId, Guid? taskWorkId, Guid? processId);
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="processDocId">Process document identifier</param>
         /// <param name="taskWorkId">Taskwork identifier</param>
         /// <returns></returns>
@@ -204,6 +252,29 @@ namespace ARXivarNEXT.Client.Api
         ApiResponse<Object> AssistantScanCompleteWithHttpInfo (string connectionId, ScanResultDto scanResultDto);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AssistantBarcodeImportAsync (string connectionId, BarcodeImportDto barcodeImportDto);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AssistantBarcodeImportAsyncWithHttpInfo (string connectionId, BarcodeImportDto barcodeImportDto);
         /// <summary>
         /// This call notifies the specified user that a document has been added to buffer from monitored folder
         /// </summary>
@@ -292,6 +363,31 @@ namespace ARXivarNEXT.Client.Api
         /// <param name="receiptPAResult">Receipt PA configuration result</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AssistantManagementReceiptPACompleteAsyncWithHttpInfo (string connectionId, ReceiptPAResultDTO receiptPAResult);
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task AssistantNotifyOperationWf2ExecutedAsync (Guid? operationId, Guid? taskWorkId, Guid? processId);
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> AssistantNotifyOperationWf2ExecutedAsyncWithHttpInfo (Guid? operationId, Guid? taskWorkId, Guid? processId);
         /// <summary>
         /// This call notifies the specified user that a document has changed
         /// </summary>
@@ -480,6 +576,181 @@ namespace ARXivarNEXT.Client.Api
         public void AddDefaultHeader(string key, string value)
         {
             this.Configuration.AddDefaultHeader(key, value);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns></returns>
+        public void AssistantBarcodeImport (string connectionId, BarcodeImportDto barcodeImportDto)
+        {
+             AssistantBarcodeImportWithHttpInfo(connectionId, barcodeImportDto);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AssistantBarcodeImportWithHttpInfo (string connectionId, BarcodeImportDto barcodeImportDto)
+        {
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling AssistantApi->AssistantBarcodeImport");
+            // verify the required parameter 'barcodeImportDto' is set
+            if (barcodeImportDto == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeImportDto' when calling AssistantApi->AssistantBarcodeImport");
+
+            var localVarPath = "./api/Assistant/BarcodeImport/{connectionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId)); // path parameter
+            if (barcodeImportDto != null && barcodeImportDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeImportDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeImportDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantBarcodeImport", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AssistantBarcodeImportAsync (string connectionId, BarcodeImportDto barcodeImportDto)
+        {
+             await AssistantBarcodeImportAsyncWithHttpInfo(connectionId, barcodeImportDto);
+
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="connectionId"></param>
+        /// <param name="barcodeImportDto"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AssistantBarcodeImportAsyncWithHttpInfo (string connectionId, BarcodeImportDto barcodeImportDto)
+        {
+            // verify the required parameter 'connectionId' is set
+            if (connectionId == null)
+                throw new ApiException(400, "Missing required parameter 'connectionId' when calling AssistantApi->AssistantBarcodeImport");
+            // verify the required parameter 'barcodeImportDto' is set
+            if (barcodeImportDto == null)
+                throw new ApiException(400, "Missing required parameter 'barcodeImportDto' when calling AssistantApi->AssistantBarcodeImport");
+
+            var localVarPath = "./api/Assistant/BarcodeImport/{connectionId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (connectionId != null) localVarPathParams.Add("connectionId", this.Configuration.ApiClient.ParameterToString(connectionId)); // path parameter
+            if (barcodeImportDto != null && barcodeImportDto.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(barcodeImportDto); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = barcodeImportDto; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantBarcodeImport", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
         }
 
         /// <summary>
@@ -1096,6 +1367,169 @@ namespace ARXivarNEXT.Client.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("AssistantManagementReceiptPAComplete", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns></returns>
+        public void AssistantNotifyOperationWf2Executed (Guid? operationId, Guid? taskWorkId, Guid? processId)
+        {
+             AssistantNotifyOperationWf2ExecutedWithHttpInfo(operationId, taskWorkId, processId);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> AssistantNotifyOperationWf2ExecutedWithHttpInfo (Guid? operationId, Guid? taskWorkId, Guid? processId)
+        {
+            // verify the required parameter 'operationId' is set
+            if (operationId == null)
+                throw new ApiException(400, "Missing required parameter 'operationId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+            // verify the required parameter 'taskWorkId' is set
+            if (taskWorkId == null)
+                throw new ApiException(400, "Missing required parameter 'taskWorkId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+            // verify the required parameter 'processId' is set
+            if (processId == null)
+                throw new ApiException(400, "Missing required parameter 'processId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+
+            var localVarPath = "./api/Assistant/OperationExecuted/{operationId}/TaskWork/{taskWorkId}/Process/{processId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (operationId != null) localVarPathParams.Add("operationId", this.Configuration.ApiClient.ParameterToString(operationId)); // path parameter
+            if (taskWorkId != null) localVarPathParams.Add("taskWorkId", this.Configuration.ApiClient.ParameterToString(taskWorkId)); // path parameter
+            if (processId != null) localVarPathParams.Add("processId", this.Configuration.ApiClient.ParameterToString(processId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantNotifyOperationWf2Executed", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task AssistantNotifyOperationWf2ExecutedAsync (Guid? operationId, Guid? taskWorkId, Guid? processId)
+        {
+             await AssistantNotifyOperationWf2ExecutedAsyncWithHttpInfo(operationId, taskWorkId, processId);
+
+        }
+
+        /// <summary>
+        /// This call notifies the specified user that a document has changed 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="operationId">Operation id</param>
+        /// <param name="taskWorkId">Taskwork identifier</param>
+        /// <param name="processId">Process identifier</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AssistantNotifyOperationWf2ExecutedAsyncWithHttpInfo (Guid? operationId, Guid? taskWorkId, Guid? processId)
+        {
+            // verify the required parameter 'operationId' is set
+            if (operationId == null)
+                throw new ApiException(400, "Missing required parameter 'operationId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+            // verify the required parameter 'taskWorkId' is set
+            if (taskWorkId == null)
+                throw new ApiException(400, "Missing required parameter 'taskWorkId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+            // verify the required parameter 'processId' is set
+            if (processId == null)
+                throw new ApiException(400, "Missing required parameter 'processId' when calling AssistantApi->AssistantNotifyOperationWf2Executed");
+
+            var localVarPath = "./api/Assistant/OperationExecuted/{operationId}/TaskWork/{taskWorkId}/Process/{processId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (operationId != null) localVarPathParams.Add("operationId", this.Configuration.ApiClient.ParameterToString(operationId)); // path parameter
+            if (taskWorkId != null) localVarPathParams.Add("taskWorkId", this.Configuration.ApiClient.ParameterToString(taskWorkId)); // path parameter
+            if (processId != null) localVarPathParams.Add("processId", this.Configuration.ApiClient.ParameterToString(processId)); // path parameter
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AssistantNotifyOperationWf2Executed", localVarResponse);
                 if (exception != null) throw exception;
             }
 

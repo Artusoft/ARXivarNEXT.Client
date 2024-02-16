@@ -32,7 +32,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>List&lt;FieldManagementDTO&gt;</returns>
         List<FieldManagementDTO> UtilitiesGetFields (int? documentTypeId, int? fieldMode);
 
@@ -44,7 +44,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>ApiResponse of List&lt;FieldManagementDTO&gt;</returns>
         ApiResponse<List<FieldManagementDTO>> UtilitiesGetFieldsWithHttpInfo (int? documentTypeId, int? fieldMode);
         #endregion Synchronous Operations
@@ -57,7 +57,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>Task of List&lt;FieldManagementDTO&gt;</returns>
         System.Threading.Tasks.Task<List<FieldManagementDTO>> UtilitiesGetFieldsAsync (int? documentTypeId, int? fieldMode);
 
@@ -69,7 +69,7 @@ namespace ARXivarNEXT.Client.Api
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>Task of ApiResponse (List&lt;FieldManagementDTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<FieldManagementDTO>>> UtilitiesGetFieldsAsyncWithHttpInfo (int? documentTypeId, int? fieldMode);
         #endregion Asynchronous Operations
@@ -177,7 +177,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>List&lt;FieldManagementDTO&gt;</returns>
         public List<FieldManagementDTO> UtilitiesGetFields (int? documentTypeId, int? fieldMode)
         {
@@ -190,7 +190,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>ApiResponse of List&lt;FieldManagementDTO&gt;</returns>
         public ApiResponse< List<FieldManagementDTO> > UtilitiesGetFieldsWithHttpInfo (int? documentTypeId, int? fieldMode)
         {
@@ -257,7 +257,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>Task of List&lt;FieldManagementDTO&gt;</returns>
         public async System.Threading.Tasks.Task<List<FieldManagementDTO>> UtilitiesGetFieldsAsync (int? documentTypeId, int? fieldMode)
         {
@@ -271,7 +271,7 @@ namespace ARXivarNEXT.Client.Api
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="documentTypeId">Document Type identifier</param>
-        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask </param>
+        /// <param name="fieldMode">Possible values:  0: Standard  1: UniquenessRules  2: Folders  3: SqlQuery  4: ApiCall  5: DataSource  6: AdditionalFieldSource  7: AdditionalFieldDestination  8: Formula  9: Additional  10: IxFeRuleMapping  11: IxFePPMapping  12: IxCeArxCe  13: RootMask  14: BarcodeConfiguration  15: EnumerationCheckEnumeration  16: EnumerationCheckSplitField  17: PostelShippedField </param>
         /// <returns>Task of ApiResponse (List&lt;FieldManagementDTO&gt;)</returns>
         public async System.Threading.Tasks.Task<ApiResponse<List<FieldManagementDTO>>> UtilitiesGetFieldsAsyncWithHttpInfo (int? documentTypeId, int? fieldMode)
         {

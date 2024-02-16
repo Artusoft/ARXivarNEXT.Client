@@ -32,9 +32,17 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="WorkflowEventAbstractConfiguration" /> class.
         /// </summary>
         /// <param name="className">className.</param>
-        public WorkflowEventAbstractConfiguration(string className = default(string))
+        /// <param name="filters">filters.</param>
+        /// <param name="eventType">eventType.</param>
+        /// <param name="defaultValues">defaultValues.</param>
+        /// <param name="variableAssociations">variableAssociations.</param>
+        public WorkflowEventAbstractConfiguration(string className = default(string), List<EventFilterDTO> filters = default(List<EventFilterDTO>), int? eventType = default(int?), List<EventDefaultValueDTO> defaultValues = default(List<EventDefaultValueDTO>), List<EventVariableAssDTO> variableAssociations = default(List<EventVariableAssDTO>))
         {
             this.ClassName = className;
+            this.Filters = filters;
+            this.EventType = eventType;
+            this.DefaultValues = defaultValues;
+            this.VariableAssociations = variableAssociations;
         }
         
         /// <summary>
@@ -42,6 +50,30 @@ namespace ARXivarNEXT.Client.Model
         /// </summary>
         [DataMember(Name="className", EmitDefaultValue=false)]
         public string ClassName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Filters
+        /// </summary>
+        [DataMember(Name="filters", EmitDefaultValue=false)]
+        public List<EventFilterDTO> Filters { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EventType
+        /// </summary>
+        [DataMember(Name="eventType", EmitDefaultValue=false)]
+        public int? EventType { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DefaultValues
+        /// </summary>
+        [DataMember(Name="defaultValues", EmitDefaultValue=false)]
+        public List<EventDefaultValueDTO> DefaultValues { get; set; }
+
+        /// <summary>
+        /// Gets or Sets VariableAssociations
+        /// </summary>
+        [DataMember(Name="variableAssociations", EmitDefaultValue=false)]
+        public List<EventVariableAssDTO> VariableAssociations { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,6 +84,10 @@ namespace ARXivarNEXT.Client.Model
             var sb = new StringBuilder();
             sb.Append("class WorkflowEventAbstractConfiguration {\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
+            sb.Append("  Filters: ").Append(Filters).Append("\n");
+            sb.Append("  EventType: ").Append(EventType).Append("\n");
+            sb.Append("  DefaultValues: ").Append(DefaultValues).Append("\n");
+            sb.Append("  VariableAssociations: ").Append(VariableAssociations).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,6 +126,26 @@ namespace ARXivarNEXT.Client.Model
                     this.ClassName == input.ClassName ||
                     (this.ClassName != null &&
                     this.ClassName.Equals(input.ClassName))
+                ) && 
+                (
+                    this.Filters == input.Filters ||
+                    this.Filters != null &&
+                    this.Filters.SequenceEqual(input.Filters)
+                ) && 
+                (
+                    this.EventType == input.EventType ||
+                    (this.EventType != null &&
+                    this.EventType.Equals(input.EventType))
+                ) && 
+                (
+                    this.DefaultValues == input.DefaultValues ||
+                    this.DefaultValues != null &&
+                    this.DefaultValues.SequenceEqual(input.DefaultValues)
+                ) && 
+                (
+                    this.VariableAssociations == input.VariableAssociations ||
+                    this.VariableAssociations != null &&
+                    this.VariableAssociations.SequenceEqual(input.VariableAssociations)
                 );
         }
 
@@ -104,6 +160,14 @@ namespace ARXivarNEXT.Client.Model
                 int hashCode = 41;
                 if (this.ClassName != null)
                     hashCode = hashCode * 59 + this.ClassName.GetHashCode();
+                if (this.Filters != null)
+                    hashCode = hashCode * 59 + this.Filters.GetHashCode();
+                if (this.EventType != null)
+                    hashCode = hashCode * 59 + this.EventType.GetHashCode();
+                if (this.DefaultValues != null)
+                    hashCode = hashCode * 59 + this.DefaultValues.GetHashCode();
+                if (this.VariableAssociations != null)
+                    hashCode = hashCode * 59 + this.VariableAssociations.GetHashCode();
                 return hashCode;
             }
         }

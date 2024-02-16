@@ -35,7 +35,7 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="userId">User Identifier.</param>
         /// <param name="completeName">User Name.</param>
         /// <param name="category">User Category.</param>
-        /// <param name="isUserDisabled">isUserDisabled.</param>
+        /// <param name="isUserDisabled">If user is disabled.</param>
         public LayoutUsersDto(int? layoutId = default(int?), int? userId = default(int?), string completeName = default(string), int? category = default(int?), bool? isUserDisabled = default(bool?))
         {
             this.LayoutId = layoutId;
@@ -74,8 +74,9 @@ namespace ARXivarNEXT.Client.Model
         public int? Category { get; set; }
 
         /// <summary>
-        /// Gets or Sets IsUserDisabled
+        /// If user is disabled
         /// </summary>
+        /// <value>If user is disabled</value>
         [DataMember(Name="isUserDisabled", EmitDefaultValue=false)]
         public bool? IsUserDisabled { get; set; }
 

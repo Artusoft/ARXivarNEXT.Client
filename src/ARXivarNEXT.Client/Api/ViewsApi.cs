@@ -88,7 +88,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of ViewDTO</returns>
         ApiResponse<ViewDTO> ViewsGetViewWithHttpInfo (string id);
         /// <summary>
-        /// This call return the view configured on a task operation with all information
+        /// This call returns the view configured on a task operation with all information
         /// </summary>
         /// <remarks>
         /// 
@@ -100,7 +100,7 @@ namespace ARXivarNEXT.Client.Api
         ViewDTO ViewsGetViewByTaskWorkOperationId (int? taskworkId, string operationId);
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information
+        /// This call returns the view configured on a task operation with all information
         /// </summary>
         /// <remarks>
         /// 
@@ -195,7 +195,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse (ViewDTO)</returns>
         System.Threading.Tasks.Task<ApiResponse<ViewDTO>> ViewsGetViewAsyncWithHttpInfo (string id);
         /// <summary>
-        /// This call return the view configured on a task operation with all information
+        /// This call returns the view configured on a task operation with all information
         /// </summary>
         /// <remarks>
         /// 
@@ -207,7 +207,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task<ViewDTO> ViewsGetViewByTaskWorkOperationIdAsync (int? taskworkId, string operationId);
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information
+        /// This call returns the view configured on a task operation with all information
         /// </summary>
         /// <remarks>
         /// 
@@ -782,7 +782,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information 
+        /// This call returns the view configured on a task operation with all information 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskworkId">The id of the task</param>
@@ -795,7 +795,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information 
+        /// This call returns the view configured on a task operation with all information 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskworkId">The id of the task</param>
@@ -862,7 +862,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information 
+        /// This call returns the view configured on a task operation with all information 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskworkId">The id of the task</param>
@@ -876,7 +876,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call return the view configured on a task operation with all information 
+        /// This call returns the view configured on a task operation with all information 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="taskworkId">The id of the task</param>

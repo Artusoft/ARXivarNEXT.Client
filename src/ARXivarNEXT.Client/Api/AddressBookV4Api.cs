@@ -169,7 +169,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -180,12 +180,33 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
         /// <returns>ApiResponse of List&lt;AddressBookV4DTO&gt;</returns>
         ApiResponse<List<AddressBookV4DTO>> AddressBookV4InsertAddressBook_0WithHttpInfo (List<AddressBookV4DTO> addressBookDtos);
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>List&lt;AddressBookV4InsertResult&gt;</returns>
+        List<AddressBookV4InsertResult> AddressBookV4InsertAddressBooksWithResults (List<AddressBookV4DTO> addressBookDtos);
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>ApiResponse of List&lt;AddressBookV4InsertResult&gt;</returns>
+        ApiResponse<List<AddressBookV4InsertResult>> AddressBookV4InsertAddressBooksWithResultsWithHttpInfo (List<AddressBookV4DTO> addressBookDtos);
         /// <summary>
         /// This call inserts new contact of a address book item
         /// </summary>
@@ -398,7 +419,7 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -409,12 +430,33 @@ namespace ARXivarNEXT.Client.Api
         /// This call inserts new address book items
         /// </summary>
         /// <remarks>
-        /// 
+        /// Use V4/AddressBook/AddressBooksWithResults
         /// </remarks>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
         /// <returns>Task of ApiResponse (List&lt;AddressBookV4DTO&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AddressBookV4DTO>>> AddressBookV4InsertAddressBook_0AsyncWithHttpInfo (List<AddressBookV4DTO> addressBookDtos);
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>Task of List&lt;AddressBookV4InsertResult&gt;</returns>
+        System.Threading.Tasks.Task<List<AddressBookV4InsertResult>> AddressBookV4InsertAddressBooksWithResultsAsync (List<AddressBookV4DTO> addressBookDtos);
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>Task of ApiResponse (List&lt;AddressBookV4InsertResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AddressBookV4InsertResult>>> AddressBookV4InsertAddressBooksWithResultsAsyncWithHttpInfo (List<AddressBookV4DTO> addressBookDtos);
         /// <summary>
         /// This call inserts new contact of a address book item
         /// </summary>
@@ -1612,7 +1654,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -1624,7 +1666,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -1698,7 +1740,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -1711,7 +1753,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call inserts new address book items 
+        /// This call inserts new address book items Use V4/AddressBook/AddressBooksWithResults
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="addressBookDtos">Address book items to profile</param>
@@ -1782,6 +1824,179 @@ namespace ARXivarNEXT.Client.Api
             return new ApiResponse<List<AddressBookV4DTO>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
                 (List<AddressBookV4DTO>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressBookV4DTO>)));
+        }
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>List&lt;AddressBookV4InsertResult&gt;</returns>
+        public List<AddressBookV4InsertResult> AddressBookV4InsertAddressBooksWithResults (List<AddressBookV4DTO> addressBookDtos)
+        {
+             ApiResponse<List<AddressBookV4InsertResult>> localVarResponse = AddressBookV4InsertAddressBooksWithResultsWithHttpInfo(addressBookDtos);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>ApiResponse of List&lt;AddressBookV4InsertResult&gt;</returns>
+        public ApiResponse< List<AddressBookV4InsertResult> > AddressBookV4InsertAddressBooksWithResultsWithHttpInfo (List<AddressBookV4DTO> addressBookDtos)
+        {
+            // verify the required parameter 'addressBookDtos' is set
+            if (addressBookDtos == null)
+                throw new ApiException(400, "Missing required parameter 'addressBookDtos' when calling AddressBookV4Api->AddressBookV4InsertAddressBooksWithResults");
+
+            var localVarPath = "./api/V4/AddressBook/AddressBooksWithResults";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (addressBookDtos != null && addressBookDtos.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(addressBookDtos); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = addressBookDtos; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddressBookV4InsertAddressBooksWithResults", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AddressBookV4InsertResult>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<AddressBookV4InsertResult>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressBookV4InsertResult>)));
+        }
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>Task of List&lt;AddressBookV4InsertResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AddressBookV4InsertResult>> AddressBookV4InsertAddressBooksWithResultsAsync (List<AddressBookV4DTO> addressBookDtos)
+        {
+             ApiResponse<List<AddressBookV4InsertResult>> localVarResponse = await AddressBookV4InsertAddressBooksWithResultsAsyncWithHttpInfo(addressBookDtos);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// This call inserts new address book items and return a result for each insert 
+        /// </summary>
+        /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="addressBookDtos">Address book items to profile</param>
+        /// <returns>Task of ApiResponse (List&lt;AddressBookV4InsertResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AddressBookV4InsertResult>>> AddressBookV4InsertAddressBooksWithResultsAsyncWithHttpInfo (List<AddressBookV4DTO> addressBookDtos)
+        {
+            // verify the required parameter 'addressBookDtos' is set
+            if (addressBookDtos == null)
+                throw new ApiException(400, "Missing required parameter 'addressBookDtos' when calling AddressBookV4Api->AddressBookV4InsertAddressBooksWithResults");
+
+            var localVarPath = "./api/V4/AddressBook/AddressBooksWithResults";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "text/json", 
+                "application/xml", 
+                "text/xml", 
+                "application/x-www-form-urlencoded"
+            };
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "text/json",
+                "application/xml",
+                "text/xml"
+            };
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (addressBookDtos != null && addressBookDtos.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = this.Configuration.ApiClient.Serialize(addressBookDtos); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = addressBookDtos; // byte array
+            }
+
+            // authentication (Authorization) required
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarHeaderParams["Authorization"] = this.Configuration.GetApiKeyWithPrefix("Authorization");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("AddressBookV4InsertAddressBooksWithResults", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AddressBookV4InsertResult>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<AddressBookV4InsertResult>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AddressBookV4InsertResult>)));
         }
 
         /// <summary>

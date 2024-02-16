@@ -109,7 +109,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DelegationInsertWithHttpInfo (DelegationDTO delegation);
         /// <summary>
-        /// This call update a delegation
+        /// This call updates a delegation
         /// </summary>
         /// <remarks>
         /// 
@@ -120,7 +120,7 @@ namespace ARXivarNEXT.Client.Api
         void DelegationUpdate (DelegationDTO delegation);
 
         /// <summary>
-        /// This call update a delegation
+        /// This call updates a delegation
         /// </summary>
         /// <remarks>
         /// 
@@ -216,7 +216,7 @@ namespace ARXivarNEXT.Client.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DelegationInsertAsyncWithHttpInfo (DelegationDTO delegation);
         /// <summary>
-        /// This call update a delegation
+        /// This call updates a delegation
         /// </summary>
         /// <remarks>
         /// 
@@ -227,7 +227,7 @@ namespace ARXivarNEXT.Client.Api
         System.Threading.Tasks.Task DelegationUpdateAsync (DelegationDTO delegation);
 
         /// <summary>
-        /// This call update a delegation
+        /// This call updates a delegation
         /// </summary>
         /// <remarks>
         /// 
@@ -937,7 +937,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a delegation 
+        /// This call updates a delegation 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="delegation"></param>
@@ -948,7 +948,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a delegation 
+        /// This call updates a delegation 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="delegation"></param>
@@ -1018,7 +1018,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a delegation 
+        /// This call updates a delegation 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="delegation"></param>
@@ -1030,7 +1030,7 @@ namespace ARXivarNEXT.Client.Api
         }
 
         /// <summary>
-        /// This call update a delegation 
+        /// This call updates a delegation 
         /// </summary>
         /// <exception cref="ARXivarNEXT.Client.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="delegation"></param>

@@ -32,6 +32,7 @@ namespace ARXivarNEXT.Client.Model
         /// Initializes a new instance of the <see cref="WorkFlowChainDTO" /> class.
         /// </summary>
         /// <param name="id">Chain identifier.</param>
+        /// <param name="enabled">Chain enabled.</param>
         /// <param name="kind">Possible values:  0: FromV1ToV2  1: FromV2ToV1 .</param>
         /// <param name="dmWorkflow">Dm WorkFlow.</param>
         /// <param name="workflowName">WorkFlow Name.</param>
@@ -43,9 +44,10 @@ namespace ARXivarNEXT.Client.Model
         /// <param name="importSecondary">Import Secondary.</param>
         /// <param name="importAttach">Import Attach.</param>
         /// <param name="wfChainVars">The list of Workflow chain vars.</param>
-        public WorkFlowChainDTO(string id = default(string), int? kind = default(int?), int? dmWorkflow = default(int?), string workflowName = default(string), int? workflowRevision = default(int?), string diagramId = default(string), string diagramName = default(string), int? diagramRevision = default(int?), int? importPrimary = default(int?), int? importSecondary = default(int?), int? importAttach = default(int?), List<WorkFlowChainVarDTO> wfChainVars = default(List<WorkFlowChainVarDTO>))
+        public WorkFlowChainDTO(string id = default(string), bool? enabled = default(bool?), int? kind = default(int?), int? dmWorkflow = default(int?), string workflowName = default(string), int? workflowRevision = default(int?), string diagramId = default(string), string diagramName = default(string), int? diagramRevision = default(int?), int? importPrimary = default(int?), int? importSecondary = default(int?), int? importAttach = default(int?), List<WorkFlowChainVarDTO> wfChainVars = default(List<WorkFlowChainVarDTO>))
         {
             this.Id = id;
+            this.Enabled = enabled;
             this.Kind = kind;
             this.DmWorkflow = dmWorkflow;
             this.WorkflowName = workflowName;
@@ -65,6 +67,13 @@ namespace ARXivarNEXT.Client.Model
         /// <value>Chain identifier</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
+
+        /// <summary>
+        /// Chain enabled
+        /// </summary>
+        /// <value>Chain enabled</value>
+        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        public bool? Enabled { get; set; }
 
         /// <summary>
         /// Possible values:  0: FromV1ToV2  1: FromV2ToV1 
@@ -152,6 +161,7 @@ namespace ARXivarNEXT.Client.Model
             var sb = new StringBuilder();
             sb.Append("class WorkFlowChainDTO {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Enabled: ").Append(Enabled).Append("\n");
             sb.Append("  Kind: ").Append(Kind).Append("\n");
             sb.Append("  DmWorkflow: ").Append(DmWorkflow).Append("\n");
             sb.Append("  WorkflowName: ").Append(WorkflowName).Append("\n");
@@ -201,6 +211,11 @@ namespace ARXivarNEXT.Client.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.Enabled == input.Enabled ||
+                    (this.Enabled != null &&
+                    this.Enabled.Equals(input.Enabled))
                 ) && 
                 (
                     this.Kind == input.Kind ||
@@ -270,6 +285,8 @@ namespace ARXivarNEXT.Client.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.Enabled != null)
+                    hashCode = hashCode * 59 + this.Enabled.GetHashCode();
                 if (this.Kind != null)
                     hashCode = hashCode * 59 + this.Kind.GetHashCode();
                 if (this.DmWorkflow != null)
